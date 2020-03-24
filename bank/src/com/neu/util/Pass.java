@@ -6,5 +6,6 @@ public class Pass {
 	private static final String  data="2020.3.24";
 	public static void main(String[] args) {
 		System.out.println("报个锤子错");
+		System.out.println("法力无边！");
 	}
 }
