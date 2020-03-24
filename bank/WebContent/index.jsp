@@ -28,9 +28,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <body class="skin-blue">
         <!-- header logo: style can be found in header.less -->
         <header class="header">
-            <a href="../index.html" class="logo">
+            <a href="index.jsp" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
-                暴走银行
+                爆炸银行
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
@@ -302,7 +302,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li class="active">
-                            <a href="../index.html">
+                            <a href="index.jsp">
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
                         </li>
@@ -350,12 +350,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-table"></i> <span>Tables</span>
+                                <i class="glyphicon glyphicon-tags"></i> <span>信用卡</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="tables/simple.html"><i class="fa fa-angle-double-right"></i> Simple tables</a></li>
-                                <li><a href="tables/data.html"><i class="fa fa-angle-double-right"></i> Data tables</a></li>
+                                <li><a href="creditCard/sqjd.html"><i class="glyphicon glyphicon-tag"></i>申请进度查询</a></li>
+                                <li><a href="creditCard/xykgl.html"><i class="glyphicon glyphicon-tag"></i>信用卡管理</a></li>
                             </ul>
                         </li>
                         <li>
@@ -512,60 +512,65 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							
 							 <div class="row">
 							 
+								
+								<div class="col-lg-2 .col-md-2 col-xs-3">
+									
+									<div style="text-align:center">
+										<a href="#" class="small" >
+										<img class="" src="img/paid.png">
+										<br />缴费</a>
+									</div>
+								</div>
+								
+								<div class="col-lg-2 .col-md-2 col-xs-3">
+									
+									<div style="text-align:center">
+										<a href="#" class="small" >
+										<img class="" src="img/pay.png">
+										<br />转账</a>
+									</div>
+								</div>
+								
+								<div class="col-lg-2 .col-md-2 col-xs-3">
+									
+									<div style="text-align:center">
+									<br>
+										<a href="#" class="small" >
+										<img class="" src="img/account.png">
+										<br />账户</a>
+									</div>
+								</div>
+								
+								
+								<div class="col-lg-2 .col-md-2 col-xs-3">
+									
+									<div style="text-align:center">
+										<br/>
+										<a href="#" class="small" >
+										<img class="" src="img/person.png">
+										<br />客户</a>
+									</div>
+								</div>
+								
 							 	<div class="col-lg-2 .col-md-2 col-xs-3">
 									
 									<div style="text-align:center">
-										<img class="" src="img/a.jpg">
+									<a href="creditCard/xykgl.html" class="small" >
+										<img class="" src="img/credit.png">
 										<br />
-										<a href="#" class="small" >转账</a>
+										信用卡</a>
 									</div>
 	
 								</div>
 								
-								<div class="col-lg-2 .col-md-2 col-xs-3">
-									
-									<div style="text-align:center">
-										<img class="" src="img/a.jpg">
-										<br />
-										<a href="#" class="small" >缴费</a>
-									</div>
-								</div>
 								
 								<div class="col-lg-2 .col-md-2 col-xs-3">
 									
 									<div style="text-align:center">
-										<img class="" src="img/a.jpg">
+										<a class="small" data-toggle="modal" data-backdrop="static" data-target="#compose-modal" >
+										<img class="" src="img/setting.png">
 										<br />
-										<a href="#" class="small" >缴费</a>
-									</div>
-								</div>
-								
-								<div class="col-lg-2 .col-md-2 col-xs-3">
-									
-									<div style="text-align:center">
-										<img class="" src="img/a.jpg">
-										<br />
-										<a href="#" class="small" >缴费</a>
-									</div>
-								</div>
-								
-								
-								<div class="col-lg-2 .col-md-2 col-xs-3">
-									
-									<div style="text-align:center">
-										<img class="" src="img/a.jpg">
-										<br />
-										<a href="#" class="small" >缴费</a>
-									</div>
-								</div>
-								
-								
-								<div class="col-lg-2 .col-md-2 col-xs-3">
-									
-									<div style="text-align:center">
-										<img class="" src="img/a.jpg">
-										<br />
-										<a class="small" data-toggle="modal" data-backdrop="static" data-target="#compose-modal" >设置</a>
+										设置</a>
 									</div>
 								</div>
 							 
