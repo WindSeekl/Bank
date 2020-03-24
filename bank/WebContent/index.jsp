@@ -331,8 +331,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             </a>
                             <ul class="treeview-menu">
                                  <li><a href="zhfw/glzhgl.html"><i class="fa fa-angle-double-right"></i> 关联账户管理 </a></li>
-                                <li><a href="zhfw/gs.html"><i class="fa fa-angle-double-right"></i> 账户服务 </a></li>
-                                <li><a href="zhfw/mmxg.html"><i class="fa fa-angle-double-right"></i> 密码修改</a></li>
+                                <li><a href="zhfw/gs.jsp"><i class="fa fa-angle-double-right"></i> 账户服务 </a></li>
+                                <li><a href="zhfw/mmxg.jps"><i class="fa fa-angle-double-right"></i> 密码修改</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
