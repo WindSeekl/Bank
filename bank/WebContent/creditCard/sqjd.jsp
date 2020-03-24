@@ -1,8 +1,13 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>AdminLTE | Dashboard</title>
+        <title>申请进度查询</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- bootstrap 3.0.2 -->
         <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -349,8 +354,8 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="sqjd.html"><i class="glyphicon glyphicon-tag"></i>申请进度查询</a></li>
-                                <li><a href="xykgl.html"><i class="glyphicon glyphicon-tag"></i>信用卡管理</a></li>
+                                <li><a href="sqjd.jsp"><i class="glyphicon glyphicon-tag"></i>申请进度查询</a></li>
+                                <li><a href="xykgl.jsp"><i class="glyphicon glyphicon-tag"></i>信用卡管理</a></li>
                             </ul>
                         </li>
                         <li>

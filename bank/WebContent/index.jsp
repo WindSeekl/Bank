@@ -7,7 +7,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>AdminLTE | Dashboard</title>
+        <title>爆炸银行</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- bootstrap 3.0.2 -->
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -356,8 +356,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="creditCard/sqjd.html"><i class="glyphicon glyphicon-tag"></i>申请进度查询</a></li>
-                                <li><a href="creditCard/xykgl.html"><i class="glyphicon glyphicon-tag"></i>信用卡管理</a></li>
+                                <li><a href="creditCard/sqjd.jsp"><i class="glyphicon glyphicon-tag"></i>申请进度查询</a></li>
+                                <li><a href="creditCard/xykgl.jsp"><i class="glyphicon glyphicon-tag"></i>信用卡管理</a></li>
                             </ul>
                         </li>
                         <li>
@@ -557,7 +557,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							 	<div class="col-lg-2 .col-md-2 col-xs-3">
 									
 									<div style="text-align:center">
-									<a href="creditCard/xykgl.html" class="small" >
+									<a href="creditCard/xykgl.jsp" class="small" >
 										<img class="" src="img/credit.png">
 										<br />
 										信用卡</a>
