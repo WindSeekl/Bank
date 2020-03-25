@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.alibaba.fastjson.JSONObject;
+import com.neu.bank.po.User;
 import com.neu.bank.service.userService.UserService;
 import com.neu.bank.service.userService.impl.UserServiceImpl;
 
@@ -35,7 +36,7 @@ public class UserController extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		String mark = request.getParameter("mark");
 		String res = null;
-		String jsonstr;
+		String jsonstr = null;
 		if(mark.equals("changeName")){
 			String name = request.getParameter("name");
 			res = us.changeUserName("张三", name);
@@ -54,8 +55,9 @@ public class UserController extends HttpServlet {
 				res = "超过长度限制";
 			}
 			jsonstr = JSONObject.toJSONString(res);
-		}else{
-			jsonstr = JSONObject.toJSONString(us.queryUser("王五"));
+		}else {
+			User u = us.queryUser("王五");
+			jsonstr = JSONObject.toJSONString(u);
 		}
 		response.setContentType("application/json;charset=utf-8");
 		response.getWriter().println(jsonstr);
