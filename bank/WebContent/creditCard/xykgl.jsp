@@ -508,45 +508,33 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									
 										<div class="row">
 									  		<div class="col-lg-8">
-												 <div class="form-group">
-							 							 <div class="input-group">
-                                           					<span class="input-group-addon">选择账号：</span>
-                                           						 <select class="form-control">
-                                                					<option>option 1</option>
-                                                					<option>option 2</option>
-                                               					    <option>option 3</option>
-                                                				   <option>option 4</option>
-                                                					<option>option 5</option>
+												<div class="form-group">
+						 						 	<div class="input-group">
+                                           				<span class="input-group-addon">选择账号：</span>
+                                           					<select class="form-control" name="cardId">
+                                               					<option>option 1</option>
+                                               					<option>option 2</option>
+                                            					<option>option 3</option>
+                                               				    <option>option 4</option>
+                                               					<option>option 5</option>
                                             				</select>
 														</div><!-- input-group -->
-											</div> <!--  form-group -->
-									  </div> <!--  col -->
-									</div> <!--  row -->
+													</div> <!--  form-group -->
+									 			</div> <!--  col -->
+											</div> <!--  row -->
 									
 									 <div class="row">
-									  		<div class="col-lg-8">
-												 <div class="form-group">
-							 							 <div class="input-group">
-                                           					<span class="input-group-addon">旧查询密码：</span>
-															<input name="email_to" type="email" class="form-control" placeholder="Email CC">
+									 	<div class="col-lg-8">
+											<div class="form-group">
+							 					<div class="input-group">
+                                         			<span class="input-group-addon">旧查询密码：</span>
+													<input name="email_to" type="email" class="form-control" placeholder="Email CC">
                                            						 
-														</div><!-- input-group -->
+												</div><!-- input-group -->
 											</div> <!--  form-group -->
-									  </div> <!--  col -->
+								   		</div> <!--  col -->
 									</div> <!--  row -->
 									
-									
-									 <div class="row">
-									  		<div class="col-lg-8">
-												 <div class="form-group">
-							 							 <div class="input-group">
-                                           					<span class="input-group-addon">新查询密码：</span>
-															<input name="email_to" type="email" class="form-control" placeholder="Email CC">
-                                           						 
-														</div><!-- input-group -->
-											</div> <!--  form-group -->
-									  </div> <!--  col -->
-									</div> <!--  row -->
 									
 									 <div class="row">
 									  		<div class="col-lg-8">
@@ -560,18 +548,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									  </div> <!--  col -->
 									</div> <!--  row -->
 									
-									
 									 <div class="row">
-									  		<div class="col-lg-5">
+									  		<div class="col-lg-8">
 												 <div class="form-group">
 							 							 <div class="input-group">
-                                           					<span class="input-group-addon">验证码：</span>
+                                           					<span class="input-group-addon">新查询密码：</span>
 															<input name="email_to" type="email" class="form-control" placeholder="Email CC">
                                            						 
 														</div><!-- input-group -->
 											</div> <!--  form-group -->
 									  </div> <!--  col -->
 									</div> <!--  row -->
+									
 									
 									
 								<div class="modal-footer clearfix">

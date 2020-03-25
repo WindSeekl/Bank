@@ -1,4 +1,4 @@
-package com.neu.bank.controller;
+package com.neu.bank.controller.creditCard;
 
 import java.io.IOException;
 
@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.neu.bank.service.CreditService;
-import com.neu.bank.service.impl.CreditServiceImpl;
+import com.neu.bank.service.creditCard.CreditService;
+import com.neu.bank.service.creditCard.impl.CreditServiceImpl;
 
 @WebServlet("/creditCard")
 public class CreditCardController extends HttpServlet{

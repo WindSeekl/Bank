@@ -1,4 +1,4 @@
-package com.neu.bank.dao;
+package com.neu.bank.dao.creditCard;
 
 import com.neu.bank.po.CreditCard;
 

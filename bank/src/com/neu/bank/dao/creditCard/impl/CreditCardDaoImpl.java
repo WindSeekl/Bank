@@ -1,6 +1,6 @@
-package com.neu.bank.dao.impl;
+package com.neu.bank.dao.creditCard.impl;
 
-import com.neu.bank.dao.CreditCardDao;
+import com.neu.bank.dao.creditCard.CreditCardDao;
 import com.neu.bank.po.CreditCard;
 import com.neu.util.BaseDao;
 

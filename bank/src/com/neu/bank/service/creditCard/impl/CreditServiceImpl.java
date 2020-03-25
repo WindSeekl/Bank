@@ -1,9 +1,9 @@
-package com.neu.bank.service.impl;
+package com.neu.bank.service.creditCard.impl;
 
-import com.neu.bank.dao.CreditCardDao;
-import com.neu.bank.dao.impl.CreditCardDaoImpl;
+import com.neu.bank.dao.creditCard.CreditCardDao;
+import com.neu.bank.dao.creditCard.impl.CreditCardDaoImpl;
 import com.neu.bank.po.CreditCard;
-import com.neu.bank.service.CreditService;
+import com.neu.bank.service.creditCard.CreditService;
 
 public class CreditServiceImpl implements CreditService {
 
