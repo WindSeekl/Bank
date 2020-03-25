@@ -11,8 +11,8 @@ public class Card {
 	private String adress;
 	private String postCode;        //邮政编码
 	private String email;
-	private int networkId;          //开户行
-	private int cardTypeId;         //卡类型
+	private String networkId;          //开户行
+	private String cardTypeId;         //卡类型
 	private boolean isSigned;       //是否签约
 	private String alias;           //别名
 	private boolean state;          //状态
@@ -81,16 +81,16 @@ public class Card {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getNetworkId() {
+	public String getNetworkId() {
 		return networkId;
 	}
-	public void setNetworkId(int networkId) {
+	public void setNetworkId(String networkId) {
 		this.networkId = networkId;
 	}
-	public int getCardTypeId() {
+	public String getCardTypeId() {
 		return cardTypeId;
 	}
-	public void setCardTypeId(int cardTypeId) {
+	public void setCardTypeId(String cardTypeId) {
 		this.cardTypeId = cardTypeId;
 	}
 	public boolean isSigned() {

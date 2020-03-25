@@ -74,6 +74,62 @@ public class BaseDao implements AutoCloseable{
 		}
 		return list;
 	}
+	public <T> T queryOne(String sql,Class<T> clazz){
+		Statement state = null;
+		ResultSet rs = null;
+		//存储结果对象
+		T t = null;
+		try {
+			con = DBUtil.getSqlConnection();
+			state = con.createStatement();
+			rs = state.executeQuery(sql);
+			t = clazz.newInstance();
+			while(rs.next()){
+				savetoInstance(clazz, rs, t);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NoSuchMethodException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			DBUtil.closeSqlSource(state,rs,con);
+		}
+		return t;
+	}
+	public <T> void savetoInstance(Class<T> clazz,ResultSet rs,T t) throws SQLException, NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
+		Field[] fieldArr = clazz.getDeclaredFields();
+		//遍历属性数组
+		for (Field field : fieldArr) {
+			String fieldName = field.getName();
+			//从结果集中获取对应的字段值
+			Object fieldValue = rs.getObject(fieldName);
+			if(fieldValue!=null){
+				//获取该属性的set方法名
+				String setMethodName = getMethodName(fieldName);
+				Method me = clazz.getDeclaredMethod(setMethodName,field.getType());
+				//赋值到对象
+					me.invoke(t,fieldValue);
+			}
+		}
+	}
+	
 	public void inUpDel(String sql){
 		Statement state = null;
 		con = DBUtil.getSqlConnection();
