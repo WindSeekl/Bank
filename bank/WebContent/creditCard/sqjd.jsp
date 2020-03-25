@@ -7,16 +7,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>爆炸银行</title>
+        <title>申请进度查询</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- bootstrap 3.0.2 -->
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <!-- font Awesome -->
-        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <!-- Ionicons -->
-        <link href="css/ionicons.min.css" rel="stylesheet" type="text/css" />
+        <link href="../css/ionicons.min.css" rel="stylesheet" type="text/css" />
         <!-- Theme style -->
-        <link href="css/AdminLTE.css" rel="stylesheet" type="text/css" />
+        <link href="../css/AdminLTE.css" rel="stylesheet" type="text/css" />
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -28,7 +28,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <body class="skin-blue">
         <!-- header logo: style can be found in header.less -->
         <header class="header">
-            <a href="index.jsp" class="logo">
+             <a href="../index.jsp" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
                 爆炸银行
             </a>
@@ -57,7 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                         <li><!-- start message -->
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <img src="img/avatar3.png" class="img-circle" alt="User Image"/>
+                                                    <img src="../img/avatar3.png" class="img-circle" alt="User Image"/>
                                                 </div>
                                                 <h4>
                                                     Support Team
@@ -69,7 +69,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                         <li>
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <img src="img/avatar2.png" class="img-circle" alt="user image"/>
+                                                    <img src="../img/avatar2.png" class="img-circle" alt="user image"/>
                                                 </div>
                                                 <h4>
                                                     AdminLTE Design Team
@@ -81,7 +81,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                         <li>
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <img src="img/avatar.png" class="img-circle" alt="user image"/>
+                                                    <img src="../img/avatar.png" class="img-circle" alt="user image"/>
                                                 </div>
                                                 <h4>
                                                     Developers
@@ -93,7 +93,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                         <li>
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <img src="img/avatar2.png" class="img-circle" alt="user image"/>
+                                                    <img src="../img/avatar2.png" class="img-circle" alt="user image"/>
                                                 </div>
                                                 <h4>
                                                     Sales Department
@@ -105,7 +105,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                         <li>
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <img src="img/avatar.png" class="img-circle" alt="user image"/>
+                                                    <img src="../img/avatar.png" class="img-circle" alt="user image"/>
                                                 </div>
                                                 <h4>
                                                     Reviewers
@@ -240,7 +240,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header bg-light-blue">
-                                    <img src="img/avatar3.png" class="img-circle" alt="User Image" />
+                                    <img src="../img/avatar3.png" class="img-circle" alt="User Image" />
                                     <p>
                                         Jane Doe - Web Developer
                                         <small>Member since Nov. 2012</small>
@@ -281,7 +281,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <!-- Sidebar user panel -->
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img src="img/avatar3.png" class="img-circle" alt="User Image" />
+                            <img src="../img/avatar3.png" class="img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
                             <p>Hello, Jane</p>
@@ -302,7 +302,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li class="active">
-                            <a href="index.jsp">
+                            <a href="index.html">
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
                         </li>
@@ -311,32 +311,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 <i class="fa fa-th"></i> <span>Widgets</span> <small class="badge pull-right bg-green">new</small>
                             </a>
                         </li>
-                       <li class="treeview">
+                        <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-bar-chart-o"></i>
-                                <span>客户服务</span>
+                                <span>Charts</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="khfw/changePass.jsp"><i class="fa fa-angle-double-right"></i> 个人信息管理</a></li>
-                                <li><a href="charts/flot.html"><i class="fa fa-angle-double-right"></i> 预留信息设置</a></li>
-                                <li><a href="khfw/changeName.jsp"><i class="fa fa-angle-double-right"></i> 网银登录名修改</a></li>
-                                <li><a href="khfw/changePass.jsp"><i class="fa fa-angle-double-right"></i> 网银密码修改</a></li>
-                                <li><a href="charts/inline.html"><i class="fa fa-angle-double-right"></i> 大额取款预约服务</a></li>
-                                <li><a href="charts/inline.html"><i class="fa fa-angle-double-right"></i> 贷款计算器</a></li>
-                                <li><a href="charts/inline.html"><i class="fa fa-angle-double-right"></i> 存款计算器</a></li>
+                                <li><a href="charts/morris.html"><i class="fa fa-angle-double-right"></i> Morris</a></li>
+                                <li><a href="charts/flot.html"><i class="fa fa-angle-double-right"></i> Flot</a></li>
+                                <li><a href="charts/inline.html"><i class="fa fa-angle-double-right"></i> Inline charts</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
-                             <a href="#">
+                            <a href="#">
                                 <i class="fa fa-laptop"></i>
-                                <span>账户服务</span>
+                                <span>UI Elements</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                 <li><a href="zhfw/glzhgl.html"><i class="fa fa-angle-double-right"></i> 关联账户管理 </a></li>
-                                <li><a href="zhfw/gs.jsp"><i class="fa fa-angle-double-right"></i> 账户服务 </a></li>
-                                <li><a href="zhfw/mmxg.jsp"><i class="fa fa-angle-double-right"></i> 密码修改</a></li>
+                                <li><a href="UI/general.html"><i class="fa fa-angle-double-right"></i> General</a></li>
+                                <li><a href="UI/icons.html"><i class="fa fa-angle-double-right"></i> Icons</a></li>
+                                <li><a href="UI/buttons.html"><i class="fa fa-angle-double-right"></i> Buttons</a></li>
+                                <li><a href="UI/sliders.html"><i class="fa fa-angle-double-right"></i> Sliders</a></li>
+                                <li><a href="UI/timeline.html"><i class="fa fa-angle-double-right"></i> Timeline</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
@@ -356,8 +354,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="creditCard/sqjd.jsp"><i class="glyphicon glyphicon-tag"></i>申请进度查询</a></li>
-                                <li><a href="creditCard/xykgl.jsp"><i class="glyphicon glyphicon-tag"></i>信用卡管理</a></li>
+                                <li><a href="sqjd.jsp"><i class="glyphicon glyphicon-tag"></i>申请进度查询</a></li>
+                                <li><a href="xykgl.jsp"><i class="glyphicon glyphicon-tag"></i>信用卡管理</a></li>
                             </ul>
                         </li>
                         <li>
@@ -427,437 +425,124 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        我的账户
-                        <small>Control panel</small>
+                        信用卡申请进度查询
+                        <small></small>
                     </h1>
                     <ol class="breadcrumb">
-                        <li class="active"><i class="fa fa-dashboard"></i> 首页</li>
+                        <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+						 <li><a href="#"><i class="fa fa-dashboard"></i> 信用卡</a></li>
+                        <li class="active">申请进度查询</li>
                     </ol>
                 </section>
 
                 <!-- Main content -->
-					
-				
                 <section class="content">
-				
-				
-					  <div class="row">
-					  
-                        <div class="col-lg-3 col-xs-6">
-                            <!-- small box -->
-                            <div class="small-box bg-aqua">
-                                <div class="inner">
-                                    <h3>
-                                        622700381417
-                                    </h3>
-                                    <p>
-                                        New Orders
-                                    </p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-bag"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">
-                                    More info <i class="fa fa-arrow-circle-right"></i>
-                                </a>
-                            </div>
-                        </div><!-- ./col -->
-                        <div class="col-lg-3 col-xs-6">
-                            <!-- small box -->
-                            <div class="small-box bg-green">
-                                <div class="inner">
-                                    <h3>
-                                        53<sup style="font-size: 20px">%</sup>
-                                    </h3>
-                                    <p>
-                                        Bounce Rate
-                                    </p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-stats-bars"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">
-                                    More info <i class="fa fa-arrow-circle-right"></i>
-                                </a>
-                            </div>
-                        </div><!-- ./col -->
-                        <div class="col-lg-3 col-xs-6">
-                            <!-- small box -->
-                            <div class="small-box bg-yellow">
-                                <div class="inner">
-                                    <h3>
-                                        44
-                                    </h3>
-                                    <p>
-                                        User Registrations
-                                    </p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-person-add"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">
-                                    More info <i class="fa fa-arrow-circle-right"></i>
-                                </a>
-                            </div>
-                        </div><!-- ./col -->
-                    </div><!-- /.count - row -->
-					
-					<div class="box">
-					</div>
-					
-					  <div class="row">
-					  
-                        <div class="col-lg-12  col-xs-12 .col-md-12">
-                          
-						  <div>
-						  	<h3>快捷菜单</h3>
-							
-							 <div class="row">
-							 
-								
-								<div class="col-lg-2 .col-md-2 col-xs-3">
-									
-									<div style="text-align:center">
-										<a href="#" class="small" >
-										<img class="" src="img/paid.png">
-										<br />缴费</a>
-									</div>
-								</div>
-								
-								<div class="col-lg-2 .col-md-2 col-xs-3">
-									
-									<div style="text-align:center">
-										<a href="#" class="small" >
-										<img class="" src="img/pay.png">
-										<br />转账</a>
-									</div>
-								</div>
-								
-								<div class="col-lg-2 .col-md-2 col-xs-3">
-									
-									<div style="text-align:center">
-									<br>
-										<a href="#" class="small" >
-										<img class="" src="img/account.png">
-										<br />账户</a>
-									</div>
-								</div>
-								
-								
-								<div class="col-lg-2 .col-md-2 col-xs-3">
-									
-									<div style="text-align:center">
-										<br/>
-										<a href="#" class="small" >
-										<img class="" src="img/person.png">
-										<br />客户</a>
-									</div>
-								</div>
-								
-							 	<div class="col-lg-2 .col-md-2 col-xs-3">
-									
-									<div style="text-align:center">
-									<a href="creditCard/xykgl.jsp" class="small" >
-										<img class="" src="img/credit.png">
-										<br />
-										信用卡</a>
-									</div>
-	
-								</div>
-								
-								
-								<div class="col-lg-2 .col-md-2 col-xs-3">
-									
-									<div style="text-align:center">
-										<a class="small" data-toggle="modal" data-backdrop="static" data-target="#compose-modal" >
-										<img class="" src="img/setting.png">
-										<br />
-										设置</a>
-									</div>
-								</div>
-							 
-							 </div><!-- row -->
-								
-						  	
-						  </div>
-                          
-                        </div><!-- ./col -->
-					</div><!-- /.fast -- row -->
-					
-					<div style="height:20px">
-					</div>
-					
 					<div class="row">
-						 <div class="col-lg-4  col-xs-4 .col-md-6">
-						 
-						 	
-							 <!-- quick email widget -->
-                            <div class="box box-solid box-success">
-                                <div class="box-header">
-                                    <i class="fa  fa-thumbs-o-up"></i>
-                                    <h3 class="box-title">理财产品推荐</h3>
-                                   
-                                </div>
-                                <div class="box-body">
-                                   
-                                </div>
-                             
-                            </div>  <!-- end widget -->
-						 	
-						 </div>
-						  <div class="col-lg-4  col-xs-4 .col-md-6">
-						  
-						  
-						   <!-- quick email widget -->
-                            <div class="box box-solid box-info">
-                                <div class="box-header">
-                                    <i class="fa fa-envelope"></i>
-                                    <h3 class="box-title">银行公告</h3>
-                                </div>
-                                <div class="box-body">
-								
-									 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                                        <ol class="carousel-indicators">
-                                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                            <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
-                                            <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
-                                        </ol>
-                                        <div class="carousel-inner">
-                                            <div class="item active">
-                                                <img src="http://placehold.it/900x500/39CCCC/ffffff&text=I+Love+Bootstrap" alt="First slide">
-                                                <div class="carousel-caption">
-                                                    First Slide
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <img src="http://placehold.it/900x500/3c8dbc/ffffff&text=I+Love+Bootstrap" alt="Second slide">
-                                                <div class="carousel-caption">
-                                                    Second Slide
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <img src="http://placehold.it/900x500/f39c12/ffffff&text=I+Love+Bootstrap" alt="Third slide">
-                                                <div class="carousel-caption">
-                                                    Third Slide
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                                            <span class="glyphicon glyphicon-chevron-left"></span>
-                                        </a>
-                                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                                            <span class="glyphicon glyphicon-chevron-right"></span>
-                                        </a>
-                                    </div>
-                                   
-                                </div>
-                             
-                            </div>  <!-- end widget -->
-						  
-						  
-						  	
-						 </div>
-						  <div class="col-lg-4  col-xs-4 .col-md-6">
-						  	
-							
-							 <!-- quick email widget -->
-                            <div class="box  box-solid box-info">
-                                <div class="box-header">
-                                    <i class="fa fa-heart-o"></i>
-                                    <h3 class="box-title">温馨提示</h3>
-									<!-- tools box -->
-                                    <div class="pull-right box-tools">
-                                        <button class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="关闭"><i class="fa fa-times"></i></button>
-                                    </div><!-- /. tools -->
-                                </div>
-                                <div class="box-body">
-                                   
-								     <ul class="todo-list">
-									 	<li class="callout callout-info">
-											1.请尽量使用专用电脑操作网上银行，并定期更新操作系统安全补丁和杀毒软件。
-										</li>
-										
-										<li>
-											2.请通过建行网站访问网上银行，不要通过电子邮件、不明网站等链接登录网上银行。
-										</li>
-										<li>
-											3.请在使用网上银行完毕后，点击页面右上角的“退出系统”，以确保安全退出。
-										</li>
-										<li>
-											4.如果您是网银盾客户，请在退出网上银行后，立即拔出您的网银盾，并妥善保管。
-										</li>
-									 </ul>
-							
-                                </div>
-                             
-                            </div>  <!-- end widget -->
-							
-							
-						 </div>
-						
 					
-					</div><!-- /.fast -- row -->
+						<div class="col-lg-9 col-sm-11 col-xs-11 col-md-10">
+							
+						   <div class="box box-solid">
+							 <div class="modal-body">
+							     
+								 <div class="row">
+									  		<div class="col-lg-8">
+												 <div class="form-group">
+							 							 <div class="input-group">
+                                           					<span class="input-group-addon">查询账号：</span>
+															<input name="email_to" type="email" class="form-control" placeholder="Email CC">
+                                           						 
+														</div><!-- input-group -->
+											</div> <!--  form-group -->
+									  </div> <!--  col -->
+									</div> <!--  row -->
+									
+									
+									 <div class="row">
+									  		<div class="col-lg-8">
+												 <div class="form-group">
+							 							 <div class="input-group">
+                                           					<span class="input-group-addon">查询密码：</span>
+															<input name="email_to" type="email" class="form-control" placeholder="Email CC">
+                                           						 
+														</div><!-- input-group -->
+											</div> <!--  form-group -->
+									  </div> <!--  col -->
+									</div> <!--  row -->
+									
+									
+								<div class="modal-footer clearfix">
+                            			<button type="submit" class="btn btn-primary pull-left" data-toggle="modal" data-backdrop="static"  data-target="#compose-modal"><i class="fa fa-check"></i> 提交</button>
+                        		</div>
+								 
+						 </div> <!-- body -->
+						   </div> <!-- box -->
+						   
+						   
 					
-			
-					<div class="row">
-						
-						<div class="col-lg-12">
-							<div class="box">
-							</div>
-							
-							
-							<div>
-						
-								<small style="color:#666">
-									©版权所有 中国建设银行版权所有&nbsp;&nbsp;京ICP备&nbsp;13030780号&nbsp;&nbsp;京公网安备&nbsp;&nbsp;110102000450&nbsp;&nbsp;中国建设银行&nbsp;&nbsp;建设现代生活&nbsp;&nbsp;总行地址：中国北京西城区金融大街25号&nbsp;&nbsp;邮编：100033    
-								</small>
-							
-							</div>
-							
-						</div>
 					
-					</div>
-				
-				
 					
                 </section><!-- /.content -->
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
 		
 		
-		
-		   <!-- COMPOSE MESSAGE MODAL -->
-        <div class="modal fade" id="compose-modal" tabindex="-1" role="dialog" aria-hidden="true">
+		<!-- COMPOSE MESSAGE MODAL -->
+        <div class="modal fade" id="compose-modal"  tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title"><i class="fa fa-cog"></i> 快捷菜单设置</h4>
+                        <h4 class="modal-title"><i class="fa fa-calendar-o"></i> 信用卡申请进度</h4>
                     </div>
                     
                         <div class="modal-body">
 						
 							 <div class="row">
-							 
-							 	<div class="col-lg-2 .col-md-2 col-xs-3">
-									
-									<div style="text-align:center">
-										<img class="" src="img/a.jpg">
-										<br />
-										<input type="checkbox" class="minimal"/><span>&nbsp;&nbsp;转账</span>
+									<div class="col-lg-11">
+										 <ul class="timeline">
+
+  											  <!-- timeline time label -->
+    										<li class="time-label">
+        										<span class="bg-red">
+            										10 Feb. 2014
+        										</span>
+    										</li>
+   											 <!-- /.timeline-label -->
+    										<!-- timeline item -->
+    									<li>
+        									<!-- timeline icon -->
+        									<i class="fa fa-envelope bg-blue"></i>
+    										    <div class="timeline-item">
+            									<span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+            									<h3 class="timeline-header"><a href="#">Support Team</a> ...</h3>
+            										<div class="timeline-body">
+        											        ...
+                										Content goes here
+            										</div>
+
+            										<div class='timeline-footer'>
+                							<a class="btn btn-primary btn-xs">...</a>
+            									</div>
+        									</div>
+    									</li>
+    								<!-- END timeline item -->
+    									...
+								</ul>
 									</div>
-	
-								</div>
-								
-								<div class="col-lg-2 .col-md-2 col-xs-3">
-									
-									<div style="text-align:center">
-										<img class="" src="img/a.jpg">
-										<br />
-										<input type="checkbox" class="minimal"/><span>&nbsp;&nbsp;转账</span>
-									</div>
-								</div>
-								
-								<div class="col-lg-2 .col-md-2 col-xs-3">
-									
-									<div style="text-align:center">
-										<img class="" src="img/a.jpg">
-										<br />
-									<input type="checkbox" class="minimal"/><span>&nbsp;&nbsp;转账</span>
-									</div>
-								</div>
-								
-								<div class="col-lg-2 .col-md-2 col-xs-3">
-									
-									<div style="text-align:center">
-										<img class="" src="img/a.jpg">
-										<br />
-									<input type="checkbox" class="minimal"/><span>&nbsp;&nbsp;转账</span>
-									</div>
-								</div>
-								
-								
-								<div class="col-lg-2 .col-md-2 col-xs-3">
-									
-									<div style="text-align:center">
-										<img class="" src="img/a.jpg">
-										<br />
-										<input type="checkbox" class="minimal"/><span>&nbsp;&nbsp;转账</span>
-									</div>
-								</div>
-								
-								<div class="col-lg-2 .col-md-2 col-xs-3">
-									
-									<div style="text-align:center">
-										<img class="" src="img/a.jpg">
-										<br />
-										<input type="checkbox" class="minimal"/><span>&nbsp;&nbsp;转账</span>
-									</div>
-								</div>
-								
-								<div class="col-lg-2 .col-md-2 col-xs-3">
-									
-									<div style="text-align:center">
-										<img class="" src="img/a.jpg">
-										<br />
-										<input type="checkbox" class="minimal"/><span>&nbsp;&nbsp;转账</span>
-									</div>
-								</div>
-								
-								<div class="col-lg-2 .col-md-2 col-xs-3">
-									
-									<div style="text-align:center">
-										<img class="" src="img/a.jpg">
-										<br />
-										<input type="checkbox" class="minimal"/><span>&nbsp;&nbsp;转账</span>
-									</div>
-								</div>
-								
-								<div class="col-lg-2 .col-md-2 col-xs-3">
-									
-									<div style="text-align:center">
-										<img class="" src="img/a.jpg">
-										<br />
-										<input type="checkbox" class="minimal"/><span>&nbsp;&nbsp;转账</span>
-									</div>
-								</div>
-								
-								<div class="col-lg-2 .col-md-2 col-xs-3">
-									
-									<div style="text-align:center">
-										<img class="" src="img/a.jpg">
-										<br />
-										<input type="checkbox" class="minimal"/><span>&nbsp;&nbsp;转账</span>
-									</div>
-								</div>
-								
-								
 							</div> <!-- row -->
-                            
                         </div>
-                        <div class="modal-footer clearfix">
-						
-                            <button type="submit" class="btn btn-primary pull-left"><i class="fa fa-check"></i> 确认</button>
-							
-							 <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> 取消</button>
-                        </div>
-                  
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
 
 
         <!-- jQuery 2.0.2 -->
-        <script src="js/jquery.min.js"></script>
+        <script src="../js/jquery.min.js"></script>
         <!-- Bootstrap -->
-        <script src="js/bootstrap.min.js" type="text/javascript"></script>
-		 <!-- daterangepicker -->
-        <script src="js/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
-        <!-- datepicker -->
-        <script src="js/plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.min.js" type="text/javascript"></script>
         <!-- AdminLTE App -->
-        <script src="js/AdminLTE/app.js" type="text/javascript"></script>
+        <script src="../js/AdminLTE/app.js" type="text/javascript"></script>
         <!-- AdminLTE for demo purposes -->
-        <script src="js/AdminLTE/demo.js" type="text/javascript"></script>
+        <script src="../js/AdminLTE/demo.js" type="text/javascript"></script>
     </body>
 </html>
