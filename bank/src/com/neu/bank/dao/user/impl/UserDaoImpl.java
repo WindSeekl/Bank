@@ -6,14 +6,14 @@ import com.neu.util.BaseDao;
 public class UserDaoImpl implements UserDao{
 	private BaseDao bd = new BaseDao();
 	@Override
-	public boolean changeUserName(String userId, String userName) {
+	public boolean changeUserName(String oldName, String newName) {
 		// TODO Auto-generated method stub
-		return bd.inUpDel("update obuser set username='"+userName+"' where obuserId='"+userId+"'")==1?true:false;
+		return bd.inUpDel("update obuser set username='"+newName+"' where userName='"+oldName+"'")==1?true:false;
 	}
 	@Override
-	public boolean changeUserPass(String userId, String userPass) {
+	public boolean changeUserPass(String userName, String userPass) {
 		// TODO Auto-generated method stub
-		return bd.inUpDel("update obuser set userPass='"+userPass+"' where obuserId='"+userId+"'")==1?true:false;
+		return bd.inUpDel("update obuser set userPass='"+userPass+"' where userName='"+userName+"'")==1?true:false;
 	}
 
 }

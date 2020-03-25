@@ -437,31 +437,30 @@
 
                 <!-- Main content -->
                 <section class="content">
-						
 						<div class="row">
-					
 						<div class="col-lg-9 col-sm-11 col-xs-11 col-md-10">
-							
 						   <div class="box box-solid">
 							 <div class="modal-body">
-							     
-								<div class="row">
-									  <div class="col-lg-8">
-										<div class="form-group">
-							 				<div class="input-group">
-                                           		<span class="input-group-addon">登录名：</span>
-												<input name="userpass" type="password" class="form-control" placeholder="Password">
-											</div><!-- input-group -->
-										</div> <!--  form-group -->
-									  </div> <!--  col -->
-								</div> <!--  row -->
-									
-								<div class="modal-footer clearfix">
-                            			<button type="submit" class="btn btn-primary pull-left" data-toggle="modal" data-backdrop="static"  data-target="#compose-modal"><i class="fa fa-check"></i> 提交</button>
-                        		</div>
-								 
-						 </div> <!-- body -->
-						   </div> <!-- box -->
+							 
+							    <form action="#" id="change">
+							    	<input name="mark" value="changeName" type="hidden">
+									<div class="row">
+										  <div class="col-lg-8">
+											<div class="form-group">
+								 				<div class="input-group">
+	                                           		<span class="input-group-addon">登录名：</span>
+													<input name="name" type="text" class="form-control">
+												</div><!-- input-group -->
+											</div> <!--  form-group -->
+										  </div> <!--  col -->
+									</div> <!--  row -->
+									<div class="modal-footer clearfix">
+										<input type="button" value="提交" id="cname" class="btn btn-primary pull-left">
+	                        		</div>
+								</form>
+								
+						 	</div> <!-- body -->
+						  	</div> <!-- box -->
 						   
 						   
 					</div> <!-- col -->
@@ -475,8 +474,6 @@
                 </section><!-- /.content -->
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
-
-
         <!-- jQuery 2.0.2 -->
         <script src="../js/jquery.min.js"></script>
         <!-- Bootstrap -->
@@ -485,5 +482,18 @@
         <script src="../js/AdminLTE/app.js" type="text/javascript"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="../js/AdminLTE/demo.js" type="text/javascript"></script>
+        <script type="text/javascript">
+        
+	        $("#cname").click(function(){
+				$.ajax({
+					url:'UserController',
+					data:$("#change").serialize(),
+					success:function(data){
+						alert(date);
+					}
+				})
+			})
+        
+        </script>
     </body>
 </html>
