@@ -7,20 +7,22 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 public class DBUtil {
 	private static ComboPooledDataSource source = new ComboPooledDataSource("mysql-config");
-	public static Connection getSqlConnection(){
+	//获取链接
+	public static Connection getConnection(){
 		Connection con = null;
 		try {
-			con = source.getConnection();
+			con =  source.getConnection();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return con;
 	}
-	public static void closeSqlSource(AutoCloseable...close){
-		for (AutoCloseable autoCloseable : close) {
+	//关闭资源
+	public static void closeDbSource(AutoCloseable...close){
+		for (AutoCloseable c : close) {
 			try {
-				autoCloseable.close();
+				c.close();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
