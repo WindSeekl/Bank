@@ -316,13 +316,17 @@
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-bar-chart-o"></i>
-                                <span>Charts</span>
+                                <span>客户服务</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="charts/morris.html"><i class="fa fa-angle-double-right"></i> Morris</a></li>
-                                <li><a href="charts/flot.html"><i class="fa fa-angle-double-right"></i> Flot</a></li>
-                                <li><a href="charts/inline.html"><i class="fa fa-angle-double-right"></i> Inline charts</a></li>
+                                <li><a href=""><i class="fa fa-angle-double-right"></i> 个人信息管理</a></li>
+                                <li><a href=""><i class="fa fa-angle-double-right"></i> 预留信息设置</a></li>
+                                <li><a href="../khfw/changeName.jsp"><i class="fa fa-angle-double-right"></i> 网银登录名修改</a></li>
+                                <li><a href="../khfw/changePass.jsp"><i class="fa fa-angle-double-right"></i> 网银密码修改</a></li>
+                                <li><a href=""><i class="fa fa-angle-double-right"></i> 大额取款预约服务</a></li>
+                                <li><a href=""><i class="fa fa-angle-double-right"></i> 贷款计算器</a></li>
+                                <li><a href=""><i class="fa fa-angle-double-right"></i> 存款计算器</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
@@ -332,7 +336,7 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                  <li><a href="glzhgl.html"><i class="fa fa-angle-double-right"></i> 关联账户管理 </a></li>
+                                <li><a href="glzhgl.html"><i class="fa fa-angle-double-right"></i> 关联账户管理 </a></li>
                                 <li><a href="gs.jsp"><i class="fa fa-angle-double-right"></i> 账户服务 </a></li>
                                 <li><a href="mmxg.jsp"><i class="fa fa-angle-double-right"></i> 密码修改</a></li>
                             </ul>
@@ -354,8 +358,8 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="../creditCard/sqjd.html"><i class="glyphicon glyphicon-tag"></i>申请进度查询</a></li>
-                                <li><a href="../creditCard/xykgl.html"><i class="glyphicon glyphicon-tag"></i>信用卡管理</a></li>
+                                <li><a href="../creditCard/sqjd.jsp"><i class="glyphicon glyphicon-tag"></i>申请进度查询</a></li>
+                                <li><a href="../creditCard/xykgl.jsp"><i class="glyphicon glyphicon-tag"></i>信用卡管理</a></li>
                             </ul>
                         </li>
                         <li>

@@ -1,13 +1,10 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>申请进度查询</title>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>AdminLTE | Dashboard</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- bootstrap 3.0.2 -->
         <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -28,7 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <body class="skin-blue">
         <!-- header logo: style can be found in header.less -->
         <header class="header">
-             <a href="../index.jsp" class="logo">
+            <a href="../index.html" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
                 爆炸银行
             </a>
@@ -320,8 +317,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             <ul class="treeview-menu">
                                 <li><a href=""><i class="fa fa-angle-double-right"></i> 个人信息管理</a></li>
                                 <li><a href=""><i class="fa fa-angle-double-right"></i> 预留信息设置</a></li>
-                                <li><a href="../khfw/changeName.jsp"><i class="fa fa-angle-double-right"></i> 网银登录名修改</a></li>
-                                <li><a href="../khfw/changePass.jsp"><i class="fa fa-angle-double-right"></i> 网银密码修改</a></li>
+                                <li><a href="changeName.jsp"><i class="fa fa-angle-double-right"></i> 网银登录名修改</a></li>
+                                <li><a href="changePass.jsp"><i class="fa fa-angle-double-right"></i> 网银密码修改</a></li>
                                 <li><a href=""><i class="fa fa-angle-double-right"></i> 大额取款预约服务</a></li>
                                 <li><a href=""><i class="fa fa-angle-double-right"></i> 贷款计算器</a></li>
                                 <li><a href=""><i class="fa fa-angle-double-right"></i> 存款计算器</a></li>
@@ -339,6 +336,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 <li><a href="../zhfw/mmxg.jsp"><i class="fa fa-angle-double-right"></i> 密码修改</a></li>
                             </ul>
                         </li>
+                        
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-edit"></i> <span>Forms</span>
@@ -356,8 +354,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="sqjd.jsp"><i class="glyphicon glyphicon-tag"></i>申请进度查询</a></li>
-                                <li><a href="xykgl.jsp"><i class="glyphicon glyphicon-tag"></i>信用卡管理</a></li>
+                                <li><a href="../creditCard/sqjd.jsp"><i class="glyphicon glyphicon-tag"></i>申请进度查询</a></li>
+                                <li><a href="../creditCard/xykgl.jsp"><i class="glyphicon glyphicon-tag"></i>信用卡管理</a></li>
                             </ul>
                         </li>
                         <li>
@@ -427,117 +425,55 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        信用卡申请进度查询
+                        网银登录名修改
                         <small></small>
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
-						 <li><a href="#"><i class="fa fa-dashboard"></i> 信用卡</a></li>
-                        <li class="active">申请进度查询</li>
+						<li><a href="#"><i class="fa fa-dashboard"></i> 客户服务</a></li>
+                        <li class="active">网银登录名修改</li>
                     </ol>
                 </section>
 
                 <!-- Main content -->
                 <section class="content">
-					<div class="row">
-					
+						<div class="row">
 						<div class="col-lg-9 col-sm-11 col-xs-11 col-md-10">
-							
 						   <div class="box box-solid">
 							 <div class="modal-body">
-							     
-								 <div class="row">
-									  		<div class="col-lg-8">
-												 <div class="form-group">
-							 							 <div class="input-group">
-                                           					<span class="input-group-addon">查询账号：</span>
-															<input name="email_to" type="email" class="form-control" placeholder="Email CC">
-                                           						 
-														</div><!-- input-group -->
+							 
+							    <form action="#" id="change">
+							    	<input name="mark" value="changeName" type="hidden">
+									<div class="row">
+										  <div class="col-lg-8">
+											<div class="form-group">
+								 				<div class="input-group">
+	                                           		<span class="input-group-addon">登录名：</span>
+													<input name="name" type="text" class="form-control">
+												</div><!-- input-group -->
 											</div> <!--  form-group -->
-									  </div> <!--  col -->
+										  </div> <!--  col -->
 									</div> <!--  row -->
-									
-									
-									 <div class="row">
-									  		<div class="col-lg-8">
-												 <div class="form-group">
-							 							 <div class="input-group">
-                                           					<span class="input-group-addon">查询密码：</span>
-															<input name="email_to" type="email" class="form-control" placeholder="Email CC">
-                                           						 
-														</div><!-- input-group -->
-											</div> <!--  form-group -->
-									  </div> <!--  col -->
-									</div> <!--  row -->
-									
-									
-								<div class="modal-footer clearfix">
-                            			<button type="submit" class="btn btn-primary pull-left" data-toggle="modal" data-backdrop="static"  data-target="#compose-modal"><i class="fa fa-check"></i> 提交</button>
-                        		</div>
-								 
-						 </div> <!-- body -->
-						   </div> <!-- box -->
+									<div class="modal-footer clearfix">
+										<input type="button" value="提交" id="cname" class="btn btn-primary pull-left">
+	                        		</div>
+								</form>
+								
+						 	</div> <!-- body -->
+						  	</div> <!-- box -->
 						   
 						   
-					
-					
+					</div> <!-- col -->
+						
+						 <div class="col-lg-2 col-sm-6 col-xs-6 col-md-2">
+						   		广告位
+							</div>
+						
+					</div> <!-- row --> 
 					
                 </section><!-- /.content -->
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
-		
-		
-		<!-- COMPOSE MESSAGE MODAL -->
-        <div class="modal fade" id="compose-modal"  tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title"><i class="fa fa-calendar-o"></i> 信用卡申请进度</h4>
-                    </div>
-                    
-                        <div class="modal-body">
-						
-							 <div class="row">
-									<div class="col-lg-11">
-										 <ul class="timeline">
-
-  											  <!-- timeline time label -->
-    										<li class="time-label">
-        										<span class="bg-red">
-            										10 Feb. 2014
-        										</span>
-    										</li>
-   											 <!-- /.timeline-label -->
-    										<!-- timeline item -->
-    									<li>
-        									<!-- timeline icon -->
-        									<i class="fa fa-envelope bg-blue"></i>
-    										    <div class="timeline-item">
-            									<span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
-            									<h3 class="timeline-header"><a href="#">Support Team</a> ...</h3>
-            										<div class="timeline-body">
-        											        ...
-                										Content goes here
-            										</div>
-
-            										<div class='timeline-footer'>
-                							<a class="btn btn-primary btn-xs">...</a>
-            									</div>
-        									</div>
-    									</li>
-    								<!-- END timeline item -->
-    									...
-								</ul>
-									</div>
-							</div> <!-- row -->
-                        </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-
-
         <!-- jQuery 2.0.2 -->
         <script src="../js/jquery.min.js"></script>
         <!-- Bootstrap -->
@@ -546,5 +482,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <script src="../js/AdminLTE/app.js" type="text/javascript"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="../js/AdminLTE/demo.js" type="text/javascript"></script>
+        <script type="text/javascript">
+        
+	        $("#cname").click(function(){
+				$.ajax({
+					url:'UserController',
+					data:$("#change").serialize(),
+					success:function(data){
+						alert(date);
+					}
+				})
+			})
+        
+        </script>
     </body>
 </html>
