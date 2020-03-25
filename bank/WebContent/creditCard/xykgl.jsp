@@ -26,6 +26,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <![endif]-->
     </head>
     <body class="skin-blue">
+    	<script src="../js/verify.js"></script>
+		<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
         <!-- header logo: style can be found in header.less -->
         <header class="header">
             <a href="../index.jsp" class="logo">
@@ -505,70 +507,65 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     </div><!-- /.tab-pane -->
                                     <div class="tab-pane" id="tab_3-3">
 									
+								<form action="#" id="queryPassForm" method="post">
+									<div class="row">
+										<div class="col-lg-8">
+											<div class="form-group">
+						 						<div class="input-group">
+                                           			<span class="input-group-addon">选择账号：</span>
+                                           			<select class="form-control" name="cardId">
+                                              			<option>aaa</option>
+                                              			<option>option 2</option>
+                                           				<option>option 3</option>
+                                              			<option>option 4</option>
+                                              			<option>option 5</option>
+                                            		</select>
+												</div><!-- input-group -->
+											</div> <!--  form-group -->
+									 	</div> <!--  col -->
+									</div> <!--  row -->
 									
-										<div class="row">
-									  		<div class="col-lg-8">
-												<div class="form-group">
-						 						 	<div class="input-group">
-                                           				<span class="input-group-addon">选择账号：</span>
-                                           					<select class="form-control" name="cardId">
-                                               					<option>option 1</option>
-                                               					<option>option 2</option>
-                                            					<option>option 3</option>
-                                               				    <option>option 4</option>
-                                               					<option>option 5</option>
-                                            				</select>
-														</div><!-- input-group -->
-													</div> <!--  form-group -->
-									 			</div> <!--  col -->
-											</div> <!--  row -->
-									
-									 <div class="row">
-									 	<div class="col-lg-8">
+									<div class="row">
+										<div class="col-lg-8">
 											<div class="form-group">
 							 					<div class="input-group">
                                          			<span class="input-group-addon">旧查询密码：</span>
-													<input name="email_to" type="email" class="form-control" placeholder="Email CC">
-                                           						 
+													<input name="oldPass" type="password" class="form-control" placeholder="Email CC">		 
 												</div><!-- input-group -->
 											</div> <!--  form-group -->
 								   		</div> <!--  col -->
 									</div> <!--  row -->
 									
 									
-									 <div class="row">
-									  		<div class="col-lg-8">
-												 <div class="form-group">
-							 							 <div class="input-group">
-                                           					<span class="input-group-addon">新查询密码：</span>
-															<input name="email_to" type="email" class="form-control" placeholder="Email CC">
-                                           						 
-														</div><!-- input-group -->
+									<div class="row">
+										<div class="col-lg-8">
+											<div class="form-group">
+							 					<div class="input-group">
+                                           			<span class="input-group-addon">新查询密码：</span>
+													<input name="newPass1" type="password" class="form-control" placeholder="Email CC">
+												</div><!-- input-group -->
 											</div> <!--  form-group -->
-									  </div> <!--  col -->
+										</div> <!--  col -->
 									</div> <!--  row -->
 									
-									 <div class="row">
-									  		<div class="col-lg-8">
-												 <div class="form-group">
-							 							 <div class="input-group">
-                                           					<span class="input-group-addon">新查询密码：</span>
-															<input name="email_to" type="email" class="form-control" placeholder="Email CC">
-                                           						 
-														</div><!-- input-group -->
+									<div class="row">
+										<div class="col-lg-8">
+											<div class="form-group">
+							 					<div class="input-group">
+                                           			<span class="input-group-addon">新查询密码：</span>
+													<input name="newPass2" type="password" class="form-control" placeholder="Email CC">	 
+												</div><!-- input-group -->
 											</div> <!--  form-group -->
-									  </div> <!--  col -->
+										</div> <!--  col -->
 									</div> <!--  row -->
-									
-									
-									
-								<div class="modal-footer clearfix">
-                            			<button type="submit" class="btn btn-primary pull-left"><i class="fa fa-check"></i> 提交</button>
-                        		</div>
-										
-								
-                                    </div><!-- /.tab-pane -->
-									<div class="tab-pane" id="tab_2-2">
+									<div id="verify2"></div>
+									<div class="modal-footer clearfix">
+										<input type="hidden" name="mark" value="qPass"> 
+                            			<input type="button" value="提交" id="queryPass" class="btn btn-primary pull-left"> 
+	                        		</div>
+								</form>
+                           	</div>
+								<div class="tab-pane" id="tab_2-2">
 									
 										<div class="row">
 									  		<div class="col-lg-8">
@@ -579,7 +576,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                                 					<option>option 1</option>
                                                 					<option>option 2</option>
                                                					    <option>option 3</option>
-                                                				   <option>option 4</option>
+                                                					<option>option 4</option>
                                                 					<option>option 5</option>
                                             				</select>
 														</div><!-- input-group -->
@@ -591,79 +588,64 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								
                                     </div><!-- /.tab-pane -->
 									<div class="tab-pane" id="tab_4-4">
-									
+									<form action="#" id="alterPassForm" method="post">
 										<div class="row">
 									  		<div class="col-lg-8">
-												 <div class="form-group">
-							 							 <div class="input-group">
-                                           					<span class="input-group-addon">选择账号：</span>
-                                           						 <select class="form-control">
-                                                					<option>option 1</option>
-                                                					<option>option 2</option>
-                                               					    <option>option 3</option>
-                                                				   <option>option 4</option>
-                                                					<option>option 5</option>
-                                            				</select>
-														</div><!-- input-group -->
-											</div> <!--  form-group -->
-									  </div> <!--  col -->
-									</div> <!--  row -->
+												<div class="form-group">
+							 						<div class="input-group">
+                                      					<span class="input-group-addon">选择账号：</span>
+                                      					<select class="form-control" name="cardId">
+                                          					<option>aaa</option>
+                                          					<option>option 2</option>
+                                         					<option>option 3</option>
+                                          				    <option>option 4</option>
+                                          					<option>option 5</option>
+                                           				</select>
+													</div><!-- input-group -->
+												</div> <!--  form-group -->
+									  		</div> <!--  col -->
+										</div> <!--  row -->
 									
-									 <div class="row">
+									 	<div class="row">
 									  		<div class="col-lg-8">
-												 <div class="form-group">
-							 							 <div class="input-group">
-                                           					<span class="input-group-addon">旧交易密码：</span>
-															<input name="email_to" type="email" class="form-control" placeholder="Email CC">
-                                           						 
-														</div><!-- input-group -->
-											</div> <!--  form-group -->
-									  </div> <!--  col -->
-									</div> <!--  row -->
+												<div class="form-group">
+							 						<div class="input-group">
+                                           				<span class="input-group-addon">旧交易密码：</span>
+														<input name="oldPass" type="password" class="form-control" placeholder="Email CC"> 
+													</div><!-- input-group -->
+												</div> <!--  form-group -->
+									  		</div> <!--  col -->
+										</div> <!--  row -->
 									
 									
-									 <div class="row">
+									 	<div class="row">
 									  		<div class="col-lg-8">
-												 <div class="form-group">
-							 							 <div class="input-group">
-                                           					<span class="input-group-addon">新交易密码：</span>
-															<input name="email_to" type="email" class="form-control" placeholder="Email CC">
-                                           						 
-														</div><!-- input-group -->
-											</div> <!--  form-group -->
-									  </div> <!--  col -->
-									</div> <!--  row -->
+												<div class="form-group">
+							 						<div class="input-group">
+                                           				<span class="input-group-addon">新交易密码：</span>
+														<input name="newPass1" type="password" class="form-control" placeholder="Email CC">		 
+													</div><!-- input-group -->
+												</div> <!--  form-group -->
+									  		</div> <!--  col -->
+										</div> <!--  row -->
 									
-									 <div class="row">
+									 	<div class="row">
 									  		<div class="col-lg-8">
-												 <div class="form-group">
-							 							 <div class="input-group">
-                                           					<span class="input-group-addon">新交易密码：</span>
-															<input name="email_to" type="email" class="form-control" placeholder="Email CC">
-                                           						 
-														</div><!-- input-group -->
-											</div> <!--  form-group -->
-									  </div> <!--  col -->
-									</div> <!--  row -->
-									
-									
-									 <div class="row">
-									  		<div class="col-lg-5">
-												 <div class="form-group">
-							 							 <div class="input-group">
-                                           					<span class="input-group-addon">验证码：</span>
-															<input name="email_to" type="email" class="form-control" placeholder="Email CC">
-                                           						 
-														</div><!-- input-group -->
-											</div> <!--  form-group -->
-									  </div> <!--  col -->
-									</div> <!--  row -->
+												<div class="form-group">
+							 						<div class="input-group">
+                                           				<span class="input-group-addon">新交易密码：</span>
+														<input name="newPass2" type="password" class="form-control" placeholder="Email CC">
+													</div><!-- input-group -->
+												</div> <!--  form-group -->
+									 		</div> <!--  col -->
+										</div> <!--  row -->
 									
 									
 								<div class="modal-footer clearfix">
-                            			<button type="submit" class="btn btn-primary pull-left"><i class="fa fa-check"></i> 提交</button>
+										<input type="hidden" name="mark" value="aPass"> 
+                            			<input type="button" value="提交" id="alterPass" class="btn btn-primary pull-left"> 
                         		</div>
-									
+								</form>	
 										
 								
                                     </div><!-- /.tab-pane -->
@@ -672,9 +654,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							
 							</div> <!-- col -->
 							
-							 <div class="col-lg-2 col-sm-6 col-xs-6 col-md-2">
-						   		广告位
-							</div>
+							 
 					
 					</div> <!-- row -->
 					
@@ -683,8 +663,34 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </section><!-- /.content -->
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
-
-
+     
+		<script type="text/javascript">
+		$("#queryPass").click(function(){
+		//$(document).on('click','#queryPass',function(){
+			$.ajax({
+				url:'../creditCard',
+				data:$("#queryPassForm").serialize(),
+				success:function(data){
+					alert(data);
+				}
+			})
+			
+		})
+		
+		$("#alterPass").click(function(){
+		//$(document).on('click','#queryPass',function(){
+			$.ajax({
+				url:'../creditCard',
+				data:$("#alterPassForm").serialize(),
+				success:function(data){
+					alert(data);
+				}
+			})
+			
+		})
+		</script>
+		
+		
         <!-- jQuery 2.0.2 -->
         <script src="../js/jquery.min.js"></script>
         <!-- Bootstrap -->

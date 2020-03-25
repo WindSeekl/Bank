@@ -14,9 +14,12 @@ public class CreditCardDaoImpl implements CreditCardDao{
 		return bd.queryOne("select * from creditcard where cardId = '" + cardId + "'", CreditCard.class);
 	}
 	@Override
-	public void queryPass(String cardId, String pass) {
+	public void updatePass(String cardId, String pass, String mark) {
 		// TODO Auto-generated method stub
-		bd.inUpDel("update creditcard set queryPass = '" + pass + "' where cardId ='" + cardId + "'");
+		if(mark.equals("qPass"))
+			bd.inUpDel("update creditcard set queryPass = '" + pass + "' where cardId ='" + cardId + "'");
+		else if(mark.equals("aPass"))
+			bd.inUpDel("update creditcard set alterPass = '" + pass + "' where cardId ='" + cardId + "'");
 	}
 
 
