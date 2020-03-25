@@ -7,11 +7,26 @@ public class User {
 	private String certificateType;
 	private String certificateNum;
 	private String cealName;
-	private String Sex;
+	private String sex;
 	private String phoneNum;
 	private String fixPhone;
+	private String email;
 	private String site;
 	private String state;
+	private String mess;
+	
+	/**
+	 * @return the email
+	 */
+	public String getEmail() {
+		return email;
+	}
+	/**
+	 * @param email the email to set
+	 */
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	/**
 	 * @return the obUserId
 	 */
@@ -88,13 +103,13 @@ public class User {
 	 * @return the sex
 	 */
 	public String getSex() {
-		return Sex;
+		return sex;
 	}
 	/**
 	 * @param sex the sex to set
 	 */
 	public void setSex(String sex) {
-		Sex = sex;
+		this.sex = sex;
 	}
 	/**
 	 * @return the phoneNum
@@ -144,14 +159,23 @@ public class User {
 	public void setState(String state) {
 		this.state = state;
 	}
+	public String getMess() {
+		return mess;
+	}
+	/**
+	 * @param mess the mess to set
+	 */
+	public void setMess(String mess) {
+		this.mess = mess;
+	}
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
 		return "User [obUserId=" + obUserId + ", userName=" + userName + ", userPass=" + userPass + ", certificateType="
-				+ certificateType + ", certificateNum=" + certificateNum + ", cealName=" + cealName + ", Sex=" + Sex
-				+ ", phoneNum=" + phoneNum + ", fixPhone=" + fixPhone + ", site=" + site + ", state=" + state + "]";
+				+ certificateType + ", certificateNum=" + certificateNum + ", cealName=" + cealName + ", Sex=" + sex
+				+ ", phoneNum=" + phoneNum + ", fixPhone=" + fixPhone + ", site=" + site + ", state=" + state
+				+ ", mess=" + mess + "]";
 	}
-	
 }

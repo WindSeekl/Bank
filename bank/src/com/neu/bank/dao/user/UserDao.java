@@ -6,4 +6,5 @@ public interface UserDao {
 	boolean changeUserName(String oldName, String newName);//改用户名
 	boolean changeUserPass(String userName, String userPass);//改用户密码
 	User queryOne(String name);//查询用户
+	boolean updateMess(String name,String mess);//修改预留信息
 }

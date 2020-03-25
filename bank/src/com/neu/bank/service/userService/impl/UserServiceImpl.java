@@ -30,4 +30,19 @@ public class UserServiceImpl implements UserService{
 		}
 		return res;
 	}
+	@Override
+	public User queryUser(String name) {
+		// TODO Auto-generated method stub
+		return ud.queryOne(name);
+	}
+	@Override
+	public String queryMess(String name) {
+		// TODO Auto-generated method stub
+		return ud.queryOne(name).getMess();
+	}
+	@Override
+	public String updateMess(String name, String mess) {
+		// TODO Auto-generated method stub
+		return ud.updateMess(name, mess)==true?"修改成功":"修改失败";
+	}
 }

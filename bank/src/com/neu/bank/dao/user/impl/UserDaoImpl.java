@@ -20,6 +20,10 @@ public class UserDaoImpl implements UserDao{
 	public User queryOne(String name) {
 		// TODO Auto-generated method stub
 		return bd.queryOne("select * from obuser where userName='"+name+"'", User.class);
-		
+	}
+	@Override
+	public boolean updateMess(String name, String mess) {
+		// TODO Auto-generated method stub
+		return bd.inUpDel("update obuser set mess='"+mess+"' where userName='"+name+"'")==1?true:false;
 	}
 }
