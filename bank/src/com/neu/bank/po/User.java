@@ -1,9 +1,9 @@
 package com.neu.bank.po;
 
 public class User {
-	private int obUserId;
+	private String obUserId;
 	private String userName;
-	private String userPassword;
+	private String userPass;
 	private String certificateType;
 	private String certificateNum;
 	private String cealName;
@@ -13,16 +13,16 @@ public class User {
 	private String site;
 	private String state;
 	/**
-	 * @return the userId
+	 * @return the obUserId
 	 */
-	public int getUserId() {
+	public String getObUserId() {
 		return obUserId;
 	}
 	/**
-	 * @param userId the userId to set
+	 * @param obUserId the obUserId to set
 	 */
-	public void setUserId(int userId) {
-		this.obUserId = userId;
+	public void setObUserId(String obUserId) {
+		this.obUserId = obUserId;
 	}
 	/**
 	 * @return the userName
@@ -37,16 +37,16 @@ public class User {
 		this.userName = userName;
 	}
 	/**
-	 * @return the userPassword
+	 * @return the userPass
 	 */
-	public String getUserPassword() {
-		return userPassword;
+	public String getUserPass() {
+		return userPass;
 	}
 	/**
-	 * @param userPassword the userPassword to set
+	 * @param userPass the userPass to set
 	 */
-	public void setUserPassword(String userPassword) {
-		this.userPassword = userPassword;
+	public void setUserPass(String userPass) {
+		this.userPass = userPass;
 	}
 	/**
 	 * @return the certificateType
@@ -149,9 +149,9 @@ public class User {
 	 */
 	@Override
 	public String toString() {
-		return "User [userId=" + obUserId + ", userName=" + userName + ", userPassword=" + userPassword
-				+ ", certificateType=" + certificateType + ", certificateNum=" + certificateNum + ", cealName="
-				+ cealName + ", Sex=" + Sex + ", phoneNum=" + phoneNum + ", fixPhone=" + fixPhone + ", site=" + site
-				+ ", state=" + state + "]";
+		return "User [obUserId=" + obUserId + ", userName=" + userName + ", userPass=" + userPass + ", certificateType="
+				+ certificateType + ", certificateNum=" + certificateNum + ", cealName=" + cealName + ", Sex=" + Sex
+				+ ", phoneNum=" + phoneNum + ", fixPhone=" + fixPhone + ", site=" + site + ", state=" + state + "]";
 	}
+	
 }

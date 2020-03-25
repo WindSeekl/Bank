@@ -36,11 +36,13 @@ public class UserController extends HttpServlet {
 		String mark = request.getParameter("mark");
 		String res = null;
 		if(mark.equals("changeName")){
-			System.out.println("进入了");
 			String name = request.getParameter("name");
-			res = us.changeUserName("张", name);
+			res = us.changeUserName("张三", name);
 		}else{
-			
+			String oldpass=request.getParameter("oldpass");
+			String newpass1=request.getParameter("newpass1");
+			String newpass2=request.getParameter("newpass2");
+			res = us.changeUserPass("王五", oldpass, newpass1,newpass2);
 		}
 		String jsonstr = JSONObject.toJSONString(res);
 		response.setContentType("application/json;charset=utf-8");

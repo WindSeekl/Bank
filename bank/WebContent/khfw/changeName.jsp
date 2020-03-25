@@ -486,10 +486,10 @@
         
 	        $("#cname").click(function(){
 				$.ajax({
-					url:'UserController',
+					url:'../UserController',
 					data:$("#change").serialize(),
 					success:function(data){
-						alert(date);
+						alert(data);
 					}
 				})
 			})
