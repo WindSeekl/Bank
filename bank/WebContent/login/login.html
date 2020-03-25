@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+		<meta charset="UTF-8">
+		<title>登陆</title>
+	<link rel="stylesheet" type="text/css" href="css/verify.css">
+	</head>
+	<body>
+		
+		<table>
+		<tr>
+		<td>
+			<label>账户:</label><input id="UserName" type="text" />
+		</td>
+		</tr>
+		<tr>
+		<td>
+			<label>密码:</label><input id="UserPassWord" type="text" />
+		</td>
+		</tr>
+		 <div id="loginyz" style="margin-top:50px;">
+        </div>
+		<tr>
+		<td>
+			<button id="login" type="button" onclick="loginL()">登陆</button>
+		</td>
+		</tr>
+		</table>
+		
+		 
+		 	
+		 	
+		 	
+		 	
+		 	
+		 	
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+        <script type="text/javascript" src="js/verify.js" ></script>
+		<script>
+	    
+		    $('#loginyz').slideVerify({
+		    	type : 2,		//类型
+        		vOffset : 5,	//误差量，根据需求自行调整
+		        vSpace : 5,	//间隔
+		        imgName : ['MerkawaTK.jpg', 'acetg.jpg'],
+		        imgSize : {
+		        	width: '400px',
+		        	height: '200px',
+		        },
+		        blockSize : {
+		        	width: '40px',
+		        	height: '40px',
+		        },
+		        barSize : {
+		        	width : '400px',
+		        	height : '40px',
+		        },
+		        ready : function() {
+		    	},
+		        success : function() {
+		        	alert('验证成功');
+		        	$("#login").click(function(){
+		        		$.ajax({
+		        			type:"post",
+		        			url:"login",
+		        			async:true
+		        		});
+		        	});
+		        },
+		        error : function() {
+		        	alert('验证失败！');
+		        }
+		        
+		    });
+		    
+		</script>
+	</body>
+</html>
