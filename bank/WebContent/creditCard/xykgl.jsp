@@ -456,18 +456,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 </ul>
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="tab_1-1">
-										
+									<form action="#" id="reportForm" method="post">
 									  <div class="row">
 									  		<div class="col-lg-8">
 												 <div class="form-group">
 							 							 <div class="input-group">
                                            					<span class="input-group-addon">挂失账号：</span>
-                                           						 <select class="form-control">
-                                                					<option>option 1</option>
-                                                					<option>option 2</option>
-                                               					    <option>option 3</option>
-                                                				   <option>option 4</option>
-                                                					<option>option 5</option>
+                                           					<select class="form-control" name="cardId">
+                                                				<option>aaa</option>
+                                                				<option>option 2</option>
+                                               					<option>option 3</option>
+                                                				<option>option 4</option>
+                                                				<option>option 5</option>
                                             				</select>
 														</div><!-- input-group -->
 											</div> <!--  form-group -->
@@ -475,35 +475,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									</div> <!--  row -->
 									
 										  <div class="row">
-									  		<div class="col-lg-8">
-												 <div class="form-group">
-							 							 <div class="input-group">
+									  			<div class="col-lg-8">
+													<div class="form-group">
+							 							<div class="input-group">
                                            					<span class="input-group-addon">查询密码：</span>
-															<input name="email_to" type="email" class="form-control" placeholder="Email CC">
-                                           						 
+															<input name="queryPass" type="password" class="form-control" placeholder="请输入查询密码"> 
 														</div><!-- input-group -->
-											</div> <!--  form-group -->
-									  </div> <!--  col -->
-									</div> <!--  row -->
-									
-									
-									 <div class="row">
-									  		<div class="col-lg-5">
-												 <div class="form-group">
-							 							 <div class="input-group">
-                                           					<span class="input-group-addon">验证码：</span>
-															<input name="email_to" type="email" class="form-control" placeholder="Email CC">
-                                           						 
+													</div> <!--  form-group -->
+									  			</div> <!--  col -->
+											</div> <!--  row -->
+											
+											<div class="row">
+									  			<div class="col-lg-8">
+													<div class="form-group">
+							 							<div class="input-group">
+                                           					<span class="input-group-addon">交易密码：</span>
+															<input name="alterPass" type="password" class="form-control" placeholder="请输入交易密码"> 
 														</div><!-- input-group -->
-											</div> <!--  form-group -->
-									  </div> <!--  col -->
-									</div> <!--  row -->
-									
-									
-								<div class="modal-footer clearfix">
-                            			<button type="submit" class="btn btn-primary pull-left"><i class="fa fa-check"></i> 提交</button>
-                        		</div>
-
+													</div> <!--  form-group -->
+									  			</div> <!--  col -->
+											</div> <!--  row -->
+											
+											<div class="modal-footer clearfix">
+												<input type="hidden" name="mark" value="report"> 
+		                            			<input type="button" value="挂失" id="report" class="btn btn-primary pull-left"> 
+                        					</div>
+											</form>	
 
                                         
                                     </div><!-- /.tab-pane -->
@@ -567,28 +564,54 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	                        		</div>
 								</form>
                            	</div>
-								<div class="tab-pane" id="tab_2-2">
-									
-										<div class="row">
-									  		<div class="col-lg-8">
-												 <div class="form-group">
-							 							 <div class="input-group">
-                                           					<span class="input-group-addon">选择账号：</span>
-                                           						 <select class="form-control">
-                                                					<option>option 1</option>
-                                                					<option>option 2</option>
-                                               					    <option>option 3</option>
-                                                					<option>option 4</option>
-                                                					<option>option 5</option>
+										<div class="tab-pane" id="tab_2-2">
+										<form action="#" id="activateForm" methos="post">
+											<div class="row">
+									  			<div class="col-lg-8">
+												 	<div class="form-group">
+							 							<div class="input-group">
+                                        					<span class="input-group-addon">选择账号：</span>
+                                           					<select class="form-control" name="cardId">
+                                                				<option>aaa</option>
+                                                				<option>option 2</option>
+                                               					<option>option 3</option>
+                                                				<option>option 4</option>
+                                                				<option>option 5</option>
                                             				</select>
 														</div><!-- input-group -->
-											</div> <!--  form-group -->
-									  </div> <!--  col -->
-									</div> <!--  row -->
-									
-										
-								
-                                    </div><!-- /.tab-pane -->
+													</div> <!--  form-group -->
+									  			</div> <!--  col -->
+											</div> <!--  row -->
+												
+											<div class="row">
+									  			<div class="col-lg-8">
+													<div class="form-group">
+							 							<div class="input-group">
+                                           					<span class="input-group-addon">查询密码：</span>
+															<input name="queryPass" type="password" class="form-control" placeholder="请输入查询密码"> 
+														</div><!-- input-group -->
+													</div> <!--  form-group -->
+									  			</div> <!--  col -->
+											</div> <!--  row -->
+											
+											<div class="row">
+									  			<div class="col-lg-8">
+													<div class="form-group">
+							 							<div class="input-group">
+                                           					<span class="input-group-addon">交易密码：</span>
+															<input name="alterPass" type="password" class="form-control" placeholder="请输入交易密码"> 
+														</div><!-- input-group -->
+													</div> <!--  form-group -->
+									  			</div> <!--  col -->
+											</div> <!--  row -->
+											
+											<div class="modal-footer clearfix">
+												<input type="hidden" name="mark" value="active"> 
+		                            			<input type="button" value="激活" id="activate" class="btn btn-primary pull-left"> 
+                        					</div>
+                       					</form>
+										</div><!-- /.tab-pane -->
+											
 									<div class="tab-pane" id="tab_4-4">
 									<form action="#" id="alterPassForm" method="post">
 										<div class="row">
@@ -676,11 +699,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					alert(data);
 				}
 			})
-			
+			document.getElementById('queryPassForm').reset();
 		})
 		
 		$("#alterPass").click(function(){
-		//$(document).on('click','#queryPass',function(){
 			$.ajax({
 				url:'../creditCard',
 				data:$("#alterPassForm").serialize(),
@@ -688,7 +710,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					alert(data);
 				}
 			})
-			
+			document.getElementById('alterPassForm').reset();
+		})
+		
+		$("#activate").click(function(){
+			$.ajax({
+				url:'../creditCard',
+				data:$("#activateForm").serialize(),
+				success:function(data){
+					alert(data)
+				}
+			})
+			document.getElementById('activateForm').reset();
+		})
+		
+		$("#report").click(function(){
+			$.ajax({
+				url:'../creditCard',
+				data:$("#reportForm").serialize(),
+				success:function(data){
+					alert(data)
+				}
+			})
+			document.getElementById('reportForm').reset();
 		})
 		</script>
 		

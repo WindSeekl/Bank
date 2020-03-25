@@ -21,6 +21,14 @@ public class CreditCardDaoImpl implements CreditCardDao{
 		else if(mark.equals("aPass"))
 			bd.inUpDel("update creditcard set alterPass = '" + pass + "' where cardId ='" + cardId + "'");
 	}
+	@Override
+	public void activateCard(String cardId, String mark) {
+		// TODO Auto-generated method stub
+		if(mark.equals("active"))
+			bd.inUpDel("update creditcard set state = " + 0 + " where cardId ='" + cardId + "'");
+		else if(mark.equals("report"))
+			bd.inUpDel("update creditcard set state = " + 1 + " where cardId ='" + cardId + "'");
+	}
 
 
 }

@@ -24,4 +24,18 @@ public class CreditServiceImpl implements CreditService {
 			return "旧密码错误";
 	}
 
+	@Override
+	public String activateCard(String cardId, String queryPass, String alterPass, String mark) {
+		// TODO Auto-generated method stub
+		CreditCard cc = ccd.creditInfo(cardId);
+		if(cc.getQueryPass().equals(queryPass) && cc.getAlterPass().equals(alterPass)) {
+			if(mark.equals("active")?cc.getState() == 1:cc.getState() == 0) {
+				ccd.activateCard(cardId, mark);
+				return mark.equals("active")?"激活成功":"挂失成功";
+			}else
+				return mark.equals("active")?"此卡无需激活":"此卡已挂失";
+		}
+		return "交易密码或查询密码错误";
+	}
+
 }
