@@ -36,7 +36,7 @@ public class BillController extends HttpServlet{
 		List<CreditBill> list = new ArrayList<CreditBill>();
 		if(mark.equals("already"))
 			list = alreadyBill(req, resp, mark);
-		else if(mark.equals("not"))
+		else/* if(mark.equals("not"))*/
 			list = notBill(req, resp, mark);
 			
 		String jsonArr = JSONArray.toJSONString(list);
@@ -50,7 +50,6 @@ public class BillController extends HttpServlet{
 		String beginTime = req.getParameter("beginTime");
 		String endTime = req.getParameter("endTime");
 
-		System.out.println(mark + "|" + cardId + "|" + endTime);
 		List<CreditBill> list = cs.queryBill(cardId, beginTime, endTime, mark, queryPass);
 		
 		return list;
@@ -59,9 +58,9 @@ public class BillController extends HttpServlet{
 	protected List<CreditBill> notBill(HttpServletRequest req, HttpServletResponse resp, String mark) {
 		String cardId = req.getParameter("cardId");
 		String queryPass = req.getParameter("queryPass");
-		String time = req.getParameter("time");
-		
-		List<CreditBill> list = cs.queryBill(cardId, time, time, mark, queryPass);
+
+		System.out.println(cardId + "|" + queryPass);
+		List<CreditBill> list = cs.queryBill(cardId, "", "", mark, queryPass);
 		
 		return list;
 	}

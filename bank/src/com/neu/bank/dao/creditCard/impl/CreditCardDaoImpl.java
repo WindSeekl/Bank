@@ -36,9 +36,9 @@ public class CreditCardDaoImpl implements CreditCardDao{
 	public List<CreditBill> queryBill(String cardId, String beginTime, String endTime, String mark) {
 		// TODO Auto-generated method stub
 		if(mark.equals("already"))
-			return bd.querySome("select * from creditBill where cardId = '" + cardId + "' beginTime < '" + beginTime + "'", CreditBill.class);
+			return bd.querySome("select * from creditBill where cardId = '" + cardId + "' and beginTime < '" + beginTime + "'", CreditBill.class);
 		else
-			return bd.querySome("select * from creditBill where cardId = '" + cardId + "' beginTime > now()", CreditBill.class);
+			return bd.querySome("select * from creditBill where cardId = '" + cardId + "' and beginTime > now()", CreditBill.class);
 	}
 
 
