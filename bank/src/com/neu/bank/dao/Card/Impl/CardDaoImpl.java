@@ -11,13 +11,19 @@ public class CardDaoImpl implements CardDao{
 	@Override
 	public void updatePass(String cardId, String password) {
 		// TODO Auto-generated method stub
-		 bd.inUpDel("update card set password = '" + password + "' where cardId = '" + cardId + "'");
+		 bd.inUpDel("update card set PassWord = '" + password + "' where cardId = '" + cardId + "'");
 	}
 
 	@Override
 	public Card queryInfo(String cardId) {
 		// TODO Auto-generated method stub
 		return bd.queryOne("select * from card where cardId = '" + cardId + "'", Card.class);
+	}
+
+	@Override
+	public Card queryId() {
+		// TODO Auto-generated method stub
+		return bd.queryOne("select cardId from card", Card.class);
 	}
 
 }
