@@ -10,22 +10,24 @@ public class User {
 	private String sex;
 	private String phoneNum;
 	private String fixPhone;
-	private String email;
+	private String e_mail;
 	private String site;
 	private String state;
 	private String mess;
 	
+	
+	
 	/**
-	 * @return the email
+	 * @return the e_mail
 	 */
-	public String getEmail() {
-		return email;
+	public String getE_mail() {
+		return e_mail;
 	}
 	/**
-	 * @param email the email to set
+	 * @param e_mail the e_mail to set
 	 */
-	public void setEmail(String email) {
-		this.email = email;
+	public void setE_mail(String e_mail) {
+		this.e_mail = e_mail;
 	}
 	/**
 	 * @return the obUserId

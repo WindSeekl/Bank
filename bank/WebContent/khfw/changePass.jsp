@@ -450,26 +450,9 @@
                                 <div class="tab-content">
                                 
                                     <div class="tab-pane active" id="tab_1-1">
-                                    	<div class="row">
-											  <div class="col-lg-8">
-												<div class="form-group">
-									 				<div class="input-group" id="userMess">
-									 					<h5>网银编号：</h5>
-									 					<h5>用户名：</h5>
-									 					<h5>真实姓名：</h5>
-									 					<h5>证件类型：</h5>
-									 					<h5>证件号码：</h5>
-									 					<h5>性别：</h5>
-									 					<h5>手机号码：</h5>
-									 					<h5>固定电话：</h5>
-									 					<h5>电子邮箱：</h5>
-									 					<h5>家庭住址：</h5>
-									 					<h5>预留信息：</h5>
-									 					<h5>账户状态：</h5>
-													</div><!-- input-group -->
-												</div> <!--  form-group -->
-											  </div> <!--  col -->
-										</div> <!--  row -->
+                                    	
+									    <input value="userInfo" type="hidden" id="mark">
+											
                                     </div><!-- /.tab-pane -->
                                     
                              	<div class="tab-pane" id="tab_2-2">
@@ -611,23 +594,29 @@
 			})
 			$(function(){
 				$.ajax({
-					url:"../UserControlle",
-					data:null,
+					url:'../UserController',
+					data:{mark:$("#mark").val()},
 					success:function(data){
 						$("#userMess").empty;
-						var str = "<h5>网银编号："+date.obUserId+"</h5>";
-						str += "<h5>用户名："+date.userName+"</h5>";
-						str += "<h5>真实姓名："+date.cealName+"</h5>";
-						str += "<h5>证件类型："+date.certificateType+"</h5>";
-						str += "<h5>证件号码："+date.certificateNum+"</h5>";
-						str += "<h5>性别："+date.sex+"</h5>";
-						str += "<h5>手机号码："+date.phoneNum+"</h5>";
-						str += "<h5>固定电话："+date.fixPhone+"</h5>";
-						str += "<h5>电子邮箱："+date.email+"</h5>";
-						str += "<h5>家庭住址："+date.site+"</h5>";
-						str += "<h5>预留信息："+date.mess+"</h5>";
-						str += "<h5>账户状态："+date.state+"</h5>";
-						$("#userMess").append(str);
+						var str = "<h5>网银编号："+data.obUserId+"</h5>";
+						str += "<h5>用户名："+data.userName+"</h5>";
+						str += "<h5>真实姓名："+data.cealName+"</h5>";
+						str += "<h5>证件类型："+data.certificateType+"</h5>";
+						str += "<h5>证件号码："+data.certificateNum+"</h5>";
+						str += "<h5>性别："+data.sex+"</h5>";
+						str += "<h5>手机号码："+data.phoneNum+"</h5>";
+						str += "<h5>固定电话："+data.fixPhone+"</h5>";
+						str += "<h5>电子邮箱："+data.e_mail+"</h5>";
+						str += "<h5>家庭住址："+data.site+"</h5>";
+						str += "<h5>预留信息："+data.mess+"</h5>";
+						var sta;
+						if(data.state=="0"){
+							sta = "冻结";
+						}else{
+							sta = "正常";
+						}
+						str += "<h5>账户状态："+sta+"</h5>";
+						$("#tab_1-1").append(str);
 					}
 				})
 			})

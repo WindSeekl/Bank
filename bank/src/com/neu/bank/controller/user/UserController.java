@@ -37,6 +37,7 @@ public class UserController extends HttpServlet {
 		String mark = request.getParameter("mark");
 		String res = null;
 		String jsonstr = null;
+		User u = us.queryUser("王五");
 		if(mark.equals("changeName")){
 			String name = request.getParameter("name");
 			res = us.changeUserName("张三", name);
@@ -55,8 +56,7 @@ public class UserController extends HttpServlet {
 				res = "超过长度限制";
 			}
 			jsonstr = JSONObject.toJSONString(res);
-		}else {
-			User u = us.queryUser("王五");
+		}else if(mark.equals("userInfo")){
 			jsonstr = JSONObject.toJSONString(u);
 		}
 		response.setContentType("application/json;charset=utf-8");
