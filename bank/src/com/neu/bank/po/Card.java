@@ -143,9 +143,9 @@ public class Card {
 	public boolean getState() {
 		boolean b;
 		if(state==0){
-			b=false;
-		}else{
 			b=true;
+		}else{
+			b=false;
 		}
 		return b;
 	}

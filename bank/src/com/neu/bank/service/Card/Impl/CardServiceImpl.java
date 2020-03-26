@@ -33,5 +33,19 @@ public class CardServiceImpl implements CardService{
 		}
 		return listId;
 	}
+
+	@Override
+	public String updateState(int state, String oldPass, String cardId) {
+		// TODO Auto-generated method stub
+		Card card = cd.queryInfo(cardId);
+		if (card.getPassword().equalsIgnoreCase(oldPass)) {
+			cd.updateState(cardId, state);
+			return "提交成功！";
+		}else
+			return "帐号密码错误!";
+		}
+
+	}
+
 	
-}
+

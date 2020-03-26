@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="java.util.List"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="com.neu.bank.po.Card"%>
+<%@ page import="com.neu.bank.service.Card.Impl.CardServiceImpl"%>
+<%@ page import="com.neu.bank.service.Card.CardService"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -445,19 +450,21 @@
 							
 						   <div class="box box-solid">
 							 <div class="modal-body">
-							     
+							      <form action="#" id="changeGs" method="post">
 								 <div class="row">
 									  		<div class="col-lg-8">
 												 <div class="form-group">
 							 							 <div class="input-group">
                                            					<span class="input-group-addon">挂失账号：</span>
-															
-																<select class="form-control">
-                                                					<option>option 1</option>
-                                                					<option>option 2</option>
-                                                					<option>option 3</option>
-                                                					<option>option 4</option>
-                                                					<option>option 5</option>
+																<select class="form-control" name="cardId">
+                                               					<% 
+																	CardService cs = new CardServiceImpl();
+																	List<String> list = cs.queryId("1212556");
+																	for(int i=0;i<list.size();i++) {%>
+																  	<option value ="<%=list.get(i)%>" ><%=list.get(i)%></option>
+																  <%
+																  }
+																  %>
                                             					</select>
                                            						 
 														</div><!-- input-group -->
@@ -480,9 +487,9 @@
 									
 									
 								<div class="modal-footer clearfix">
-                            			<button type="submit" class="btn btn-primary pull-left" data-toggle="modal" data-backdrop="static"  data-target="#compose-modal"><i class="fa fa-check"></i> 提交</button>
+                            			<button type="submit" id="cGS" class="btn btn-primary pull-left" data-toggle="modal" data-backdrop="static"  data-target="#compose-modal"><i class="fa fa-check"></i> 提交</button>
                         		</div>
-								 
+								 </form>
 						 </div> <!-- body -->
 						   </div> <!-- box -->
 						   
@@ -508,6 +515,19 @@
         <script src="../js/AdminLTE/app.js" type="text/javascript"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="../js/AdminLTE/demo.js" type="text/javascript"></script>
+        <script type="text/javascript">
+        
+		    $("#cGS").click(function(){
+				$.ajax({
+					url:'../GsContorller',
+					data:$("#changeGs").serialize(),
+					success:function(data){
+						alert(data);
+					}
+				})
+			})
+        
+        </script>
     </body>
 </body>
 </html>
