@@ -318,8 +318,7 @@
                             <ul class="treeview-menu">
                                 <li><a href="changePass.jsp"><i class="fa fa-angle-double-right"></i> 个人信息管理</a></li>
                                 <li><a href=""><i class="fa fa-angle-double-right"></i> 大额取款预约服务</a></li>
-                                <li><a href=""><i class="fa fa-angle-double-right"></i> 贷款计算器</a></li>
-                                <li><a href=""><i class="fa fa-angle-double-right"></i> 存款计算器</a></li>
+                                <li><a href="calculator.jsp"><i class="fa fa-angle-double-right"></i> 理财计算器</a></li>
                             </ul>
                         </li>
                         
@@ -598,7 +597,6 @@
 					url:'../UserController',
 					data:{mark:$("#mark").val()},
 					success:function(data){
-						$("#userMess").empty;
 						var str = "<h5>网银编号："+data.obUserId+"</h5>";
 						str += "<h5>用户名："+data.userName+"</h5>";
 						str += "<h5>真实姓名："+data.cealName+"</h5>";

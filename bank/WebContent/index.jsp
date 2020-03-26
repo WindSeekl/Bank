@@ -320,8 +320,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             <ul class="treeview-menu">
                                 <li><a href="khfw/changePass.jsp"><i class="fa fa-angle-double-right"></i> 个人信息管理</a></li>
                                 <li><a href=""><i class="fa fa-angle-double-right"></i> 大额取款预约服务</a></li>
-                                <li><a href=""><i class="fa fa-angle-double-right"></i> 贷款计算器</a></li>
-                                <li><a href=""><i class="fa fa-angle-double-right"></i> 存款计算器</a></li>
+                                <li><a href="khfw/calculator.jsp"><i class="fa fa-angle-double-right"></i> 理财计算</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
