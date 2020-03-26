@@ -471,14 +471,14 @@
                             <div class="form-group">
                                 <div class="input-group">
                                     <span class="input-group-addon">收款人账号:</span>
-                                    <input name="email_to" type="email" class="form-control" placeholder="Email CC">
+                                    <input name="text" type="email" class="form-control" placeholder="...">
                                 </div>
                             </div>
 							
                             <div class="form-group">
                                 <div class="input-group">
                                     <span class="input-group-addon">收款人姓名:</span>
-                                    <input name="email_to" type="email" class="form-control" placeholder="Email BCC">
+                                    <input name="text" type="email" class="form-control" placeholder="...">
                                 </div>
                             </div>
                            

@@ -471,7 +471,7 @@
 												 <div class="form-group">
 							 							 <div class="input-group">
                                            					<span class="input-group-addon">账号密码：</span>
-															<input name="email_to" type="email" class="form-control" placeholder="Email CC">
+															<input name="pass" type="password" class="form-control" placeholder="password">
                                            						 
 														</div><!-- input-group -->
 											</div> <!--  form-group -->
