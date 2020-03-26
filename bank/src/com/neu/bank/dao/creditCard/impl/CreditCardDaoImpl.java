@@ -1,6 +1,9 @@
 package com.neu.bank.dao.creditCard.impl;
 
+import java.util.List;
+
 import com.neu.bank.dao.creditCard.CreditCardDao;
+import com.neu.bank.po.CreditBill;
 import com.neu.bank.po.CreditCard;
 import com.neu.util.BaseDao;
 
@@ -28,6 +31,14 @@ public class CreditCardDaoImpl implements CreditCardDao{
 			bd.inUpDel("update creditcard set state = " + 0 + " where cardId ='" + cardId + "'");
 		else if(mark.equals("report"))
 			bd.inUpDel("update creditcard set state = " + 1 + " where cardId ='" + cardId + "'");
+	}
+	@Override
+	public List<CreditBill> queryBill(String cardId, String beginTime, String endTime, String mark) {
+		// TODO Auto-generated method stub
+		if(mark.equals("already"))
+			return bd.querySome("select * from creditBill where cardId = '" + cardId + "' beginTime < '" + beginTime + "'", CreditBill.class);
+		else
+			return bd.querySome("select * from creditBill where cardId = '" + cardId + "' beginTime > '" + endTime + "'", CreditBill.class);
 	}
 
 
