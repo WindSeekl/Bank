@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import com.neu.bank.po.CreditBill;
 import com.neu.bank.service.creditCard.CreditService;
 import com.neu.bank.service.creditCard.impl.CreditServiceImpl;
@@ -40,7 +39,6 @@ public class BillController extends HttpServlet{
 		else if(mark.equals("not"))
 			list = notBill(req, resp, mark);
 			
-
 		String jsonArr = JSONArray.toJSONString(list);
 		resp.setContentType("application/json;charset=utf-8");
 		resp.getWriter().println(jsonArr);
@@ -48,19 +46,22 @@ public class BillController extends HttpServlet{
 	
 	protected List<CreditBill> alreadyBill(HttpServletRequest req, HttpServletResponse resp, String mark) {
 		String cardId = req.getParameter("cardId");
+		String queryPass = req.getParameter("queryPass");
 		String beginTime = req.getParameter("beginTime");
 		String endTime = req.getParameter("endTime");
 
-		List<CreditBill> list = cs.queryBill(cardId, beginTime, endTime, mark);
+		System.out.println(mark + "|" + cardId + "|" + endTime);
+		List<CreditBill> list = cs.queryBill(cardId, beginTime, endTime, mark, queryPass);
 		
 		return list;
 	}
 	
 	protected List<CreditBill> notBill(HttpServletRequest req, HttpServletResponse resp, String mark) {
 		String cardId = req.getParameter("cardId");
+		String queryPass = req.getParameter("queryPass");
 		String time = req.getParameter("time");
 		
-		List<CreditBill> list = cs.queryBill(cardId, time, time, mark);
+		List<CreditBill> list = cs.queryBill(cardId, time, time, mark, queryPass);
 		
 		return list;
 	}

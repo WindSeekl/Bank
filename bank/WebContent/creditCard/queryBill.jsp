@@ -31,6 +31,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         #a3{
         	margin-top: 7%;
         }
+        
+        le>
+        table,table tr th, table tr td { border:1px solid gray; }
+        table tr th,table tr td{
+        	width:163px;
+        }
+        table {  min-height: 25px; line-height: 25px; text-align: center; border-collapse: collapse;}
+        #alreadyTb{
+        	display: none;
+       	}
         </style>
 
 
@@ -38,7 +48,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
     </head>
     <body class="skin-blue">
-    	<script src="../js/verify.js"></script>
 		<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
         <header class="header">
             <a href="../index.jsp" class="logo">
@@ -447,7 +456,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 
                                		<div class="tab-pane active" id="tab_1-1">
                                		
-                               		
+								         <form action='#' id="alreadyForm">
+											<table id="alreadyTb">
+										  		
+										  		<thead>
+										  			<tr>
+										  				<th>编号</th>
+										  				<th>信用卡编号</th>
+										  				<th>账单开始时间</th>
+										  				<th>账单结束时间</th>
+										  				<th>币种</th>
+										  				<th>最后还款日</th>
+										  				<th>上期账面余额</th>
+										  				<th>存入总计</th>
+										  				<th>支出总计</th>
+										  				<th>消费</th>
+										  				<th>手续费</th>
+										  				<th>取现</th>
+										  				<th>循环利息</th>
+										  				<th>最低还款额</th>
+									  				</tr>
+									  			</thead>
+									  	</table>
+									  	</form>
                                		
                                		
                                  		<div id="main" style="width: 40%">
@@ -479,7 +510,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										</div>
 										<div id="a3">
 											<input type="hidden" name="mark" value="already"> 
-											<center><input type="submit" id="query" value="查询" class="btn btn-primary"></center>
+											<center><input type="button" id="query" value="查询" class="btn btn-primary"></center>
 										</div>
 										</form>	
 									</div>
@@ -517,49 +548,38 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div><!-- ./wrapper -->
      
 		<script type="text/javascript">
-		$("#queryPass").click(function(){
-		//$(document).on('click','#queryPass',function(){
-			$.ajax({
-				url:'../creditCard',
-				data:$("#queryPassForm").serialize(),
-				success:function(data){
-					alert(data);
-				}
-			})
-			document.getElementById('queryPassForm').reset();
-		})
+		$("#query").click(function(){
 		
-		$("#alterPass").click(function(){
 			$.ajax({
-				url:'../creditCard',
-				data:$("#alterPassForm").serialize(),
+				utl:'../billController',
+				data:$("#queryBillForm").serialize(),
 				success:function(data){
-					alert(data);
+					$("#queryBillForm").css('display', 'none');
+					$("#alreadyTb tbody").html("");
+					$("#alreadyTb").css('display', 'table');
+					for(var i in data){
+						var html = "<tr class='alreadyInfo'>";
+						html += "<td>" + data[i].cbId + "</td>";
+						html += "<td>" + data[i].cardId + "</td>";
+						html += "<td>" + data[i].beginTime + "</td>";
+						html += "<td>" + data[i].endTime + "</td>";
+						html += "<td>" + data[i].coinType + "</td>";
+						html += "<td>" + data[i].lastDate + "</td>";
+						html += "<td>" + data[i].lastRemain + "</td>";
+						html += "<td>" + data[i].putSum + "</td>";
+						html += "<td>" + data[i].useSum + "</td>";
+						html += "<td>" + data[i].consume + "</td>";
+						html += "<td>" + data[i].commossion + "</td>";
+						html += "<td>" + data[i].essay + "</td>";
+						html += "<td>" + data[i].cycleRate + "</td>";
+						html += "<td>" + data[i].minBack + "</td>";
+						html += "</tr>"
+						$("#alreadyTb").append(html);
+					}
+				},error:function(){
+					alert("失败");
 				}
 			})
-			document.getElementById('alterPassForm').reset();
-		})
-		
-		$("#activate").click(function(){
-			$.ajax({
-				url:'../creditCard',
-				data:$("#activateForm").serialize(),
-				success:function(data){
-					alert(data)
-				}
-			})
-			document.getElementById('activateForm').reset();
-		})
-		
-		$("#report").click(function(){
-			$.ajax({
-				url:'../creditCard',
-				data:$("#reportForm").serialize(),
-				success:function(data){
-					alert(data)
-				}
-			})
-			document.getElementById('reportForm').reset();
 		})
 		
 		
