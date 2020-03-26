@@ -31,13 +31,13 @@ public class CreditCard {
 	public final void setIntegral(int integral) {
 		this.integral = integral;
 	}
-	public final int isState() {
+	public final int getState() {
 		return state;
 	}
 	public final void setState(int state) {
 		this.state = state;
 	}
-	public final int isSchedule() {
+	public final int getSchedule() {
 		return schedule;
 	}
 	public final void setSchedule(int schedule) {

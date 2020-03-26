@@ -1,6 +1,7 @@
 package com.neu.bank.dao.user.impl;
 
 import com.neu.bank.dao.user.UserDao;
+import com.neu.bank.po.User;
 import com.neu.util.BaseDao;
 
 public class UserDaoImpl implements UserDao{
@@ -15,5 +16,14 @@ public class UserDaoImpl implements UserDao{
 		// TODO Auto-generated method stub
 		return bd.inUpDel("update obuser set userPass='"+userPass+"' where userName='"+userName+"'")==1?true:false;
 	}
-
+	@Override
+	public User queryOne(String name) {
+		// TODO Auto-generated method stub
+		return bd.queryOne("select * from obuser where userName='"+name+"'", User.class);
+	}
+	@Override
+	public boolean updateMess(String name, String mess) {
+		// TODO Auto-generated method stub
+		return bd.inUpDel("update obuser set mess='"+mess+"' where userName='"+name+"'")==1?true:false;
+	}
 }

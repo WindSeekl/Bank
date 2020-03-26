@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.alibaba.fastjson.JSONObject;
+import com.neu.bank.po.User;
 import com.neu.bank.service.userService.UserService;
 import com.neu.bank.service.userService.impl.UserServiceImpl;
 
@@ -35,16 +36,32 @@ public class UserController extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		String mark = request.getParameter("mark");
 		String res = null;
+		String jsonstr = null;
+		User u = us.queryUser("王五");
 		if(mark.equals("changeName")){
-			System.out.println("进入了");
 			String name = request.getParameter("name");
-			res = us.changeUserName("张", name);
-		}else{
-			
+			res = us.changeUserName("张三", name);
+			jsonstr = JSONObject.toJSONString(res);
+		}else if(mark.equals("changePass")){
+			String oldpass=request.getParameter("oldpass");
+			String newpass1=request.getParameter("newpass1");
+			String newpass2=request.getParameter("newpass2");
+			res = us.changeUserPass("王五", oldpass, newpass1,newpass2);
+			jsonstr = JSONObject.toJSONString(res);
+		}else if(mark.equals("changeMess")){
+			String mess=request.getParameter("mess");
+			if(mess.length()<=8){
+				res = us.updateMess("王五", mess);
+			}else{
+				res = "超过长度限制";
+			}
+			jsonstr = JSONObject.toJSONString(res);
+		}else if(mark.equals("userInfo")){
+			jsonstr = JSONObject.toJSONString(u);
 		}
-		String jsonstr = JSONObject.toJSONString(res);
 		response.setContentType("application/json;charset=utf-8");
 		response.getWriter().println(jsonstr);
+		//"王五"替换为seison
 	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

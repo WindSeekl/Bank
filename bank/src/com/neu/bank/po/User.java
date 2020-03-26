@@ -1,28 +1,45 @@
 package com.neu.bank.po;
 
 public class User {
-	private int obUserId;
+	private String obUserId;
 	private String userName;
-	private String userPassword;
+	private String userPass;
 	private String certificateType;
 	private String certificateNum;
 	private String cealName;
-	private String Sex;
+	private String sex;
 	private String phoneNum;
 	private String fixPhone;
+	private String e_mail;
 	private String site;
 	private String state;
+	private String mess;
+	
+	
+	
 	/**
-	 * @return the userId
+	 * @return the e_mail
 	 */
-	public int getUserId() {
+	public String getE_mail() {
+		return e_mail;
+	}
+	/**
+	 * @param e_mail the e_mail to set
+	 */
+	public void setE_mail(String e_mail) {
+		this.e_mail = e_mail;
+	}
+	/**
+	 * @return the obUserId
+	 */
+	public String getObUserId() {
 		return obUserId;
 	}
 	/**
-	 * @param userId the userId to set
+	 * @param obUserId the obUserId to set
 	 */
-	public void setUserId(int userId) {
-		this.obUserId = userId;
+	public void setObUserId(String obUserId) {
+		this.obUserId = obUserId;
 	}
 	/**
 	 * @return the userName
@@ -37,16 +54,16 @@ public class User {
 		this.userName = userName;
 	}
 	/**
-	 * @return the userPassword
+	 * @return the userPass
 	 */
-	public String getUserPassword() {
-		return userPassword;
+	public String getUserPass() {
+		return userPass;
 	}
 	/**
-	 * @param userPassword the userPassword to set
+	 * @param userPass the userPass to set
 	 */
-	public void setUserPassword(String userPassword) {
-		this.userPassword = userPassword;
+	public void setUserPass(String userPass) {
+		this.userPass = userPass;
 	}
 	/**
 	 * @return the certificateType
@@ -88,13 +105,13 @@ public class User {
 	 * @return the sex
 	 */
 	public String getSex() {
-		return Sex;
+		return sex;
 	}
 	/**
 	 * @param sex the sex to set
 	 */
 	public void setSex(String sex) {
-		Sex = sex;
+		this.sex = sex;
 	}
 	/**
 	 * @return the phoneNum
@@ -144,14 +161,23 @@ public class User {
 	public void setState(String state) {
 		this.state = state;
 	}
+	public String getMess() {
+		return mess;
+	}
+	/**
+	 * @param mess the mess to set
+	 */
+	public void setMess(String mess) {
+		this.mess = mess;
+	}
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "User [userId=" + obUserId + ", userName=" + userName + ", userPassword=" + userPassword
-				+ ", certificateType=" + certificateType + ", certificateNum=" + certificateNum + ", cealName="
-				+ cealName + ", Sex=" + Sex + ", phoneNum=" + phoneNum + ", fixPhone=" + fixPhone + ", site=" + site
-				+ ", state=" + state + "]";
+		return "User [obUserId=" + obUserId + ", userName=" + userName + ", userPass=" + userPass + ", certificateType="
+				+ certificateType + ", certificateNum=" + certificateNum + ", cealName=" + cealName + ", Sex=" + sex
+				+ ", phoneNum=" + phoneNum + ", fixPhone=" + fixPhone + ", site=" + site + ", state=" + state
+				+ ", mess=" + mess + "]";
 	}
 }

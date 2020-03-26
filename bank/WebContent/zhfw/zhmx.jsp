@@ -322,10 +322,7 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href=""><i class="fa fa-angle-double-right"></i> 个人信息管理</a></li>
-                                <li><a href=""><i class="fa fa-angle-double-right"></i> 预留信息设置</a></li>
-                                <li><a href="../khfw/changeName.jsp"><i class="fa fa-angle-double-right"></i> 网银登录名修改</a></li>
-                                <li><a href="../khfw/changePass.jsp"><i class="fa fa-angle-double-right"></i> 网银密码修改</a></li>
+                                <li><a href="../khfw/changePass.jsp"><i class="fa fa-angle-double-right"></i> 个人信息管理</a></li>
                                 <li><a href=""><i class="fa fa-angle-double-right"></i> 大额取款预约服务</a></li>
                                 <li><a href=""><i class="fa fa-angle-double-right"></i> 贷款计算器</a></li>
                                 <li><a href=""><i class="fa fa-angle-double-right"></i> 存款计算器</a></li>

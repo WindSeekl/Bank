@@ -316,10 +316,7 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href=""><i class="fa fa-angle-double-right"></i> 个人信息管理</a></li>
-                                <li><a href=""><i class="fa fa-angle-double-right"></i> 预留信息设置</a></li>
-                                <li><a href="changeName.jsp"><i class="fa fa-angle-double-right"></i> 网银登录名修改</a></li>
-                                <li><a href="changePass.jsp"><i class="fa fa-angle-double-right"></i> 网银密码修改</a></li>
+                                <li><a href="changePass.jsp"><i class="fa fa-angle-double-right"></i> 个人信息管理</a></li>
                                 <li><a href=""><i class="fa fa-angle-double-right"></i> 大额取款预约服务</a></li>
                                 <li><a href=""><i class="fa fa-angle-double-right"></i> 贷款计算器</a></li>
                                 <li><a href=""><i class="fa fa-angle-double-right"></i> 存款计算器</a></li>
@@ -426,70 +423,126 @@
             <aside class="right-side">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
-                    <h1>
-                        网银密码修改
-                        <small></small>
-                    </h1>
+                
+                    <h1> 个人信息管理</h1>
+                    
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
 						<li><a href="#"><i class="fa fa-dashboard"></i> 客户服务</a></li>
-                        <li class="active">网银密码修改</li>
+                        <li class="active">个人信息管理</li>
                     </ol>
                 </section>
 
                 <!-- Main content -->
                 <section class="content">
-						
 						<div class="row">
-					
-						<div class="col-lg-9 col-sm-11 col-xs-11 col-md-10">
-							
-						   <div class="box box-solid">
-							 <div class="modal-body">
-							  	<div class="row">
-									  <div class="col-lg-8">
-										<div class="form-group">
-							 				<div class="input-group">
-                                           										<span class="input-group-addon">原密码：</span>
-												<input name="userpass" type="password" class="form-control" placeholder="Password">
-                                           						 			</div><!-- input-group -->
-										</div> <!--  form-group -->
-									  </div> <!--  col -->
-								</div> <!--  row -->
-														
-								<div class="row">
-									  <div class="col-lg-8">
-										<div class="form-group">
-							 				<div class="input-group">
-                                           										<span class="input-group-addon">新密码：</span>
-												<input name="userpass" type="password" class="form-control" placeholder="Password">
-                                           						 
-											</div><!-- input-group -->
-										</div> <!--  form-group -->
-									  </div> <!--  col -->
-								</div> <!--  row -->
-
-								<div class="row">
-									  <div class="col-lg-8">
-										<div class="form-group">
-							 				<div class="input-group">
-                                           										<span class="input-group-addon">确认密码：</span>
-												<input name="userpass" type="password" class="form-control" placeholder="Password">
-											</div><!-- input-group -->
-										</div> <!--  form-group -->
-									  </div> <!--  col -->
-								</div> <!--  row -->
-									
-								<div class="modal-footer clearfix">
-                            			<button type="submit" class="btn btn-primary pull-left" data-toggle="modal" data-backdrop="static"  data-target="#compose-modal"><i class="fa fa-check"></i> 提交</button>
-                        		</div>
-								 
-						 </div> <!-- body -->
-						   </div> <!-- box -->
-						   
-						   
-					</div> <!-- col -->
 						
+							<div class="col-lg-9 col-sm-11 col-xs-11 col-md-10">
+							
+								 <div class="nav-tabs-custom">
+                                <ul class="nav nav-tabs pull-right">
+                                    <li class="active"><a href="#tab_1-1" data-toggle="tab">个人信息查询</a></li>
+									<li><a href="#tab_2-2" data-toggle="tab">预留信息设置</a></li>
+									<li><a href="#tab_3-3" data-toggle="tab">登录名修改</a></li>
+                                    <li><a href="#tab_4-4" data-toggle="tab">登录密码修改</a></li>
+                                    <li class="pull-left header"><i class="fa fa-th"></i> 操作</li>
+                                </ul>
+                                <div class="tab-content">
+                                
+                                    <div class="tab-pane active" id="tab_1-1">
+                                    	
+									    <input value="userInfo" type="hidden" id="mark">
+											
+                                    </div><!-- /.tab-pane -->
+                                    
+                             	<div class="tab-pane" id="tab_2-2">
+									<form action="#" id="chmess">
+									    	<input name="mark" value="changeMess" type="hidden">
+											<div class="row">
+												  <div class="col-lg-8">
+													<div class="form-group">
+										 				<div class="input-group">
+			                                           		<span class="input-group-addon">新预留信息：</span>
+															<input name="mess" type="text" class="form-control" placeholder="请输入1-8位新预留信息">
+														</div><!-- input-group -->
+													</div> <!--  form-group -->
+												  </div> <!--  col -->
+											</div> <!--  row -->
+											<div class="modal-footer clearfix">
+												<input type="button" value="提交" id="cmess" class="btn btn-primary pull-left">
+			                        		</div>
+										</form>
+                           			</div>
+                           			
+									<div class="tab-pane" id="tab_3-3">
+										 <form action="#" id="chname">
+									    	<input name="mark" value="changeName" type="hidden">
+											<div class="row">
+												  <div class="col-lg-8">
+													<div class="form-group">
+										 				<div class="input-group">
+			                                           		<span class="input-group-addon">登录名：</span>
+															<input name="name" type="text" class="form-control">
+														</div><!-- input-group -->
+													</div> <!--  form-group -->
+												  </div> <!--  col -->
+											</div> <!--  row -->
+											<div class="modal-footer clearfix">
+												<input type="button" value="提交" id="cname" class="btn btn-primary pull-left">
+			                        		</div>
+										</form>
+									</div><!-- /.tab-pane -->
+											
+								<div class="tab-pane" id="tab_4-4">
+									
+										<form action="#" id="chpass">
+									    	<input name="mark" value="changePass" type="hidden">
+									    	
+									    	<div class="row">
+											  <div class="col-lg-8">
+												<div class="form-group">
+									 				<div class="input-group">
+			                                           	<span class="input-group-addon">原密码：</span>
+														<input name="oldpass" type="password" class="form-control">
+			                                          	</div><!-- input-group -->
+												</div> <!--  form-group -->
+											  </div> <!--  col -->
+											</div> <!--  row -->
+											
+											<div class="row">
+												  <div class="col-lg-8">
+													<div class="form-group">
+										 				<div class="input-group">
+			                                           		<span class="input-group-addon">新密码：</span>
+															<input name="newpass1" type="password" class="form-control">
+														</div><!-- input-group -->
+													</div> <!--  form-group -->
+												  </div> <!--  col -->
+											</div> <!--  row -->
+											
+											<div class="row">
+												  <div class="col-lg-8">
+													<div class="form-group">
+										 				<div class="input-group">
+			                                           		<span class="input-group-addon">确认输入：</span>
+															<input name="newpass2" type="password" class="form-control">
+														</div><!-- input-group -->
+													</div> <!--  form-group -->
+												  </div> <!--  col -->
+											</div> <!--  row -->
+											
+											<div class="modal-footer clearfix">
+												<input type="button" value="提交" id="cpass" class="btn btn-primary pull-left">
+			                        		</div>
+										</form>
+                                 </div><!-- /.tab-pane -->
+                                    
+                                </div><!-- /.tab-content -->
+                            </div><!-- nav-tabs-custom -->
+							
+							</div> <!-- col -->
+					</div> <!-- row -->
+	
 						 <div class="col-lg-2 col-sm-6 col-xs-6 col-md-2">
 						   		广告位
 							</div>
@@ -509,5 +562,64 @@
         <script src="../js/AdminLTE/app.js" type="text/javascript"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="../js/AdminLTE/demo.js" type="text/javascript"></script>
+        <script type="text/javascript">
+        	
+	        $("#cpass").click(function(){
+				$.ajax({
+					url:'../UserController',
+					data:$("#chpass").serialize(),
+					success:function(data){
+						alert(data);
+					}
+				})
+			})
+			
+        	$("#cname").click(function(){
+				$.ajax({
+					url:'../UserController',
+					data:$("#chname").serialize(),
+					success:function(data){
+						alert(data);
+					}
+				})
+			})
+			$("#cmess").click(function(){
+				$.ajax({
+					url:'../UserController',
+					data:$("#chmess").serialize(),
+					success:function(data){
+						alert(data);
+					}
+				})
+			})
+			$(function(){
+				$.ajax({
+					url:'../UserController',
+					data:{mark:$("#mark").val()},
+					success:function(data){
+						$("#userMess").empty;
+						var str = "<h5>网银编号："+data.obUserId+"</h5>";
+						str += "<h5>用户名："+data.userName+"</h5>";
+						str += "<h5>真实姓名："+data.cealName+"</h5>";
+						str += "<h5>证件类型："+data.certificateType+"</h5>";
+						str += "<h5>证件号码："+data.certificateNum+"</h5>";
+						str += "<h5>性别："+data.sex+"</h5>";
+						str += "<h5>手机号码："+data.phoneNum+"</h5>";
+						str += "<h5>固定电话："+data.fixPhone+"</h5>";
+						str += "<h5>电子邮箱："+data.e_mail+"</h5>";
+						str += "<h5>家庭住址："+data.site+"</h5>";
+						str += "<h5>预留信息："+data.mess+"</h5>";
+						var sta;
+						if(data.state=="0"){
+							sta = "冻结";
+						}else{
+							sta = "正常";
+						}
+						str += "<h5>账户状态："+sta+"</h5>";
+						$("#tab_1-1").append(str);
+					}
+				})
+			})
+        </script>
     </body>
 </html>

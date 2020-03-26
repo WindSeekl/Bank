@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*"%>
+<%@ page import="com.neu.bank.po.*"%>
+<%@ page import="com.neu.bank.dao.Card.Impl.CardDaoImpl"%>
+<%@ page import="com.neu.bank.dao.Card.CardDao"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -320,10 +324,7 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href=""><i class="fa fa-angle-double-right"></i> 个人信息管理</a></li>
-                                <li><a href=""><i class="fa fa-angle-double-right"></i> 预留信息设置</a></li>
-                                <li><a href="../khfw/changeName.jsp"><i class="fa fa-angle-double-right"></i> 网银登录名修改</a></li>
-                                <li><a href="../khfw/changePass.jsp"><i class="fa fa-angle-double-right"></i> 网银密码修改</a></li>
+                                <li><a href="../khfw/changePass.jsp"><i class="fa fa-angle-double-right"></i> 个人信息管理</a></li>
                                 <li><a href=""><i class="fa fa-angle-double-right"></i> 大额取款预约服务</a></li>
                                 <li><a href=""><i class="fa fa-angle-double-right"></i> 贷款计算器</a></li>
                                 <li><a href=""><i class="fa fa-angle-double-right"></i> 存款计算器</a></li>
@@ -450,19 +451,22 @@
 							 <div class="modal-body">
 							     
 								 <div class="row">
+								 <form action="CardController">
+								 
 									  		<div class="col-lg-8">
 												 <div class="form-group">
 							 							 <div class="input-group">
                                            					<span class="input-group-addon">选择账号：</span>
-															
+																<% 
+																List<Card> list = new ArrayList<>();
+																CardDao cd = new CardDaoImpl();
+																list.add(cd.queryId());
+																%> 
 																<select class="form-control">
-                                                					<option>option 1</option>
-                                                					<option>option 2</option>
-                                                					<option>option 3</option>
-                                                					<option>option 4</option>
-                                                					<option>option 5</option>
-                                            					</select>
-                                           						 
+																<%for(int i=0;i<list.size();i++) {%>
+															  	<option value ="<%=list.get(i).getCardId() %>"><%=list.get(i).getCardId()%></option> 
+															  <%} %>
+                                           					</select>                 						 
 														</div><!-- input-group -->
 											</div> <!--  form-group -->
 									  </div> <!--  col -->
@@ -473,8 +477,8 @@
 									  		<div class="col-lg-8">
 												 <div class="form-group">
 							 							 <div class="input-group">
-                                           					<span class="input-group-addon">账号密码：</span>
-															<input name="email_to" type="password" class="form-control" placeholder="password">
+                                           					<span class="input-group-addon">原密码：</span>
+															<input name="oldpass" type="password" class="form-control" placeholder="password">
                                            						 
 														</div><!-- input-group -->
 											</div> <!--  form-group -->
@@ -484,8 +488,8 @@
 									  		<div class="col-lg-8">
 												 <div class="form-group">
 							 							 <div class="input-group">
-                                           					<span class="input-group-addon">账号密码：</span>
-															<input name="email_to" type="password" class="form-control" placeholder="password">
+                                           					<span class="input-group-addon">新密码：</span>
+															<input name="newpass1" type="password" class="form-control" placeholder="password">
                                            						 
 														</div><!-- input-group -->
 											</div> <!--  form-group -->
@@ -495,8 +499,8 @@
 									  		<div class="col-lg-8">
 												 <div class="form-group">
 							 							 <div class="input-group">
-                                           					<span class="input-group-addon">账号密码：</span>
-															<input name="email_to" type="password" class="form-control" placeholder="password">
+                                           					<span class="input-group-addon">确认密码：</span>
+															<input name="newpass2" type="password" class="form-control" placeholder="password">
                                            						 
 														</div><!-- input-group -->
 											</div> <!--  form-group -->
@@ -509,7 +513,7 @@
 								 
 						 </div> <!-- body -->
 						   </div> <!-- box -->
-						   
+						   </form>
 						   
 					</div> <!-- col -->
 						
