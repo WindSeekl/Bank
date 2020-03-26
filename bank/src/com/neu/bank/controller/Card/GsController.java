@@ -29,7 +29,6 @@ public class GsController extends HttpServlet{
 				res = "已提交挂失请求，请勿重复操作！"; 
 		}
 			System.out.println(card.getState());
-			
 		String jsonStr = JSONObject.toJSONString(res);
 		resp.setContentType("application/json;charset=utf-8");
 		resp.getWriter().println(jsonStr);
