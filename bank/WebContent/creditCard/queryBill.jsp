@@ -33,12 +33,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         }
         
         le>
-        table,table tr th, table tr td { border:1px solid gray; }
+        /* table,table tr th, table tr td { border:1px solid gray; } */
         table tr th,table tr td{
         	width:163px;
         }
+        th{
+        	text-align:center;
+        }
+		td {
+ 			text-align:center;
+        }
         table {  min-height: 25px; line-height: 25px; text-align: center; border-collapse: collapse;}
         #alreadyTb{
+        	display: none;
+       	}
+       	#notTb{
         	display: none;
        	}
         </style>
@@ -456,25 +465,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 
                                		<div class="tab-pane active" id="tab_1-1">
                                		
-								         <form action='#' id="alreadyForm">
-											<table id="alreadyTb">
+								         <form action='#' id="alreadyForm"  method="post">
+											<table id="alreadyTb" class="table table-hover">
 										  		
 										  		<thead>
 										  			<tr>
 										  				<th>编号</th>
 										  				<th>信用卡编号</th>
-										  				<th>账单开始时间</th>
-										  				<th>账单结束时间</th>
+										  				<th>开始时间</th>
+										  				<th>结束时间</th>
 										  				<th>币种</th>
 										  				<th>最后还款日</th>
-										  				<th>上期账面余额</th>
 										  				<th>存入总计</th>
 										  				<th>支出总计</th>
 										  				<th>消费</th>
 										  				<th>手续费</th>
 										  				<th>取现</th>
 										  				<th>循环利息</th>
-										  				<th>最低还款额</th>
+										  				<th>最低还款</th>
 									  				</tr>
 									  			</thead>
 									  	</table>
@@ -483,7 +491,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                		
                                  		<div id="main" style="width: 40%">
 										<form action="#" id="queryBillForm" method="post">
-											<div class="form-group">
+											<!-- <div class="form-group">
 							 					<div class="input-group">
                                       				<span class="input-group-addon">选择账号：</span>
                                       				<select class="form-control" name="cardId">
@@ -493,22 +501,64 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                           				<option>option 4</option>
                                           				<option>option 5</option>
                                            			</select>
-												</div><!-- input-group -->
-											</div> <!--  form-group -->
-										<div id="a1">
+												</div>input-group
+											</div>  form-group
+											 -->
+											<div class="row">
+									  		<div class="col-lg-8">
+												<div class="form-group">
+							 						<div class="input-group">
+                                      					<span class="input-group-addon">选择账号：</span>
+                                      					<select class="form-control" name="cardId">
+                                          					<option>aaa</option>
+                                          					<option>option 2</option>
+                                         					<option>option 3</option>
+                                          				    <option>option 4</option>
+                                          					<option>option 5</option>
+                                           				</select>
+													</div><!-- input-group -->
+												</div> <!--  form-group -->
+									  		</div> <!--  col -->
+										</div> <!--  row -->
+											
+										<div class="row">
+									  		<div class="col-lg-8">
+												<div class="form-group">
+							 						<div class="input-group">
+														<span class="input-group-addon">查询日期:</span>
+														<input type="date" name="beginTime" class="form-control"/>
+														<input type="date" name="endTime" class="form-control"/><br/>
+													</div>
+												</div>
+									  		</div> 
+										</div> 
+											
+										<!-- <div id="a1">
 											<div class="input-group">
 												<span class="input-group-addon">查询日期:</span>
 												<input type="date" name="beginTime" class="form-control"/>
 												<input type="date" name="endTime" class="form-control"/><br/>
 											</div>
-										</div>
-										<div id="a2">
+										</div> -->
+										
+										<div class="row">
+									  		<div class="col-lg-8">
+												<div class="form-group">
+							 						<div class="input-group">
+														<span class="input-group-addon">查询密码：</span>
+														<input type="password" class="form-control"  name="queryPass"><br/>
+													</div>
+												</div>
+									  		</div> 
+										</div> 
+										
+										<!-- <div id="a2">
 											<div class="input-group">
 												<span class="input-group-addon">查询密码：</span>
 												<input type="password" class="form-control"  name="queryPass"><br/>
 											</div>
-										</div>
-										<div id="a3">
+										</div> -->
+										<div class="modal-footer clearfix">
 											<input type="hidden" name="mark" value="already"> 
 											<center><input type="button" id="query" value="查询" class="btn btn-primary"></center>
 										</div>
@@ -517,6 +567,73 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                        		  	</div><!-- /.tab-pane -->
                                     
                             	<div class="tab-pane" id="tab_2-2">
+                            	
+                            		<form action='#' id="notTbForm"  method="post">
+										<table id="notTb" class="table table-hover">
+									  		<thead>
+									  			<tr>
+									  				<th>编号</th>
+									  				<th>信用卡编号</th>
+									  				<th>开始时间</th>
+									  				<th>结束时间</th>
+									  				<th>币种</th>
+									  				<th>最后还款日</th>
+									  				<th>存入总计</th>
+									  				<th>支出总计</th>
+									  				<th>消费</th>
+									  				<th>手续费</th>
+									  				<th>取现</th>
+									  				<th>循环利息</th>
+									  				<th>最低还款</th>
+								  				</tr>
+								  			</thead>
+									  	</table>
+								  	</form>
+                               		<div id="not" style="width: 40%">
+										<form action="#" id="notForm" method="post">
+											<div class="row">
+									  		<div class="col-lg-8">
+												<div class="form-group">
+							 						<div class="input-group">
+                                      					<span class="input-group-addon">选择账号：</span>
+                                      					<select class="form-control" name="cardId">
+                                          					<option>aaa</option>
+                                          					<option>option 2</option>
+                                         					<option>option 3</option>
+                                          				    <option>option 4</option>
+                                          					<option>option 5</option>
+                                           				</select>
+													</div><!-- input-group -->
+												</div> <!--  form-group -->
+									  		</div> <!--  col -->
+										</div> <!--  row -->
+											
+										<div class="row">
+									  		<div class="col-lg-8">
+												<div class="form-group">
+							 						<div class="input-group">
+														<span class="input-group-addon">查询密码：</span>
+														<input type="password" class="form-control"  name="queryPass"><br/>
+													</div>
+												</div>
+									  		</div> 
+										</div> 
+											
+										<!-- <div id="a1">
+											<div class="input-group">
+											</div>
+										</div> -->
+										<div class="modal-footer clearfix">
+											<input type="hidden" name="mark" value="not"> 
+											<center><input type="button" id="notquery" value="查询" class="btn btn-primary"></center>
+										</div>
+									</form>
+                            	
+                            	
+                            	
+                            	
+                            	
+                            	</div>
 					
                            		</div>
 									
@@ -546,12 +663,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </section><!-- /.content -->
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
-     
-		<script type="text/javascript">
+       <script type="text/javascript">
 		$("#query").click(function(){
-		
 			$.ajax({
-				utl:'../billController',
+				url:'../billController',
 				data:$("#queryBillForm").serialize(),
 				success:function(data){
 					$("#queryBillForm").css('display', 'none');
@@ -564,8 +679,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						html += "<td>" + data[i].beginTime + "</td>";
 						html += "<td>" + data[i].endTime + "</td>";
 						html += "<td>" + data[i].coinType + "</td>";
-						html += "<td>" + data[i].lastDate + "</td>";
-						html += "<td>" + data[i].lastRemain + "</td>";
+						html += "<td>" + data[i].lastTime + "</td>";
 						html += "<td>" + data[i].putSum + "</td>";
 						html += "<td>" + data[i].useSum + "</td>";
 						html += "<td>" + data[i].consume + "</td>";
@@ -581,6 +695,37 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				}
 			})
 		})
+		$("#notquery").click(function(){
+			$.ajax({
+				url:'../billController',
+				data:$("#notForm").serialize(),
+				success:function(data){
+					$("#notForm").css('display', 'none');
+					$("#notTb tbody").html("");
+					$("#notTb").css('display', 'table');
+					for(var i in data){
+						var html = "<tr class='notInfo'>";
+						html += "<td>" + data[i].cbId + "</td>";
+						html += "<td>" + data[i].cardId + "</td>";
+						html += "<td>" + data[i].beginTime + "</td>";
+						html += "<td>" + data[i].endTime + "</td>";
+						html += "<td>" + data[i].coinType + "</td>";
+						html += "<td>" + data[i].lastTime + "</td>";
+						html += "<td>" + data[i].putSum + "</td>";
+						html += "<td>" + data[i].useSum + "</td>";
+						html += "<td>" + data[i].consume + "</td>";
+						html += "<td>" + data[i].commossion + "</td>";
+						html += "<td>" + data[i].essay + "</td>";
+						html += "<td>" + data[i].cycleRate + "</td>";
+						html += "<td>" + data[i].minBack + "</td>";
+						html += "</tr>"
+						$("#notTb").append(html);
+					}
+				},error:function(){
+					alert("失败");
+				}
+			})
+		})
 		
 		
 		</script>
@@ -588,7 +733,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
         <!-- jQuery 2.0.2 -->
         <script src="../js/jquery.min.js"></script>
-        <!-- Bootstrap -->
+     
         <script src="../js/bootstrap.min.js" type="text/javascript"></script>
         <!-- AdminLTE App -->
         <script src="../js/AdminLTE/app.js" type="text/javascript"></script>

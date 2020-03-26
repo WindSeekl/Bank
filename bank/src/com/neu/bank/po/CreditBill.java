@@ -1,13 +1,12 @@
 package com.neu.bank.po;
 
 public class CreditBill {
-	private String cbId;
+	private int cbId;
 	private String cardId;
 	private String beginTime;
 	private String endTime;
 	private String coinType;
-	private String lastDate;
-	private double lastRemain;
+	private String lastTime;
 	private double putSum;
 	private double useSum;
 	private double consume;
@@ -16,10 +15,10 @@ public class CreditBill {
 	private double cycleRate;
 	private double minBack;
 	
-	public final String getCbId() {
+	public final int getCbId() {
 		return cbId;
 	}
-	public final void setCbId(String cbId) {
+	public final void setCbId(int cbId) {
 		this.cbId = cbId;
 	}
 	public final String getCardId() {
@@ -47,16 +46,10 @@ public class CreditBill {
 		this.coinType = coinType;
 	}
 	public final String getLastDate() {
-		return lastDate;
+		return lastTime;
 	}
-	public final void setLastDate(String lastDate) {
-		this.lastDate = lastDate;
-	}
-	public final double getLastRemain() {
-		return lastRemain;
-	}
-	public final void setLastRemain(double lastRemain) {
-		this.lastRemain = lastRemain;
+	public final void setLastDate(String lastTime) {
+		this.lastTime = lastTime;
 	}
 	public final double getPutSum() {
 		return putSum;
