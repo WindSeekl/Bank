@@ -1,14 +1,11 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>信用卡额度管理</title>
-        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- bootstrap 3.0.2 -->
         <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <!-- font Awesome -->
@@ -26,8 +23,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <![endif]-->
     </head>
     <body class="skin-blue">
-    	<script src="../js/verify.js"></script>
-		<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
         <!-- header logo: style can be found in header.less -->
         <header class="header">
             <a href="../index.jsp" class="logo">
@@ -313,6 +308,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 <i class="fa fa-th"></i> <span>Widgets</span> <small class="badge pull-right bg-green">new</small>
                             </a>
                         </li>
+                        
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-bar-chart-o"></i>
@@ -320,11 +316,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="../khfw/changePass.jsp"><i class="fa fa-angle-double-right"></i> 个人信息管理</a></li>
+                                <li><a href="changePass.jsp"><i class="fa fa-angle-double-right"></i> 个人信息管理</a></li>
                                 <li><a href=""><i class="fa fa-angle-double-right"></i> 大额取款预约服务</a></li>
-                                <li><a href="../khfw/calculator.jsp"><i class="fa fa-angle-double-right"></i> 理财计算</a></li>
+                                <li><a href="calculator.jsp"><i class="fa fa-angle-double-right"></i> 理财计算器</a></li>
                             </ul>
                         </li>
+                        
                         <li class="treeview">
                              <a href="#">
                                 <i class="fa fa-laptop"></i>
@@ -337,6 +334,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 <li><a href="../zhfw/mmxg.jsp"><i class="fa fa-angle-double-right"></i> 密码修改</a></li>
                             </ul>
                         </li>
+                        
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-edit"></i> <span>Forms</span>
@@ -354,8 +352,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="sqjd.jsp"><i class="glyphicon glyphicon-tag"></i>申请进度查询</a></li>
-                                <li><a href="xykgl.jsp"><i class="glyphicon glyphicon-tag"></i>信用卡管理</a></li>
+                                <li><a href="../creditCard/sqjd.jsp"><i class="glyphicon glyphicon-tag"></i>申请进度查询</a></li>
+                                <li><a href="../creditCard/xykgl.jsp"><i class="glyphicon glyphicon-tag"></i>信用卡管理</a></li>
                             </ul>
                         </li>
                         <li>
@@ -424,315 +422,107 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <aside class="right-side">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
-                    <h1>
-                        信用卡管理
-                        <small></small>
-                    </h1>
+                
+                    <h1> 理财计算</h1>
+                    
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
-						 <li><a href="#"><i class="fa fa-dashboard"></i> 信用卡</a></li>
-                        <li class="active">信用卡管理</li>
+						<li><a href="#"><i class="fa fa-dashboard"></i> 客户服务</a></li>
+                        <li class="active">理财计算器</li>
                     </ol>
                 </section>
 
                 <!-- Main content -->
                 <section class="content">
-					
-					<div class="row">
+						<div class="row">
 						
 							<div class="col-lg-9 col-sm-11 col-xs-11 col-md-10">
 							
-							 <div class="nav-tabs-custom">
+								<div class="nav-tabs-custom">
                                 <ul class="nav nav-tabs pull-right">
-                                    <li class="active"><a href="#tab_1-1" data-toggle="tab">卡片挂失</a></li>
-									<li><a href="#tab_2-2" data-toggle="tab">卡片激活</a></li>
-									<li><a href="#tab_3-3" data-toggle="tab">查询密码设置</a></li>
-                                    <li><a href="#tab_4-4" data-toggle="tab">交易密码设置</a></li>
+                                    <li class="active"><a href="#tab_1-1" data-toggle="tab">个人存款计算器</a></li>
+									<li><a href="#tab_2-2" data-toggle="tab">个人贷款计算器</a></li>
+									<li><a href="#tab_3-3" data-toggle="tab">外币兑换计算</a></li>
                                     <li class="pull-left header"><i class="fa fa-th"></i> 操作</li>
                                 </ul>
                                 <div class="tab-content">
+                                
                                     <div class="tab-pane active" id="tab_1-1">
-										<form action="#" id="reportForm" method="post">
-									  		<div class="row">
-									  			<div class="col-lg-8">
-													<div class="form-group">
-							 							<div class="input-group">
-                                           					<span class="input-group-addon">挂失账号：</span>
-                                           					<select class="form-control" name="cardId">
-                                                				<option>aaa</option>
-                                                				<option>option 2</option>
-                                               					<option>option 3</option>
-                                                				<option>option 4</option>
-                                                				<option>option 5</option>
-                                            				</select>
-														</div><!-- input-group -->
-											</div> <!--  form-group -->
-									  </div> <!--  col -->
-									</div> <!--  row -->
-									
-										  <div class="row">
-									  			<div class="col-lg-8">
-													<div class="form-group">
-							 							<div class="input-group">
-                                           					<span class="input-group-addon">查询密码：</span>
-															<input name="queryPass" type="password" class="form-control" placeholder="请输入查询密码"> 
-														</div><!-- input-group -->
+                                    	
+									    <form action="#" id=depositCount>
+									    	<input name="mark" value="deposit" type="hidden">
+									    	<div class="row">
+										  		<div class="col-lg-8">
+													 <div class="form-group">
+								 							 <div class="input-group">
+	                                           					<span class="input-group-addon">存款类型:</span>
+																<select class="form-control" name="save">
+                                                					<option value="1">活期存款</option>
+                                                					<option value="2">整存整取</option>
+                                                					<option value="3">零存整取</option>
+                                                					<option value="4">整存零取</option>
+                                                					<option value="5">存本取息</option>
+                                            					</select>	 
+															</div><!-- input-group -->
 													</div> <!--  form-group -->
-									  			</div> <!--  col -->
+										  		</div> <!--  col -->
 											</div> <!--  row -->
-											
+									    	
+									    	
 											<div class="row">
-									  			<div class="col-lg-8">
+												  <div class="col-lg-8">
 													<div class="form-group">
-							 							<div class="input-group">
-                                           					<span class="input-group-addon">交易密码：</span>
-															<input name="alterPass" type="password" class="form-control" placeholder="请输入交易密码"> 
+										 				<div class="input-group">
+			                                           		<span class="input-group-addon">存款期限:</span>
+															<input type="date" name="savebeginTime" class="form-control"/>
+															<input type="date" name="saveendTime" class="form-control"/><br/>
 														</div><!-- input-group -->
 													</div> <!--  form-group -->
-									  			</div> <!--  col -->
+												  </div> <!--  col -->
+											</div> <!--  row -->
+									    	
+											<div class="row">
+												  <div class="col-lg-8">
+													<div class="form-group">
+										 				<div class="input-group">
+			                                           		<span class="input-group-addon">存入金额:</span>
+															<input name="money" type="text" class="form-control" >
+														</div><!-- input-group -->
+													</div> <!--  form-group -->
+												  </div> <!--  col -->
 											</div> <!--  row -->
 											
 											<div class="modal-footer clearfix">
-												<input type="hidden" name="mark" value="report"> 
-		                            			<input type="button" value="挂失" id="report" class="btn btn-primary pull-left"> 
-                        					</div>
-											</form>	
-
-                                        
-                                    </div><!-- /.tab-pane -->
-                                    <div class="tab-pane" id="tab_3-3">
-									
-								<form action="#" id="queryPassForm" method="post">
-									<div class="row">
-										<div class="col-lg-8">
-											<div class="form-group">
-						 						<div class="input-group">
-                                           			<span class="input-group-addon">选择账号：</span>
-                                           			<select class="form-control" name="cardId">
-                                              			<option>aaa</option>
-                                              			<option>option 2</option>
-                                           				<option>option 3</option>
-                                              			<option>option 4</option>
-                                              			<option>option 5</option>
-                                            		</select>
-												</div><!-- input-group -->
-											</div> <!--  form-group -->
-									 	</div> <!--  col -->
-									</div> <!--  row -->
-									
-									<div class="row">
-										<div class="col-lg-8">
-											<div class="form-group">
-							 					<div class="input-group">
-                                         			<span class="input-group-addon">旧查询密码：</span>
-													<input name="oldPass" type="password" class="form-control" placeholder="Email CC">		 
-												</div><!-- input-group -->
-											</div> <!--  form-group -->
-								   		</div> <!--  col -->
-									</div> <!--  row -->
-									
-									
-									<div class="row">
-										<div class="col-lg-8">
-											<div class="form-group">
-							 					<div class="input-group">
-                                           			<span class="input-group-addon">新查询密码：</span>
-													<input name="newPass1" type="password" class="form-control" placeholder="Email CC">
-												</div><!-- input-group -->
-											</div> <!--  form-group -->
-										</div> <!--  col -->
-									</div> <!--  row -->
-									
-									<div class="row">
-										<div class="col-lg-8">
-											<div class="form-group">
-							 					<div class="input-group">
-                                           			<span class="input-group-addon">新查询密码：</span>
-													<input name="newPass2" type="password" class="form-control" placeholder="Email CC">	 
-												</div><!-- input-group -->
-											</div> <!--  form-group -->
-										</div> <!--  col -->
-									</div> <!--  row -->
-									<div id="verify2"></div>
-									<div class="modal-footer clearfix">
-										<input type="hidden" name="mark" value="qPass"> 
-                            			<input type="button" value="提交" id="queryPass" class="btn btn-primary pull-left"> 
-	                        		</div>
-								</form>
-                           	</div>
-										<div class="tab-pane" id="tab_2-2">
-										<form action="#" id="activateForm" methos="post">
-											<div class="row">
-									  			<div class="col-lg-8">
-												 	<div class="form-group">
-							 							<div class="input-group">
-                                        					<span class="input-group-addon">选择账号：</span>
-                                           					<select class="form-control" name="cardId">
-                                                				<option>aaa</option>
-                                                				<option>option 2</option>
-                                               					<option>option 3</option>
-                                                				<option>option 4</option>
-                                                				<option>option 5</option>
-                                            				</select>
-														</div><!-- input-group -->
-													</div> <!--  form-group -->
-									  			</div> <!--  col -->
-											</div> <!--  row -->
-												
-											<div class="row">
-									  			<div class="col-lg-8">
-													<div class="form-group">
-							 							<div class="input-group">
-                                           					<span class="input-group-addon">查询密码：</span>
-															<input name="queryPass" type="password" class="form-control" placeholder="请输入查询密码"> 
-														</div><!-- input-group -->
-													</div> <!--  form-group -->
-									  			</div> <!--  col -->
-											</div> <!--  row -->
-											
-											<div class="row">
-									  			<div class="col-lg-8">
-													<div class="form-group">
-							 							<div class="input-group">
-                                           					<span class="input-group-addon">交易密码：</span>
-															<input name="alterPass" type="password" class="form-control" placeholder="请输入交易密码"> 
-														</div><!-- input-group -->
-													</div> <!--  form-group -->
-									  			</div> <!--  col -->
-											</div> <!--  row -->
-											
-											<div class="modal-footer clearfix">
-												<input type="hidden" name="mark" value="active"> 
-		                            			<input type="button" value="激活" id="activate" class="btn btn-primary pull-left"> 
-                        					</div>
-                       					</form>
-										</div><!-- /.tab-pane -->
-											
-									<div class="tab-pane" id="tab_4-4">
-									<form action="#" id="alterPassForm" method="post">
-										<div class="row">
-									  		<div class="col-lg-8">
-												<div class="form-group">
-							 						<div class="input-group">
-                                      					<span class="input-group-addon">选择账号：</span>
-                                      					<select class="form-control" name="cardId">
-                                          					<option>aaa</option>
-                                          					<option>option 2</option>
-                                         					<option>option 3</option>
-                                          				    <option>option 4</option>
-                                          					<option>option 5</option>
-                                           				</select>
-													</div><!-- input-group -->
-												</div> <!--  form-group -->
-									  		</div> <!--  col -->
-										</div> <!--  row -->
-									
-									 	<div class="row">
-									  		<div class="col-lg-8">
-												<div class="form-group">
-							 						<div class="input-group">
-                                           				<span class="input-group-addon">旧交易密码：</span>
-														<input name="oldPass" type="password" class="form-control" placeholder="Email CC"> 
-													</div><!-- input-group -->
-												</div> <!--  form-group -->
-									  		</div> <!--  col -->
-										</div> <!--  row -->
-									
-									
-									 	<div class="row">
-									  		<div class="col-lg-8">
-												<div class="form-group">
-							 						<div class="input-group">
-                                           				<span class="input-group-addon">新交易密码：</span>
-														<input name="newPass1" type="password" class="form-control" placeholder="Email CC">		 
-													</div><!-- input-group -->
-												</div> <!--  form-group -->
-									  		</div> <!--  col -->
-										</div> <!--  row -->
-									
-									 	<div class="row">
-									  		<div class="col-lg-8">
-												<div class="form-group">
-							 						<div class="input-group">
-                                           				<span class="input-group-addon">新交易密码：</span>
-														<input name="newPass2" type="password" class="form-control" placeholder="Email CC">
-													</div><!-- input-group -->
-												</div> <!--  form-group -->
-									 		</div> <!--  col -->
-										</div> <!--  row -->
-									
-									
-								<div class="modal-footer clearfix">
-										<input type="hidden" name="mark" value="aPass"> 
-                            			<input type="button" value="提交" id="alterPass" class="btn btn-primary pull-left"> 
-                        		</div>
-								</form>	
+													<input type="button" value="计算" id="count" class="btn btn-primary pull-left">
+													<input type="reset" value="重置"  class="btn btn-primary pull-left">
+				                        	</div>
+										</form>
+										<div id="div1"> </div>
 										
-								
                                     </div><!-- /.tab-pane -->
+                                    
+                             	<div class="tab-pane" id="tab_2-2">
+									
+                           		</div>
+                           			
+								<div class="tab-pane" id="tab_3-3">
+									 
+								</div><!-- /.tab-pane -->
+
+                                    
                                 </div><!-- /.tab-content -->
                             </div><!-- nav-tabs-custom -->
-							
-							</div> <!-- col -->
-							
-							 
-					
+						</div> <!-- col -->
 					</div> <!-- row -->
-					
-
-
+	
+					 <div class="col-lg-2 col-sm-6 col-xs-6 col-md-2">
+					   		广告位
+					</div>
                 </section><!-- /.content -->
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
-     
-		<script type="text/javascript">
-		$("#queryPass").click(function(){
-		//$(document).on('click','#queryPass',function(){
-			$.ajax({
-				url:'../creditCard',
-				data:$("#queryPassForm").serialize(),
-				success:function(data){
-					alert(data);
-				}
-			})
-			document.getElementById('queryPassForm').reset();
-		})
-		
-		$("#alterPass").click(function(){
-			$.ajax({
-				url:'../creditCard',
-				data:$("#alterPassForm").serialize(),
-				success:function(data){
-					alert(data);
-				}
-			})
-			document.getElementById('alterPassForm').reset();
-		})
-		
-		$("#activate").click(function(){
-			$.ajax({
-				url:'../creditCard',
-				data:$("#activateForm").serialize(),
-				success:function(data){
-					alert(data)
-				}
-			})
-			document.getElementById('activateForm').reset();
-		})
-		
-		$("#report").click(function(){
-			$.ajax({
-				url:'../creditCard',
-				data:$("#reportForm").serialize(),
-				success:function(data){
-					alert(data)
-				}
-			})
-			document.getElementById('reportForm').reset();
-		})
-		</script>
-		
-		
+
+
         <!-- jQuery 2.0.2 -->
         <script src="../js/jquery.min.js"></script>
         <!-- Bootstrap -->
@@ -741,5 +531,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <script src="../js/AdminLTE/app.js" type="text/javascript"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="../js/AdminLTE/demo.js" type="text/javascript"></script>
+        <script type="text/javascript">
+        
+	        $("#count").click(function(){
+				$.ajax({
+					url:'../ManageMoney',
+					data:$("#depositCount").serialize(),
+					success:function(data){
+						$('#div1').empty();
+						var html = "<span class='input-group-addon'>年利率:"+data[0]*100+"%</span>";
+						html += "<span class='input-group-addon'>利息:"+data[1]+"元</span>";
+						html += "<span class='input-group-addon'>本息总额:"+data[2]+"元</span>";
+						$("#div1").append(html);
+					}
+				})
+			})
+	       
+        </script>
     </body>
 </html>
