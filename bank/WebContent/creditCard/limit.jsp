@@ -446,7 +446,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						
 							<div class="col-lg-9 col-sm-11 col-xs-11 col-md-10">
 							
-								 <div class="nav-tabs-custom">
+							 <div class="nav-tabs-custom">
                                 <ul class="nav nav-tabs pull-right">
                                     <li class="active"><a href="#tab_1-1" data-toggle="tab">卡片挂失</a></li>
 									<li><a href="#tab_2-2" data-toggle="tab">卡片激活</a></li>
@@ -456,11 +456,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 </ul>
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="tab_1-1">
-									<form action="#" id="reportForm" method="post">
-									  <div class="row">
-									  		<div class="col-lg-8">
-												 <div class="form-group">
-							 							 <div class="input-group">
+										<form action="#" id="reportForm" method="post">
+									  		<div class="row">
+									  			<div class="col-lg-8">
+													<div class="form-group">
+							 							<div class="input-group">
                                            					<span class="input-group-addon">挂失账号：</span>
                                            					<select class="form-control" name="cardId">
                                                 				<option>aaa</option>

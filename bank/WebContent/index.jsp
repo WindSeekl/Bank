@@ -320,7 +320,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             <ul class="treeview-menu">
                                 <li><a href="khfw/changePass.jsp"><i class="fa fa-angle-double-right"></i> 个人信息管理</a></li>
                                 <li><a href=""><i class="fa fa-angle-double-right"></i> 大额取款预约服务</a></li>
-                                <li><a href=""><i class="fa fa-angle-double-right"></i> 理财计算器</a></li>
+                                <li><a href=""><i class="fa fa-angle-double-right"></i> 贷款计算器</a></li>
+                                <li><a href=""><i class="fa fa-angle-double-right"></i> 存款计算器</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
@@ -354,8 +355,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             <ul class="treeview-menu">
                                 <li><a href="creditCard/sqjd.jsp"><i class="glyphicon glyphicon-tag"></i>申请进度查询</a></li>
                                 <li><a href="creditCard/xykgl.jsp"><i class="glyphicon glyphicon-tag"></i>信用卡管理</a></li>
+                                <li><a href="creditCard/queryBill.jsp"><i class="glyphicon glyphicon-tag"></i>账单查询</a></li>
                             </ul>
                         </li>
+                        
+                        
                         <li>
                             <a href="calendar.html">
                                 <i class="fa fa-calendar"></i> <span>Calendar</span>
@@ -778,7 +782,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<br />
 										<input type="checkbox" class="minimal"/><span>&nbsp;&nbsp;转账</span>
 									</div>
-									
 								</div>
 								
 								<div class="col-lg-2 .col-md-2 col-xs-3">
@@ -840,6 +843,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
+
 
         <!-- jQuery 2.0.2 -->
         <script src="js/jquery.min.js"></script>

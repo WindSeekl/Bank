@@ -20,7 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <style type="text/css">
         #main{
         	margin-top:	5%;
-        	margin-left:45%;
+        	margin-left:25%;
         }
         #a1{
         	margin-top: 5%;
@@ -435,62 +435,80 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					
 					<div class="row">
 						
-							<div class="col-lg-9 col-sm-11 col-xs-11 col-md-10">
+						<div class="col-lg-9 col-sm-11 col-xs-11 col-md-10">
 							
-						<div id="main" style="width: 40%">
-						<form action="../billController" method="post">
-						
-						
-												<div class="form-group">
-							 						<div class="input-group">
-                                      					<span class="input-group-addon">选择账号：</span>
-                                      					<select class="form-control" name="cardId">
-                                          					<option>aaa</option>
-                                          					<option>option 2</option>
-                                         					<option>option 3</option>
-                                          				    <option>option 4</option>
-                                          					<option>option 5</option>
-                                           				</select>
-													</div><!-- input-group -->
-												</div> <!--  form-group -->
-						
-								<div id="a1">
-										<div class="input-group">
-											<span class="input-group-addon">查询日期:</span>
-											<input type="date" name="beginTime" class="form-control"/>
-											<input type="date" name="endTime" class="form-control"/><br/>
+							<div class="nav-tabs-custom">
+                                <ul class="nav nav-tabs pull-right">
+	                                <li class="active"><a href="#tab_1-1" data-toggle="tab">已出账账单</a></li>
+									<li><a href="#tab_2-2" data-toggle="tab">未出账账单</a></li>
+	                                <li class="pull-left header"><i class="fa fa-th"></i> 操作</li>
+                                </ul>
+                               	<div class="tab-content">
+                                
+                               		<div class="tab-pane active" id="tab_1-1">
+                               		
+                               		
+                               		
+                               		
+                                 		<div id="main" style="width: 40%">
+										<form action="#" id="queryBillForm" method="post">
+											<div class="form-group">
+							 					<div class="input-group">
+                                      				<span class="input-group-addon">选择账号：</span>
+                                      				<select class="form-control" name="cardId">
+                                          				<option>aaa</option>
+                                          				<option>option 2</option>
+                                         				<option>option 3</option>
+                                          				<option>option 4</option>
+                                          				<option>option 5</option>
+                                           			</select>
+												</div><!-- input-group -->
+											</div> <!--  form-group -->
+										<div id="a1">
+											<div class="input-group">
+												<span class="input-group-addon">查询日期:</span>
+												<input type="date" name="beginTime" class="form-control"/>
+												<input type="date" name="endTime" class="form-control"/><br/>
+											</div>
 										</div>
-								</div>
-								<div id="a2">
-										<div class="input-group">
-											<span class="input-group-addon">查询密码：</span>
-											<input type="password" class="form-control"  name="queryPass"><br/>
+										<div id="a2">
+											<div class="input-group">
+												<span class="input-group-addon">查询密码：</span>
+												<input type="password" class="form-control"  name="queryPass"><br/>
+											</div>
 										</div>
-								</div>
-								<div id="a3">
-										<input type="hidden" name="mark" value="already"> 
-										<center><input type="submit" id="query" value="查询" class="btn btn-primary"></center>
-								</div>
-						</form>	
-						</div>	
+										<div id="a3">
+											<input type="hidden" name="mark" value="already"> 
+											<center><input type="submit" id="query" value="查询" class="btn btn-primary"></center>
+										</div>
+										</form>	
+									</div>
+                       		  	</div><!-- /.tab-pane -->
+                                    
+                            	<div class="tab-pane" id="tab_2-2">
+					
+                           		</div>
+									
+										
+                                 </div><!-- /.tab-pane -->
+                                    
+                                </div><!-- /.tab-content -->
+                            </div><!-- nav-tabs-custom -->
+							
+						</div> <!-- col -->
 							
 							
 
 
 
+								
 
 		
 							
 							
 							
 							
-							
-							
-							</div> <!-- col -->
-							
-							 
-					
-					</div> <!-- row -->
+						
 					
 
 

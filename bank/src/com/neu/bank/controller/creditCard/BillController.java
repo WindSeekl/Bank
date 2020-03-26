@@ -1,6 +1,7 @@
 package com.neu.bank.controller.creditCard;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -9,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.neu.bank.po.CreditBill;
 import com.neu.bank.service.creditCard.CreditService;
 import com.neu.bank.service.creditCard.impl.CreditServiceImpl;
@@ -31,21 +34,34 @@ public class BillController extends HttpServlet{
 		// TODO Auto-generated method stub
 		req.setCharacterEncoding("utf-8");
 		String mark = req.getParameter("mark");
+		List<CreditBill> list = new ArrayList<CreditBill>();
 		if(mark.equals("already"))
-			alreadyBill(req, resp, mark);
+			list = alreadyBill(req, resp, mark);
 		else if(mark.equals("not"))
-			notBill(req, resp, mark);
+			list = notBill(req, resp, mark);
 			
+
+		String jsonArr = JSONArray.toJSONString(list);
+		resp.setContentType("application/json;charset=utf-8");
+		resp.getWriter().println(jsonArr);
 	}
 	
-	protected void alreadyBill(HttpServletRequest req, HttpServletResponse resp, String mark) {
+	protected List<CreditBill> alreadyBill(HttpServletRequest req, HttpServletResponse resp, String mark) {
 		String cardId = req.getParameter("cardId");
 		String beginTime = req.getParameter("beginTime");
 		String endTime = req.getParameter("endTime");
 
 		List<CreditBill> list = cs.queryBill(cardId, beginTime, endTime, mark);
+		
+		return list;
 	}
 	
-	protected void notBill(HttpServletRequest req, HttpServletResponse resp, String mark) {
+	protected List<CreditBill> notBill(HttpServletRequest req, HttpServletResponse resp, String mark) {
+		String cardId = req.getParameter("cardId");
+		String time = req.getParameter("time");
+		
+		List<CreditBill> list = cs.queryBill(cardId, time, time, mark);
+		
+		return list;
 	}
 }
