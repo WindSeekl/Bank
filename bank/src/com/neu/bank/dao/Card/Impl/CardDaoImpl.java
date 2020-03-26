@@ -1,5 +1,7 @@
 package com.neu.bank.dao.Card.Impl;
 
+import java.util.List;
+
 import com.neu.bank.dao.Card.CardDao;
 import com.neu.bank.po.Card;
 import com.neu.util.BaseDao;
@@ -21,9 +23,9 @@ public class CardDaoImpl implements CardDao{
 	}
 
 	@Override
-	public Card queryId() {
+	public List<Card> queryId(String obUserId){
 		// TODO Auto-generated method stub
-		return bd.queryOne("select cardId from card", Card.class);
+		return bd.querySome("select * from card where obUserId='"+obUserId+"'",Card.class);
 	}
 
 }

@@ -9,15 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.alibaba.fastjson.JSONObject;
-import com.neu.bank.dao.Card.CardDao;
-import com.neu.bank.dao.Card.Impl.CardDaoImpl;
 import com.neu.bank.service.Card.CardService;
 import com.neu.bank.service.Card.Impl.CardServiceImpl;
 @WebServlet("/CardController")
 public class CardContorller extends HttpServlet{
 	
 	private CardService cs = new CardServiceImpl();
-	private CardDao cd = new CardDaoImpl();
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -37,7 +34,6 @@ public class CardContorller extends HttpServlet{
 		}else {	
 			res = "两次输入密码不一致";
 		}
-		System.out.println(cd.queryId());
 		String jsonStr = JSONObject.toJSONString(res);
 		resp.setContentType("application/json;charset=utf-8");
 		resp.getWriter().println(jsonStr);

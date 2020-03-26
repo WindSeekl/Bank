@@ -1,10 +1,7 @@
 package com.neu.bank.service.creditCard.impl;
 
-import java.util.List;
-
 import com.neu.bank.dao.creditCard.CreditCardDao;
 import com.neu.bank.dao.creditCard.impl.CreditCardDaoImpl;
-import com.neu.bank.po.CreditBill;
 import com.neu.bank.po.CreditCard;
 import com.neu.bank.service.creditCard.CreditService;
 
@@ -39,12 +36,6 @@ public class CreditServiceImpl implements CreditService {
 				return mark.equals("active")?"此卡无需激活":"此卡已挂失";
 		}
 		return "交易密码或查询密码错误";
-	}
-
-	@Override
-	public List<CreditBill> queryBill(String cardId, String beginTime, String endTime, String mark) {
-		// TODO Auto-generated method stub
-		return ccd.queryBill(cardId, beginTime, endTime, mark);
 	}
 
 }

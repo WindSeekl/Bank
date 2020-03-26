@@ -439,14 +439,14 @@
 						
 							<div class="col-lg-9 col-sm-11 col-xs-11 col-md-10">
 							
-								 <div class="nav-tabs-custom">
-                                <ul class="nav nav-tabs pull-right">
-                                    <li class="active"><a href="#tab_1-1" data-toggle="tab">个人信息查询</a></li>
+								<div class="nav-tabs-custom">
+                               <ul class="nav nav-tabs pull-right">
+	                                <li class="active"><a href="#tab_1-1" data-toggle="tab">个人信息查询</a></li>
 									<li><a href="#tab_2-2" data-toggle="tab">预留信息设置</a></li>
 									<li><a href="#tab_3-3" data-toggle="tab">登录名修改</a></li>
-                                    <li><a href="#tab_4-4" data-toggle="tab">登录密码修改</a></li>
-                                    <li class="pull-left header"><i class="fa fa-th"></i> 操作</li>
-                                </ul>
+	                                <li><a href="#tab_4-4" data-toggle="tab">登录密码修改</a></li>
+	                                <li class="pull-left header"><i class="fa fa-th"></i> 操作</li>
+                               </ul>
                                 <div class="tab-content">
                                 
                                     <div class="tab-pane active" id="tab_1-1">
@@ -535,12 +535,13 @@
 												<input type="button" value="提交" id="cpass" class="btn btn-primary pull-left">
 			                        		</div>
 										</form>
+										
                                  </div><!-- /.tab-pane -->
                                     
                                 </div><!-- /.tab-content -->
                             </div><!-- nav-tabs-custom -->
 							
-							</div> <!-- col -->
+						</div> <!-- col -->
 					</div> <!-- row -->
 	
 						 <div class="col-lg-2 col-sm-6 col-xs-6 col-md-2">

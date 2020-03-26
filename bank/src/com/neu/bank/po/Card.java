@@ -6,16 +6,16 @@ public class Card {
 	private String certificateType; //证件类型
 	private String certificateNum;  //证件号码
 	private String FixPhone;        //电话号码
-	private String sex;
+	private int sex;
 	private String phoneNum;
-	private String adress;
+	private String address;
 	private String postCode;        //邮政编码
-	private String email;
+	private String e_mail;
 	private String networkId;          //开户行
 	private String cardTypeId;         //卡类型
-	private boolean isSigned;       //是否签约
+	private int isSigned;       //是否签约
 	private String alias;           //别名
-	private boolean state;          //状态
+	private int state;          //状态
 	private int obUserId;           //网银编号
 	public String getCardId() {
 		return cardId;
@@ -47,27 +47,24 @@ public class Card {
 	public void setFixPhone(String fixPhone) {
 		FixPhone = fixPhone;
 	}
-	public String getSex() {
-		return sex;
-	}
-	public void setSex(int sex) {
-		if(sex == 0)
-			this.sex = "男";
-		else if(sex == 1)
-			this.sex = "女";
-
-	}
 	public String getPhoneNum() {
 		return phoneNum;
 	}
 	public void setPhoneNum(String phoneNum) {
 		this.phoneNum = phoneNum;
 	}
-	public String getAdress() {
-		return adress;
+	
+	/**
+	 * @return the address
+	 */
+	public String getAddress() {
+		return address;
 	}
-	public void setAdress(String adress) {
-		this.adress = adress;
+	/**
+	 * @param address the address to set
+	 */
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	public String getPostCode() {
 		return postCode;
@@ -75,12 +72,7 @@ public class Card {
 	public void setPostCode(String postCode) {
 		this.postCode = postCode;
 	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
+	
 	public String getNetworkId() {
 		return networkId;
 	}
@@ -93,33 +85,84 @@ public class Card {
 	public void setCardTypeId(String cardTypeId) {
 		this.cardTypeId = cardTypeId;
 	}
-	public boolean isSigned() {
-		return isSigned;
-	}
-	public void setSigned(int isSigned) {
-		if(isSigned == 0)
-			this.isSigned = true;
-		else if(isSigned == 1)
-			this.isSigned = false;
-	}
 	public String getAlias() {
 		return alias;
 	}
 	public void setAlias(String alias) {
 		this.alias = alias;
 	}
-	public boolean isState() {
-		return state;
+	/**
+	 * @return the e_mail
+	 */
+	public String getE_mail() {
+		return e_mail;
 	}
+	/**
+	 * @param e_mail the e_mail to set
+	 */
+	public void setE_mail(String e_mail) {
+		this.e_mail = e_mail;
+	}
+	/**
+	 * @param sex the sex to set
+	 */
+	/**
+	 * @return the sex
+	 */
+	public String getSex() {
+		String res;
+		if(sex==0){
+			res="男";
+		}else{
+			res="女";
+		}
+		return res;
+	}
+
+	public void setSex(int sex) {
+		this.sex = sex;
+	}
+
+	public boolean getIsSigned() {
+		boolean b;
+		if(isSigned==0){
+			b=false;
+		}else{
+			b=true;
+		}
+		return b;
+	}
+
+	public void setIsSigned(int isSigned) {
+		this.isSigned = isSigned;
+	}
+	/**
+	 * @return the state
+	 */
+	public boolean getState() {
+		boolean b;
+		if(state==0){
+			b=false;
+		}else{
+			b=true;
+		}
+		return b;
+	}
+	/**
+	 * @param state the state to set
+	 */
 	public void setState(int state) {
-		if(state == 0)
-			this.state = true;
-		else if(state == 1)
-			this.state = false;
+		this.state = state;
 	}
+	/**
+	 * @return the obUserId
+	 */
 	public int getObUserId() {
 		return obUserId;
 	}
+	/**
+	 * @param obUserId the obUserId to set
+	 */
 	public void setObUserId(int obUserId) {
 		this.obUserId = obUserId;
 	}

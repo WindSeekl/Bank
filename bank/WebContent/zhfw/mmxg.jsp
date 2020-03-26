@@ -2,8 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="com.neu.bank.po.*"%>
-<%@ page import="com.neu.bank.dao.Card.Impl.CardDaoImpl"%>
-<%@ page import="com.neu.bank.dao.Card.CardDao"%>
+<%@ page import="com.neu.bank.service.Card.Impl.CardServiceImpl"%>
+<%@ page import="com.neu.bank.service.Card.CardService"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -436,7 +436,7 @@
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
 						<li><a href="#"><i class="fa fa-dashboard"></i> 账户服务</a></li>
-                        <li class="active">账户挂失</li>
+                        <li class="active">密码修改</li>
                     </ol>
                 </section>
 
@@ -449,77 +449,74 @@
 							
 						   <div class="box box-solid">
 							 <div class="modal-body">
-							     
-								 <div class="row">
-								 <form action="CardController">
-								 
+							 
+							     <form action="#" id="changePass" method="post">
+										 <div class="row">
 									  		<div class="col-lg-8">
 												 <div class="form-group">
-							 							 <div class="input-group">
-                                           					<span class="input-group-addon">选择账号：</span>
-																<% 
-																List<Card> list = new ArrayList<>();
-																CardDao cd = new CardDaoImpl();
-																list.add(cd.queryId());
-																%> 
-																<select class="form-control">
-																<%for(int i=0;i<list.size();i++) {%>
-															  	<option value ="<%=list.get(i).getCardId() %>"><%=list.get(i).getCardId()%></option> 
-															  <%} %>
-                                           					</select>                 						 
-														</div><!-- input-group -->
-											</div> <!--  form-group -->
-									  </div> <!--  col -->
-									</div> <!--  row -->
+						 							 <div class="input-group">
+                                         				<span class="input-group-addon">选择账号：</span>
+														<select class="form-control" name="cardId">
+														<% 
+															CardService cs = new CardServiceImpl();
+															List<String> list = cs.queryId("1212556");
+															for(int i=0;i<list.size();i++) {%>
+														  	<option value ="<%=list.get(i)%>" ><%=list.get(i)%></option>
+														  <%}%>
+                                         				</select>                 						 
+													</div><!-- input-group -->
+												</div> <!--  form-group -->
+									  		</div> <!--  col -->
+										</div> <!--  row -->
 									
 									
-									 <div class="row">
-									  		<div class="col-lg-8">
-												 <div class="form-group">
-							 							 <div class="input-group">
-                                           					<span class="input-group-addon">原密码：</span>
-															<input name="oldpass" type="password" class="form-control" placeholder="password">
-                                           						 
-														</div><!-- input-group -->
-											</div> <!--  form-group -->
-									  </div> <!--  col -->
-									</div> <!--  row -->
-									 <div class="row">
-									  		<div class="col-lg-8">
-												 <div class="form-group">
-							 							 <div class="input-group">
-                                           					<span class="input-group-addon">新密码：</span>
-															<input name="newpass1" type="password" class="form-control" placeholder="password">
-                                           						 
-														</div><!-- input-group -->
-											</div> <!--  form-group -->
-									  </div> <!--  col -->
-									</div> <!--  row -->
-									 <div class="row">
-									  		<div class="col-lg-8">
-												 <div class="form-group">
-							 							 <div class="input-group">
-                                           					<span class="input-group-addon">确认密码：</span>
-															<input name="newpass2" type="password" class="form-control" placeholder="password">
-                                           						 
-														</div><!-- input-group -->
-											</div> <!--  form-group -->
-									  </div> <!--  col -->
-									</div> <!--  row -->	
+										 <div class="row">
+										  		<div class="col-lg-8">
+													 <div class="form-group">
+								 							 <div class="input-group">
+	                                           					<span class="input-group-addon">原密码：</span>
+																<input name="oldpass" type="password" class="form-control" placeholder="password">
+	                                           						 
+															</div><!-- input-group -->
+												</div> <!--  form-group -->
+										  </div> <!--  col -->
+										</div> <!--  row -->
 									
-								<div class="modal-footer clearfix">
-                            			<button type="submit" class="btn btn-primary pull-left" data-toggle="modal" data-backdrop="static"  data-target="#compose-modal"><i class="fa fa-check"></i> 提交</button>
-                        		</div>
-								 
+										 <div class="row">
+										  		<div class="col-lg-8">
+													 <div class="form-group">
+								 							 <div class="input-group">
+	                                           					<span class="input-group-addon">新密码：</span>
+																<input name="newpass1" type="password" class="form-control" placeholder="password">
+	                                           						 
+															</div><!-- input-group -->
+												</div> <!--  form-group -->
+										  </div> <!--  col -->
+										</div> <!--  row -->
+									
+										 <div class="row">
+										  		<div class="col-lg-8">
+													 <div class="form-group">
+								 							 <div class="input-group">
+	                                           					<span class="input-group-addon">确认密码：</span>
+																<input name="newpass2" type="password" class="form-control" placeholder="password">
+															</div><!-- input-group -->
+												</div> <!--  form-group -->
+										  </div> <!--  col -->
+										</div> <!--  row -->	
+									
+										<div class="modal-footer clearfix">
+											<input type="submit" value="提交" id="cpass" class="btn btn-primary pull-left">	
+		                        		</div>
+								</form> 
+							
 						 </div> <!-- body -->
-						   </div> <!-- box -->
-						   </form>
-						   
+						</div> <!-- box -->
 					</div> <!-- col -->
 						
 						 <div class="col-lg-2 col-sm-6 col-xs-6 col-md-2">
 						   		广告位
-							</div>
+						</div>
 						
 					</div> <!-- row --> 
 					
@@ -536,6 +533,19 @@
         <script src="../js/AdminLTE/app.js" type="text/javascript"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="../js/AdminLTE/demo.js" type="text/javascript"></script>
+        <script type="text/javascript">
+        
+		    $("#cpass").click(function(){
+				$.ajax({
+					url:'../CardController',
+					data:$("#changePass").serialize(),
+					success:function(data){
+						alert(data);
+					}
+				})
+			})
+        
+        </script>
     </body>
 </body>
 </html>
