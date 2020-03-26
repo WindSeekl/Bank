@@ -1,5 +1,6 @@
 package com.neu.bank.service.creditCard.impl;
 
+import java.util.Arrays;
 import java.util.List;
 
 import com.neu.bank.dao.creditCard.CreditCardDao;
@@ -42,9 +43,13 @@ public class CreditServiceImpl implements CreditService {
 	}
 
 	@Override
-	public List<CreditBill> queryBill(String cardId, String beginTime, String endTime, String mark) {
+	public List<CreditBill> queryBill(String cardId, String beginTime, String endTime, String mark, String queryPass) {
 		// TODO Auto-generated method stub
-		return ccd.queryBill(cardId, beginTime, endTime, mark);
+		CreditCard cc = ccd.creditInfo(cardId);
+		if(cc.getQueryPass().equals(queryPass))
+			return ccd.queryBill(cardId, beginTime, endTime, mark);
+		else
+			return null;
 	}
 
 }
