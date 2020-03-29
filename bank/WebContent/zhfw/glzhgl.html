@@ -438,10 +438,10 @@
 						   <div class="box box-solid">
 							 <div class="modal-body">
 							     
-								
-									<table class="table table-striped">
+								<form action="#" id="del">
+									<table class="table table-striped" id="data">
 											<thead>
-												<th><input type="checkbox"></th>
+												<th></th>
 												<th>账号</th>
 												<th>账号类型</th>
 												<th>账户开户行</th>
@@ -449,58 +449,16 @@
 												<th>余额</th>
 												<th>操作</th>
 											<thead>
-											<tbody>
-											<tr>
-											    <td><input type="checkbox"></td>
-												<td>5678945612345</td>
-												<td>龙卡</td>
-												<td>肇庆西江支行</td>
-												<td>校园卡</td>
-												<td>1000000000.00</td>
-												<td><a href="zhmx.jsp">明细查询</a><small>&nbsp;|&nbsp;</small><a href="#"><a href="wsjycx.jsp">网上交易查询</td>
-											</tr>
-											<tr>
-											    <td><input type="checkbox"></td>
-												<td>5678945612345</td>
-												<td>龙卡</td>
-												<td>肇庆西江支行</td>
-												<td>校园卡</td>
-												<td>1000000000.00</td>
-												<td><a href="zhmx.jsp">明细查询</a><small>&nbsp;|&nbsp;</small><a href="#"><a href="wsjycx.jsp">网上交易查询</td>
-											</tr>
-											<tr>
-											    <td><input type="checkbox"></td>
-												<td>5678945612345</td>
-												<td>龙卡</td>
-												<td>肇庆西江支行</td>
-												<td>校园卡</td>
-												<td>1000000000.00</td>
-												<td><a href="zhmx.jsp">明细查询</a><small>&nbsp;|&nbsp;</small><a href="#"><a href="wsjycx.jsp">网上交易查询</td>
-											</tr>
-											<tr>
-											    <td><input type="checkbox"></td>
-												<td>5678945612345</td>
-												<td>龙卡</td>
-												<td>肇庆西江支行</td>
-												<td>校园卡</td>
-												<td>1000000000.00</td>
-												<td><a href="zhmx.jsp">明细查询</a><small>&nbsp;|&nbsp;</small><a href="#"><a href="wsjycx.jsp">网上交易查询</td>
-											</tr>
-												
-  									　　　</tbody>
-										</table>
+												<tbody>
+													
+		  									　　　</tbody>
+											</table>
+								</form>
+								
                                 <div class="box-footer clearfix">
 									
-									  <a href="#" class="btn btn-primary" data-toggle="modal" data-backdrop="static"  data-target="#compose-modal">新增关联账户</a>
-								      <a href="#" class="btn btn-primary">删除关联账户</a>
-									 
-                                    <ul class="pagination pagination-sm no-margin pull-right">
-                                        <li><a href="#">&laquo;</a></li>
-                                        <li><a href="#">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#">&raquo;</a></li>
-                                    </ul>
+									 <!--  <a href="#" class="btn btn-primary" data-toggle="modal" data-backdrop="static"  data-target="#compose-modal">新增关联账户</a> -->
+								      <input type="button" href="#" class="btn btn-primary">删除关联账户</input>
                                 </div>		
 								
 								 
@@ -517,8 +475,8 @@
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
 		
-		
 		 <!-- COMPOSE MESSAGE MODAL -->
+		<!-- 
         <div class="modal fade" id="compose-modal"  tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -596,7 +554,7 @@
 									</div>
                                         </div>
                           
-                        </div>
+                        </div> -->
                         <div class="modal-footer clearfix">
 
                             <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> 取消</button>
@@ -625,5 +583,27 @@
         <script src="../js/AdminLTE/app.js" type="text/javascript"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="../js/AdminLTE/demo.js" type="text/javascript"></script>
+        <script type="text/javascript">
+		$(function(){
+			$.ajax({
+				url:"../GlContorller",
+				data:null,
+				success:function(data){
+					console.log(data);
+					for (var i in data) {
+						var html="<tr>";
+						html += "<td><input type='checkbox' name='dName' value='"+data[i].cardId+"'></td>";
+						html += "<td>"+data[i].cardId+"</td>";
+						html += "<td>"+data[i].cardTypeId+"</td>";
+						html += "<td>"+data[i].networkId+"</td>";
+						html += "<td>"+data[i].alias+"</td>";
+						html += "<td>"+data[i].balance+"</td>";
+						html += "<td><a href='zhmx.jsp'>明细查询</a><small>&nbsp;|&nbsp;</small><a href='#'><a href='wsjycx.jsp'>网上交易查询</td>";
+						$("#data").append(html);
+					}
+				}
+			})
+		})
+			</script>
     </body>
 </html>

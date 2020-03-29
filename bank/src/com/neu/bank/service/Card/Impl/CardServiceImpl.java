@@ -8,6 +8,7 @@ import com.neu.bank.dao.Card.Impl.CardDaoImpl;
 import com.neu.bank.po.Card;
 import com.neu.bank.service.Card.CardService;
 
+
 public class CardServiceImpl implements CardService{
 
 	private CardDao cd = new CardDaoImpl();
@@ -45,7 +46,18 @@ public class CardServiceImpl implements CardService{
 			return "帐号密码错误!";
 		}
 
+	@Override
+	public List<Card> queryAll(String obUserId) {
+		return cd.queryId(obUserId);
 	}
+
+	@Override
+	public void del(String cardId) {
+		// TODO Auto-generated method stub
+		cd.del(cardId);
+	}
+
+}
 
 	
 

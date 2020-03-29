@@ -34,4 +34,10 @@ public class CardDaoImpl implements CardDao{
 		bd.inUpDel("update card set State = '"+state+"' where cardId = '"+cardId+"'");
 	}
 
+	@Override
+	public void del(String cardId) {
+		// TODO Auto-generated method stub
+		bd.inUpDell("delete from card where cardId = '"+cardId+"'");
+	}
+
 }
