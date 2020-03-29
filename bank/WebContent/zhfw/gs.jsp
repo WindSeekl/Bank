@@ -527,6 +527,7 @@
 						alert(data);
 					}
 				})
+				document.getElementById('changeGs').reset();
 			})
         
         </script>
