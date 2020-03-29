@@ -39,32 +39,32 @@ public class ManageMoney extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("utf-8");
 		String mark = request.getParameter("mark");
+		String beginTime = request.getParameter("beginTime");
+		String endTime = request.getParameter("endTime");
+		String str= request.getParameter("money");
+		double money = Double.parseDouble(str);
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+		Date begin = null;
+		Date end = null;
+		try {
+			begin = df.parse(beginTime);
+			end = df.parse(endTime);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		double day = (end.getTime()-begin.getTime())/1000/60/60/24;//存/贷天数
+		double year = day/365;//年
+		double rate = 0.0;//利率
+		double in = 0.0;//利息
+		double interestMoney = 0.0;//本息总额
 		List<Double> list = new ArrayList<Double>();
 		if(mark.equals("deposit")){
 			String save = request.getParameter("save");
-			String beginTime = request.getParameter("savebeginTime");
-			String endTime = request.getParameter("saveendTime");
-			String str= request.getParameter("money");
-			double money = Double.parseDouble(str);
-			DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-			Date begin = null;
-			Date end = null;
-			try {
-				begin = df.parse(beginTime);
-				end = df.parse(endTime);
-			} catch (ParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			double day = (end.getTime()-begin.getTime())/1000/60/60/24;
-			double year = day/365;
-			double rate = 0.0;
-			double in = 0.0;
-			double interestMoney = 0.0;
 			if(save.equals("1")){
 				rate = 0.00385;
 			}else if(save.equals("2")){
-				if(year<0){
+				if(year<1){
 					rate = 0.013;
 				}else if(year>=1&&year<3){
 					rate = 0.021;
@@ -78,17 +78,26 @@ public class ManageMoney extends HttpServlet {
 					rate = 0.013;
 				}
 			}
-			DecimalFormat d = new DecimalFormat( "0.00");
-			in = (day*money*rate)/365;
-			double interest = Double.parseDouble(d.format(in));
-			interestMoney = interest+money;
-			list.add(rate);
-			list.add(interest);
-			list.add(interestMoney);
-			String jsonArr = JSONArray.toJSONString(list);
-			response.setContentType("application/json;charset=utf-8");
-			response.getWriter().println(jsonArr);
+			
+		}else if(mark.equals("loans")){
+			if(year<1){
+				rate = 0.0435;
+			}else if(year<=3&&year>1){
+				rate = 0.0475;
+			}else {
+				rate = 0.049;
+			}
 		}
+		DecimalFormat d = new DecimalFormat( "0.00");
+		in = (day*money*rate)/365;
+		double interest = Double.parseDouble(d.format(in));
+		interestMoney = interest+money;
+		list.add(rate);
+		list.add(interest);
+		list.add(interestMoney);
+		String jsonArr = JSONArray.toJSONString(list);
+		response.setContentType("application/json;charset=utf-8");
+		response.getWriter().println(jsonArr);
 	}
 	
 	/**

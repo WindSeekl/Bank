@@ -358,6 +358,8 @@
                             <ul class="treeview-menu">
                                 <li><a href="../creditCard/sqjd.jsp"><i class="glyphicon glyphicon-tag"></i>申请进度查询</a></li>
                                 <li><a href="../creditCard/xykgl.jsp"><i class="glyphicon glyphicon-tag"></i>信用卡管理</a></li>
+                                <li><a href="../creditCard/queryBill.jsp"><i class="glyphicon glyphicon-tag"></i>账单查询</a></li>
+                                <li><a href="../creditCard/limit.jsp"><i class="glyphicon glyphicon-tag"></i>额度查询</a></li>
                             </ul>
                         </li>
                         <li>
@@ -540,13 +542,6 @@
 										</table>
 										
 											<div class="box-footer clearfix">
-                                    			<ul class="pagination pagination-sm no-margin pull-right">
-                                        			<li><a href="#">&laquo;</a></li>
-                                        			<li><a href="#">1</a></li>
-                                        			<li><a href="#">2</a></li>
-                                        			<li><a href="#">3</a></li>
-                                        			<li><a href="#">&raquo;</a></li>
-                                    			</ul>
                                 			</div> <!-- footer-->
 											
 										</div> <!--  table -->					

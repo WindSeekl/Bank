@@ -354,6 +354,8 @@
                             <ul class="treeview-menu">
                                 <li><a href="../creditCard/sqjd.jsp"><i class="glyphicon glyphicon-tag"></i>申请进度查询</a></li>
                                 <li><a href="../creditCard/xykgl.jsp"><i class="glyphicon glyphicon-tag"></i>信用卡管理</a></li>
+                                <li><a href="../creditCard/queryBill.jsp"><i class="glyphicon glyphicon-tag"></i>账单查询</a></li>
+                                <li><a href="../creditCard/limit.jsp"><i class="glyphicon glyphicon-tag"></i>额度查询</a></li>
                             </ul>
                         </li>
                         <li>
@@ -442,7 +444,7 @@
                                 <ul class="nav nav-tabs pull-right">
                                     <li class="active"><a href="#tab_1-1" data-toggle="tab">个人存款计算器</a></li>
 									<li><a href="#tab_2-2" data-toggle="tab">个人贷款计算器</a></li>
-									<li><a href="#tab_3-3" data-toggle="tab">外币兑换计算</a></li>
+									<li><a href="#tab_3-3" data-toggle="tab">存贷款利率表</a></li>
                                     <li class="pull-left header"><i class="fa fa-th"></i> 操作</li>
                                 </ul>
                                 <div class="tab-content">
@@ -474,8 +476,8 @@
 													<div class="form-group">
 										 				<div class="input-group">
 			                                           		<span class="input-group-addon">存款期限:</span>
-															<input type="date" name="savebeginTime" class="form-control"/>
-															<input type="date" name="saveendTime" class="form-control"/><br/>
+															<input type="date" name="beginTime" class="form-control"/>
+															<input type="date" name="endTime" class="form-control"/><br/>
 														</div><!-- input-group -->
 													</div> <!--  form-group -->
 												  </div> <!--  col -->
@@ -493,7 +495,7 @@
 											</div> <!--  row -->
 											
 											<div class="modal-footer clearfix">
-													<input type="button" value="计算" id="count" class="btn btn-primary pull-left">
+													<input type="button" value="计算" id="savecount" class="btn btn-primary pull-left">
 													<input type="reset" value="重置"  class="btn btn-primary pull-left">
 				                        	</div>
 										</form>
@@ -502,11 +504,114 @@
                                     </div><!-- /.tab-pane -->
                                     
                              	<div class="tab-pane" id="tab_2-2">
-									
+									<form action="#" id="loansCount">
+									    	<input name="mark" value="loans" type="hidden">
+									    	<div class="row">
+												  <div class="col-lg-8">
+													<div class="form-group">
+										 				<div class="input-group">
+			                                           		<span class="input-group-addon">贷款金额:</span>
+															<input name="money" type="text" class="form-control" >
+														</div><!-- input-group -->
+													</div> <!--  form-group -->
+												  </div> <!--  col -->
+											</div> <!--  row -->
+											
+									    	<div class="row">
+												  <div class="col-lg-8">
+													<div class="form-group">
+										 				<div class="input-group">
+			                                           		<span class="input-group-addon">贷款期限:</span>
+															<input type="date" name="beginTime" class="form-control"/>
+															<input type="date" name="endTime" class="form-control"/><br/>
+														</div><!-- input-group -->
+													</div> <!--  form-group -->
+												  </div> <!--  col -->
+											</div> <!--  row -->
+									    	
+											<div class="modal-footer clearfix">
+													<input type="button" value="计算" id="loanscount" class="btn btn-primary pull-left">
+													<input type="reset" value="重置"  class="btn btn-primary pull-left">
+				                        	</div>
+										</form>
+										<div id="div2"> </div>
                            		</div>
                            			
 								<div class="tab-pane" id="tab_3-3">
-									 
+									 <table class="table table-striped">
+										<tr>
+											<th>贷款期限</th>
+											<th>年利率%</th>
+										<tr>
+										<tr>
+											<td><b>一、短期贷款</b></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>一年以内（含一年）</td>
+											<td>4.350</td>
+										</tr>
+										<tr>
+											<td><b>一、中长期贷款</b></td> 
+											<td></td>
+										</tr>
+										<tr>
+											<td>一至三年（含三年）</td>
+											<td>4.750</td>
+										</tr>
+										<tr>
+											<td>五年以上</td>
+											<td>4.900</td>
+										</tr>
+									</table>
+									<table class="table table-striped">
+										<tr>
+											<th>存款期限</th>
+											<th>央行基准利率%</th>
+										<tr>
+										<tr>
+											<td><b>一、活期</b></td>
+											<td>0.35</td>
+										</tr>
+										<tr>
+											<td><b>二、定期</b></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>1.整存整取</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>一年以内（含一年）</td> 
+											<td>1.300</td>
+										</tr>
+										<tr>
+											<td>一至三年（含三年）</td>
+											<td>2.100</td>
+										</tr>
+										<tr>
+											<td>三年以上</td>
+											<td>3.000</td>
+										</tr>
+										
+										<tr>
+											<td>2.零存整取、整存零取、存本取息</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>一年以内（含一年）</td> 
+											<td>1.100</td>
+										</tr>
+										<tr>
+											<td>一至三年（含三年）</td>
+											<td>1.300</td>
+										</tr>
+										<tr>
+											<td>三年以上</td>
+											<td>— —</td>
+										</tr>
+										
+									</table>
 								</div><!-- /.tab-pane -->
 
                                     
@@ -514,10 +619,7 @@
                             </div><!-- nav-tabs-custom -->
 						</div> <!-- col -->
 					</div> <!-- row -->
-	
-					 <div class="col-lg-2 col-sm-6 col-xs-6 col-md-2">
-					   		广告位
-					</div>
+					
                 </section><!-- /.content -->
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
@@ -533,7 +635,7 @@
         <script src="../js/AdminLTE/demo.js" type="text/javascript"></script>
         <script type="text/javascript">
         
-	        $("#count").click(function(){
+	        $("#savecount").click(function(){
 				$.ajax({
 					url:'../ManageMoney',
 					data:$("#depositCount").serialize(),
@@ -543,6 +645,19 @@
 						html += "<span class='input-group-addon'>利息:"+data[1]+"元</span>";
 						html += "<span class='input-group-addon'>本息总额:"+data[2]+"元</span>";
 						$("#div1").append(html);
+					}
+				})
+			})
+			$("#loanscount").click(function(){
+				$.ajax({
+					url:'../ManageMoney',
+					data:$("#loansCount").serialize(),
+					success:function(data){
+						$('#div2').empty();
+						var html = "<span class='input-group-addon'>基准年利率:"+data[0]*100+"%</span>";
+						html += "<span class='input-group-addon'>累计支付利息:"+data[1]+"元</span>";
+						html += "<span class='input-group-addon'>累计还款总额:"+data[2]+"元</span>";
+						$("#div2").append(html);
 					}
 				})
 			})

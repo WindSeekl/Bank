@@ -5,8 +5,10 @@ import java.util.List;
 
 import com.neu.bank.dao.creditCard.CreditCardDao;
 import com.neu.bank.dao.creditCard.impl.CreditCardDaoImpl;
+import com.neu.bank.po.Card;
 import com.neu.bank.po.CreditBill;
 import com.neu.bank.po.CreditCard;
+import com.neu.bank.po.CreditLimit;
 import com.neu.bank.service.creditCard.CreditService;
 
 public class CreditServiceImpl implements CreditService {
@@ -50,6 +52,41 @@ public class CreditServiceImpl implements CreditService {
 			return ccd.queryBill(cardId, beginTime, endTime, mark);
 		else
 			return null;
+	}
+
+	@Override
+	public CreditLimit queryLimit(String cardId, String password) {
+		// TODO Auto-generated method stub
+		CreditCard cc = ccd.creditInfo(cardId);
+		if(cc.getQueryPass().equals(password))
+			return ccd.queryLimit(cardId);
+		else
+			return null;
+	}
+
+	@Override
+	public String setLimit(String cardId, double limit) {
+		// TODO Auto-generated method stub
+		CreditCard cc = ccd.creditInfo(cardId);
+		if(cc.getMaxRemaining() > limit) {
+			ccd.setLimit(cardId, limit);
+			return "设置成功";
+		}
+		return "失败 额度不足";
+	}
+
+	@Override
+	public String queryProcess(String cardId, String password) {
+		// TODO Auto-generated method stub
+		CreditCard cc = ccd.creditInfo(cardId);
+		if(cc.getQueryPass().equals(password)) {
+			Card card = ccd.cardInfo(cardId);
+			if(card.getCertificateNum()  != null)
+				return "申请成功";
+			else
+				return "请上传身份证信息";
+		}
+		return "密码错误";
 	}
 
 }
