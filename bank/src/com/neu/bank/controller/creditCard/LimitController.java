@@ -56,9 +56,13 @@ public class LimitController extends HttpServlet{
 	}
 	protected String setLimit(HttpServletRequest req, HttpServletResponse resp) {
 		String cardId = (String) req.getAttribute("cardId");
-		System.out.println("1" + cardId);
 		String limit = req.getParameter("setLimitt");
-		double li = Double.parseDouble(limit);
+		double li = 0.00;
+		try {
+			li = Double.parseDouble(limit);
+		} catch(NumberFormatException e) {
+			return "请输入数字";
+		}
 		return cs.setLimit(cardId, li);
 	}
 }

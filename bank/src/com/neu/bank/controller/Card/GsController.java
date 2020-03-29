@@ -27,7 +27,6 @@ public class GsController extends HttpServlet{
 					res = cs.updateState(1, pwd, cardId);
 				}
 			}
-			
 		String jsonStr = JSONObject.toJSONString(res);
 		resp.setContentType("application/json;charset=utf-8");
 		resp.getWriter().println(jsonStr);
