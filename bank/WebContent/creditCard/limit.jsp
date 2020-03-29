@@ -361,6 +361,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             <ul class="treeview-menu">
                                 <li><a href="sqjd.jsp"><i class="glyphicon glyphicon-tag"></i>申请进度查询</a></li>
                                 <li><a href="xykgl.jsp"><i class="glyphicon glyphicon-tag"></i>信用卡管理</a></li>
+                                <li><a href="queryBill.jsp"><i class="glyphicon glyphicon-tag"></i>账单查询</a></li>
+                                <li><a href="limit.jsp"><i class="glyphicon glyphicon-tag"></i>额度查询</a></li>
                             </ul>
                         </li>
                         <li>
@@ -430,13 +432,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        信用卡管理
+                        信用卡额度
                         <small></small>
                     </h1>
                     <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
-						 <li><a href="#"><i class="fa fa-dashboard"></i> 信用卡</a></li>
-                        <li class="active">信用卡管理</li>
+                   		<li><a href="../index.jsp"><i class="fa fa-dashboard"></i> 首页</a></li>
+                        <li class="active">信用卡额度</li>
                     </ol>
                 </section>
 
