@@ -593,6 +593,7 @@
 					data:$("#chpass").serialize(),
 					success:function(data){
 						alert(data);
+						window.location.reload();
 					}
 				})
 			})
@@ -603,6 +604,7 @@
 					data:$("#chname").serialize(),
 					success:function(data){
 						alert(data);
+						window.location.reload();
 					}
 				})
 			})
@@ -612,6 +614,7 @@
 					data:$("#chmess").serialize(),
 					success:function(data){
 						alert(data);
+						window.location.reload();
 					}
 				})
 			})
@@ -620,6 +623,13 @@
 					url:'../UserController',
 					data:{mark:$("#mark").val()},
 					success:function(data){
+						var sta;
+						if(data.state=="0"){
+							sta = "冻结";
+						}else{
+							sta = "正常";
+						}
+						
 						var str = "<div class='row' id='data'>";
 							str += "<div class='col-xs-6 col-md-4'>网银编号："+data.obUserId+"</div>";
 							str += "<div class='col-xs-6 col-md-4'>用户名："+data.userName+"</div>";
@@ -639,15 +649,9 @@
 							str += "<div class='row' id='data'>";
 							str += "<div class='col-xs-6 col-md-4'>家庭住址："+data.site+"</div>";
 							str += "<div class='col-xs-6 col-md-4'>预留信息："+data.mess+"</div>";
-							str += "<div class='col-xs-6 col-md-4'></div>";
+							str += "<div class='col-xs-6 col-md-4'>账户状态："+sta+"</div>";
 							str += "</div>";
-						var sta;
-						if(data.state=="0"){
-							sta = "冻结";
-						}else{
-							sta = "正常";
-						}
-						str += "<span class='input-group-addon>账户状态："+sta+"</span></br>";
+						
 						$("#tab_1-1").append(str);
 						$("#oldmess").val(data.mess);
 						$("#oldname").val(data.userName);
