@@ -21,6 +21,12 @@
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
+        
+        <style type="text/css">
+        	#data{
+        		font-size: 20px;
+        	}
+        </style>
     </head>
     <body class="skin-blue">
         <!-- header logo: style can be found in header.less -->
@@ -612,17 +618,27 @@
 					url:'../UserController',
 					data:{mark:$("#mark").val()},
 					success:function(data){
-						var str = "<span class='input-group-addon'>网银编号："+data.obUserId+"</span></br>";
-						str += "<span class='input-group-addon'>用户名："+data.userName+"</span></br>";
-						str += "<span class='input-group-addon'>真实姓名："+data.cealName+"</span></br>";
-						str += "<span class='input-group-addon'>证件类型："+data.certificateType+"</span></br>";
-						str += "<span class='input-group-addon'>证件号码："+data.certificateNum+"</span></br>";
-						str += "<span class='input-group-addon'>性别："+data.sex+"</span></br>";
-						str += "<span class='input-group-addon'>手机号码："+data.phoneNum+"</span></br>";
-						str += "<span class='input-group-addon'>固定电话："+data.fixPhone+"</span></br>";
-						str += "<span class='input-group-addon'>电子邮箱："+data.e_mail+"</span></br>";
-						str += "<span class='input-group-addon'>家庭住址："+data.site+"</span></br>";
-						str += "<span class='input-group-addon'>预留信息："+data.mess+"</span></br>";
+						var str = "<div class='row' id='data'>";
+							str += "<div class='col-xs-6 col-md-4'>网银编号："+data.obUserId+"</div>";
+							str += "<div class='col-xs-6 col-md-4'>用户名："+data.userName+"</div>";
+							str += "<div class='col-xs-6 col-md-4'>真实姓名："+data.cealName+"</div><hr>";
+							str += "</div>";
+							str += "<div class='row' id='data'>";
+							str += "<div class='col-xs-6 col-md-4'>证件类型："+data.certificateType+"</div>";
+							str += "<div class='col-xs-6 col-md-4'>证件号码："+data.certificateNum+"</div>";
+							str += "<div class='col-xs-6 col-md-4'>性别："+data.sex+"</div><hr>";
+							str += "</div>";
+							str += "<div class='row' id='data'>";
+							str += "<div class='col-xs-6 col-md-4'>手机号码："+data.phoneNum+"</div>";
+							str += "<div class='col-xs-6 col-md-4'>固定电话："+data.fixPhone+"</div>";
+							str += "<div class='col-xs-6 col-md-4'>电子邮箱："+data.e_mail+"</div><hr>";
+							str += "</div>";
+							str += "</div>";
+							str += "<div class='row' id='data'>";
+							str += "<div class='col-xs-6 col-md-4'>家庭住址："+data.site+"</div>";
+							str += "<div class='col-xs-6 col-md-4'>预留信息："+data.mess+"</div>";
+							str += "<div class='col-xs-6 col-md-4'></div>";
+							str += "</div>";
 						var sta;
 						if(data.state=="0"){
 							sta = "冻结";
