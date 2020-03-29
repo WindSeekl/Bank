@@ -61,7 +61,7 @@ public class UserController extends HttpServlet {
 		}
 		response.setContentType("application/json;charset=utf-8");
 		response.getWriter().println(jsonstr);
-		//"王五"替换为seison
+		//"王五"替换为session
 	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
