@@ -360,6 +360,8 @@
                             <ul class="treeview-menu">
                                 <li><a href="../creditCard/sqjd.jsp"><i class="glyphicon glyphicon-tag"></i>申请进度查询</a></li>
                                 <li><a href="../creditCard/xykgl.jsp"><i class="glyphicon glyphicon-tag"></i>信用卡管理</a></li>
+                                <li><a href="../creditCard/queryBill.jsp"><i class="glyphicon glyphicon-tag"></i>账单查询</a></li>
+                                <li><a href="../creditCard/limit.jsp"><i class="glyphicon glyphicon-tag"></i>额度查询</a></li>
                             </ul>
                         </li>
                         <li>
