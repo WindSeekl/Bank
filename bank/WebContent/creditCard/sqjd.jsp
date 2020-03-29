@@ -27,6 +27,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </head>
     <body class="skin-blue">
         <!-- header logo: style can be found in header.less -->
+		<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
         <header class="header">
              <a href="../index.jsp" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
@@ -355,6 +356,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             <ul class="treeview-menu">
                                 <li><a href="sqjd.jsp"><i class="glyphicon glyphicon-tag"></i>申请进度查询</a></li>
                                 <li><a href="xykgl.jsp"><i class="glyphicon glyphicon-tag"></i>信用卡管理</a></li>
+                                <li><a href="queryBill.jsp"><i class="glyphicon glyphicon-tag"></i>账单查询</a></li>
                             </ul>
                         </li>
                         <li>
@@ -443,12 +445,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						   <div class="box box-solid">
 							 <div class="modal-body">
 							     
+							     <form id="proForm" action="#" method="post">
+							     
 								 <div class="row">
 									  		<div class="col-lg-8">
 												 <div class="form-group">
 							 							 <div class="input-group">
                                            					<span class="input-group-addon">查询账号：</span>
-															<input name="email_to" type="email" class="form-control" placeholder="Email CC">
+															<input name="cardId" type="email" class="form-control" placeholder="请输入卡号">
                                            						 
 														</div><!-- input-group -->
 											</div> <!--  form-group -->
@@ -461,7 +465,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												 <div class="form-group">
 							 							 <div class="input-group">
                                            					<span class="input-group-addon">查询密码：</span>
-															<input name="email_to" type="email" class="form-control" placeholder="Email CC">
+															<input name="password" type="email" class="form-control" placeholder="请输入密码">
                                            						 
 														</div><!-- input-group -->
 											</div> <!--  form-group -->
@@ -470,9 +474,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									
 									
 								<div class="modal-footer clearfix">
-                            			<button type="submit" class="btn btn-primary pull-left" data-toggle="modal" data-backdrop="static"  data-target="#compose-modal"><i class="fa fa-check"></i> 提交</button>
+                            			<center><input type="button" id="queryprocess" value="查询" class="btn btn-primary"></center>
                         		</div>
-								 
+							</form>	 
 						 </div> <!-- body -->
 						   </div> <!-- box -->
 						   
@@ -532,7 +536,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
-
+		<script type="text/javascript">
+			$("#queryprocess").click(function(){
+				$.ajax({
+					url:'../processController',
+					data:$("#proForm").serialize(),
+					success:function(data){
+						alert(data);
+					}
+				})
+			})
+		</script>
 
         <!-- jQuery 2.0.2 -->
         <script src="../js/jquery.min.js"></script>

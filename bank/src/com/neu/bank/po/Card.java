@@ -17,10 +17,17 @@ public class Card {
 	private String alias;           //别名
 	private int state;          //状态
 	private int obUserId;           //网银编号
+	private String balance; //账户余额
+	
+	public String getBalance() {
+		return balance;
+	}
+	public void setBalance(String balance) {
+		this.balance = balance;
+	}
 	public String getCardId() {
 		return cardId;
 	}
-	
 	public void setCardId(String cardId) {
 		this.cardId = cardId;
 	}
@@ -143,9 +150,9 @@ public class Card {
 	public boolean getState() {
 		boolean b;
 		if(state==0){
-			b=false;
-		}else{
 			b=true;
+		}else{
+			b=false;
 		}
 		return b;
 	}

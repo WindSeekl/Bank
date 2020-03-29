@@ -4,6 +4,8 @@ public class CreditCard {
 	private String cardId;
 	private String queryPass;
 	private String alterPass;
+	private double remaining;
+	private double maxRemaining;
 	private int integral;            //积分
 	private int state;			 //挂失
 	private int schedule; 		 //进度
@@ -42,6 +44,24 @@ public class CreditCard {
 	}
 	public final void setSchedule(int schedule) {
 		this.schedule = schedule;
+	}
+	public final double getRemaining() {
+		return remaining;
+	}
+	public final void setRemaining(double remaining) {
+		this.remaining = remaining;
+	}
+	public final double getMaxRemaining() {
+		return maxRemaining;
+	}
+	public final void setMaxRemaining(double maxRemaining) {
+		this.maxRemaining = maxRemaining;
+	}
+	@Override
+	public String toString() {
+		return "CreditCard [cardId=" + cardId + ", queryPass=" + queryPass + ", alterPass=" + alterPass + ", remaining="
+				+ remaining + ", maxRemaining=" + maxRemaining + ", integral=" + integral + ", state=" + state
+				+ ", schedule=" + schedule + "]";
 	}
 	
 	

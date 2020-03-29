@@ -14,6 +14,10 @@ import com.neu.bank.service.Card.Impl.CardServiceImpl;
 @WebServlet("/CardController")
 public class CardContorller extends HttpServlet{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private CardService cs = new CardServiceImpl();
 	
 	@Override

@@ -17,13 +17,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <link href="../css/ionicons.min.css" rel="stylesheet" type="text/css" />
         <!-- Theme style -->
         <link href="../css/AdminLTE.css" rel="stylesheet" type="text/css" />
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+		<style type="text/css">
+		#Tb{
+			display: none;
+		}
+		
+        th{
+        	text-align:center;
+        }
+		td {
+ 			text-align:center;
+        }
+		</style>
     </head>
     <body class="skin-blue">
     	<script src="../js/verify.js"></script>
@@ -446,242 +451,104 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						
 							<div class="col-lg-9 col-sm-11 col-xs-11 col-md-10">
 							
-							 <div class="nav-tabs-custom">
-                                <ul class="nav nav-tabs pull-right">
-                                    <li class="active"><a href="#tab_1-1" data-toggle="tab">卡片挂失</a></li>
-									<li><a href="#tab_2-2" data-toggle="tab">卡片激活</a></li>
-									<li><a href="#tab_3-3" data-toggle="tab">查询密码设置</a></li>
-                                    <li><a href="#tab_4-4" data-toggle="tab">交易密码设置</a></li>
-                                    <li class="pull-left header"><i class="fa fa-th"></i> 操作</li>
-                                </ul>
+								<div class="nav-tabs-custom">
+                               <ul class="nav nav-tabs pull-right">
+	                                <li class="active"><a href="#tab_1-1" data-toggle="tab">查询额度</a></li>
+									<li><a href="#tab_2-2" data-toggle="tab">设置额度</a></li>
+	                                <li class="pull-left header"><i class="fa fa-th"></i> 操作</li>
+                               </ul>
                                 <div class="tab-content">
+                                
                                     <div class="tab-pane active" id="tab_1-1">
-										<form action="#" id="reportForm" method="post">
-									  		<div class="row">
-									  			<div class="col-lg-8">
-													<div class="form-group">
-							 							<div class="input-group">
-                                           					<span class="input-group-addon">挂失账号：</span>
-                                           					<select class="form-control" name="cardId">
-                                                				<option>aaa</option>
-                                                				<option>option 2</option>
-                                               					<option>option 3</option>
-                                                				<option>option 4</option>
-                                                				<option>option 5</option>
-                                            				</select>
-														</div><!-- input-group -->
-											</div> <!--  form-group -->
-									  </div> <!--  col -->
-									</div> <!--  row -->
-									
-										  <div class="row">
-									  			<div class="col-lg-8">
-													<div class="form-group">
-							 							<div class="input-group">
-                                           					<span class="input-group-addon">查询密码：</span>
-															<input name="queryPass" type="password" class="form-control" placeholder="请输入查询密码"> 
-														</div><!-- input-group -->
-													</div> <!--  form-group -->
-									  			</div> <!--  col -->
-											</div> <!--  row -->
-											
+                                 		<form action='#' id="notTbForm"  method="post">
+											<table id="Tb" class="table table-hover">
+										  		<thead>
+										  			<tr>
+										  				<th>卡号</th>
+										  				<th>剩余额度</th>
+										  				<th>可用额度</th>
+										  				<th>最大额度</th>
+										  				<th>积分</th>
+									  				</tr>
+									  			</thead>
+										  	</table>
+									  	</form>
+									  	<form action="#" id="queryLimitForm" method="post">
 											<div class="row">
 									  			<div class="col-lg-8">
 													<div class="form-group">
 							 							<div class="input-group">
-                                           					<span class="input-group-addon">交易密码：</span>
-															<input name="alterPass" type="password" class="form-control" placeholder="请输入交易密码"> 
+	                                      					<span class="input-group-addon">选择账号：</span>
+	                                      					<select class="form-control" name="cardId">
+	                                          					<option>aaa</option>
+	                                          					<option>option 2</option>
+	                                         					<option>option 3</option>
+	                                          				    <option>option 4</option>
+	                                          					<option>option 5</option>
+                                           					</select>
 														</div><!-- input-group -->
 													</div> <!--  form-group -->
 									  			</div> <!--  col -->
 											</div> <!--  row -->
-											
+											<div class="row">
+										  		<div class="col-lg-8">
+													<div class="form-group">
+								 						<div class="input-group">
+															<span class="input-group-addon">查询密码：</span>
+															<input type="password" class="form-control"  name="queryPass"><br/>
+														</div>
+													</div>
+										  		</div> 
+											</div> 
 											<div class="modal-footer clearfix">
-												<input type="hidden" name="mark" value="report"> 
-		                            			<input type="button" value="挂失" id="report" class="btn btn-primary pull-left"> 
-                        					</div>
-											</form>	
-
-                                        
+												<input type="hidden" name="mark" value="query"> 
+												<center><input type="button" id="query" value="查询" class="btn btn-primary"></center>
+											</div>
+										</form>	
+											
                                     </div><!-- /.tab-pane -->
-                                    <div class="tab-pane" id="tab_3-3">
-									
-								<form action="#" id="queryPassForm" method="post">
-									<div class="row">
-										<div class="col-lg-8">
-											<div class="form-group">
-						 						<div class="input-group">
-                                           			<span class="input-group-addon">选择账号：</span>
-                                           			<select class="form-control" name="cardId">
-                                              			<option>aaa</option>
-                                              			<option>option 2</option>
-                                           				<option>option 3</option>
-                                              			<option>option 4</option>
-                                              			<option>option 5</option>
-                                            		</select>
-												</div><!-- input-group -->
-											</div> <!--  form-group -->
-									 	</div> <!--  col -->
-									</div> <!--  row -->
-									
-									<div class="row">
-										<div class="col-lg-8">
-											<div class="form-group">
-							 					<div class="input-group">
-                                         			<span class="input-group-addon">旧查询密码：</span>
-													<input name="oldPass" type="password" class="form-control" placeholder="Email CC">		 
-												</div><!-- input-group -->
-											</div> <!--  form-group -->
-								   		</div> <!--  col -->
-									</div> <!--  row -->
-									
-									
-									<div class="row">
-										<div class="col-lg-8">
-											<div class="form-group">
-							 					<div class="input-group">
-                                           			<span class="input-group-addon">新查询密码：</span>
-													<input name="newPass1" type="password" class="form-control" placeholder="Email CC">
-												</div><!-- input-group -->
-											</div> <!--  form-group -->
-										</div> <!--  col -->
-									</div> <!--  row -->
-									
-									<div class="row">
-										<div class="col-lg-8">
-											<div class="form-group">
-							 					<div class="input-group">
-                                           			<span class="input-group-addon">新查询密码：</span>
-													<input name="newPass2" type="password" class="form-control" placeholder="Email CC">	 
-												</div><!-- input-group -->
-											</div> <!--  form-group -->
-										</div> <!--  col -->
-									</div> <!--  row -->
-									<div id="verify2"></div>
-									<div class="modal-footer clearfix">
-										<input type="hidden" name="mark" value="qPass"> 
-                            			<input type="button" value="提交" id="queryPass" class="btn btn-primary pull-left"> 
-	                        		</div>
-								</form>
-                           	</div>
-										<div class="tab-pane" id="tab_2-2">
-										<form action="#" id="activateForm" methos="post">
+                                    
+                             		<div class="tab-pane" id="tab_2-2">
+										<form id="setForm" action="#" method="post">
 											<div class="row">
-									  			<div class="col-lg-8">
-												 	<div class="form-group">
-							 							<div class="input-group">
-                                        					<span class="input-group-addon">选择账号：</span>
-                                           					<select class="form-control" name="cardId">
-                                                				<option>aaa</option>
-                                                				<option>option 2</option>
-                                               					<option>option 3</option>
-                                                				<option>option 4</option>
-                                                				<option>option 5</option>
-                                            				</select>
-														</div><!-- input-group -->
-													</div> <!--  form-group -->
-									  			</div> <!--  col -->
-											</div> <!--  row -->
-												
-											<div class="row">
-									  			<div class="col-lg-8">
+										  		<div class="col-lg-8">
 													<div class="form-group">
-							 							<div class="input-group">
-                                           					<span class="input-group-addon">查询密码：</span>
-															<input name="queryPass" type="password" class="form-control" placeholder="请输入查询密码"> 
+								 						<div class="input-group">
+	                                      					<span class="input-group-addon">选择账号：</span>
+	                                      					<select class="form-control" name="cardId">
+	                                          					<option>aaa</option>
+	                                          					<option>option 2</option>
+	                                         					<option>option 3</option>
+	                                          				    <option>option 4</option>
+	                                          					<option>option 5</option>
+	                                           				</select>
 														</div><!-- input-group -->
 													</div> <!--  form-group -->
-									  			</div> <!--  col -->
+										  		</div> <!--  col -->
 											</div> <!--  row -->
-											
-											<div class="row">
-									  			<div class="col-lg-8">
-													<div class="form-group">
-							 							<div class="input-group">
-                                           					<span class="input-group-addon">交易密码：</span>
-															<input name="alterPass" type="password" class="form-control" placeholder="请输入交易密码"> 
-														</div><!-- input-group -->
-													</div> <!--  form-group -->
-									  			</div> <!--  col -->
-											</div> <!--  row -->
-											
-											<div class="modal-footer clearfix">
-												<input type="hidden" name="mark" value="active"> 
-		                            			<input type="button" value="激活" id="activate" class="btn btn-primary pull-left"> 
-                        					</div>
-                       					</form>
-										</div><!-- /.tab-pane -->
-											
-									<div class="tab-pane" id="tab_4-4">
-									<form action="#" id="alterPassForm" method="post">
-										<div class="row">
-									  		<div class="col-lg-8">
-												<div class="form-group">
-							 						<div class="input-group">
-                                      					<span class="input-group-addon">选择账号：</span>
-                                      					<select class="form-control" name="cardId">
-                                          					<option>aaa</option>
-                                          					<option>option 2</option>
-                                         					<option>option 3</option>
-                                          				    <option>option 4</option>
-                                          					<option>option 5</option>
-                                           				</select>
-													</div><!-- input-group -->
-												</div> <!--  form-group -->
-									  		</div> <!--  col -->
-										</div> <!--  row -->
-									
-									 	<div class="row">
-									  		<div class="col-lg-8">
-												<div class="form-group">
-							 						<div class="input-group">
-                                           				<span class="input-group-addon">旧交易密码：</span>
-														<input name="oldPass" type="password" class="form-control" placeholder="Email CC"> 
-													</div><!-- input-group -->
-												</div> <!--  form-group -->
-									  		</div> <!--  col -->
-										</div> <!--  row -->
-									
-									
-									 	<div class="row">
-									  		<div class="col-lg-8">
-												<div class="form-group">
-							 						<div class="input-group">
-                                           				<span class="input-group-addon">新交易密码：</span>
-														<input name="newPass1" type="password" class="form-control" placeholder="Email CC">		 
-													</div><!-- input-group -->
-												</div> <!--  form-group -->
-									  		</div> <!--  col -->
-										</div> <!--  row -->
-									
-									 	<div class="row">
-									  		<div class="col-lg-8">
-												<div class="form-group">
-							 						<div class="input-group">
-                                           				<span class="input-group-addon">新交易密码：</span>
-														<input name="newPass2" type="password" class="form-control" placeholder="Email CC">
-													</div><!-- input-group -->
-												</div> <!--  form-group -->
-									 		</div> <!--  col -->
-										</div> <!--  row -->
-									
-									
-								<div class="modal-footer clearfix">
-										<input type="hidden" name="mark" value="aPass"> 
-                            			<input type="button" value="提交" id="alterPass" class="btn btn-primary pull-left"> 
-                        		</div>
-								</form>	
 										
-								
-                                    </div><!-- /.tab-pane -->
-                                </div><!-- /.tab-content -->
-                            </div><!-- nav-tabs-custom -->
+											<div class="row">
+										  		<div class="col-lg-8">
+													<div class="form-group">
+								 						<div class="input-group">
+															<span class="input-group-addon">设置额度：</span>
+															<input type="text" class="form-control"  name="setLimitt"><br/>
+														</div>
+													</div>
+									  			</div>
+								  			</div>
+									  		<div class="modal-footer clearfix">
+												<input type="hidden" name="mark" value="set"> 
+												<center><input type="button" id="setLimit" value="设置" class="btn btn-primary"></center>
+											</div>
+										</form>			
+                          		 	</div><!-- /.tab-pane -->
+                           		</div><!-- /.tab-pane -->
+                                    
+                            </div><!-- /.tab-content -->
+                        </div><!-- nav-tabs-custom -->
 							
-							</div> <!-- col -->
-							
-							 
-					
-					</div> <!-- row -->
+                                    
 					
 
 
@@ -690,50 +557,35 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div><!-- ./wrapper -->
      
 		<script type="text/javascript">
-		$("#queryPass").click(function(){
-		//$(document).on('click','#queryPass',function(){
-			$.ajax({
-				url:'../creditCard',
-				data:$("#queryPassForm").serialize(),
-				success:function(data){
-					alert(data);
-				}
+			$("#query").click(function(){
+				$.ajax({
+					url:'../limitController',
+					data:$('#queryLimitForm').serialize(),
+					success:function(data){
+						$("#queryLimitForm").css('display','none');
+						$("#Tb").css('display','table');
+						var html = "<tr class='limitInfo'>";
+						html += "<td>" + data.cardId + "</td>";
+						html += "<td>" + data.usableRemaining + "</td>";
+						html += "<td>" + data.remaining + "</td>";
+						html += "<td>" + data.maxRemaining + "</td>";
+						html += "<td>" + data.integral + "</td>";
+						html += "</tr>";
+						$("#Tb").append(html);
+					}
+				})
 			})
-			document.getElementById('queryPassForm').reset();
-		})
-		
-		$("#alterPass").click(function(){
-			$.ajax({
-				url:'../creditCard',
-				data:$("#alterPassForm").serialize(),
-				success:function(data){
-					alert(data);
-				}
+			$("#setLimit").click(function(){
+				$.ajax({
+					url:'../limitController',
+					data:$('#setForm').serialize(),
+					success:function(data){
+						alert(data);
+					},error:function(data){
+						alert(data);
+					}
+				})
 			})
-			document.getElementById('alterPassForm').reset();
-		})
-		
-		$("#activate").click(function(){
-			$.ajax({
-				url:'../creditCard',
-				data:$("#activateForm").serialize(),
-				success:function(data){
-					alert(data)
-				}
-			})
-			document.getElementById('activateForm').reset();
-		})
-		
-		$("#report").click(function(){
-			$.ajax({
-				url:'../creditCard',
-				data:$("#reportForm").serialize(),
-				success:function(data){
-					alert(data)
-				}
-			})
-			document.getElementById('reportForm').reset();
-		})
 		</script>
 		
 		
