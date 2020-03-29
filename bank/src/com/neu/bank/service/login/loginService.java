@@ -1,5 +1,8 @@
 package com.neu.bank.service.login;
 
-public interface logins {
-	int logins(String Username ,String UserPass);
+public interface loginService {
+	
+	public String getUserinfoPO(String UserName,String UserPass);
+	
+
 }

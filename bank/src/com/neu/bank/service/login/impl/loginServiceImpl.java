@@ -1,31 +1,34 @@
 package com.neu.bank.service.login.impl;
 
-import com.neu.bank.dao.login.getUser;
-import com.neu.bank.dao.login.impl.Usersql;
-import com.neu.bank.po.UserBean;
-import com.neu.bank.service.login.logins;
+import com.neu.bank.dao.login.LoginDao;
+import com.neu.bank.dao.login.impl.LoginDaoImpl;
+import com.neu.bank.po.UserinfoPO;
+import com.neu.bank.service.login.loginService;
 
-public class login implements logins{
-	getUser GetUser=new Usersql();
 
+public class loginServiceImpl implements loginService{
+	LoginDao LD=new LoginDaoImpl();
 	@Override
-	public int logins(String Username, String UserPass) {
+	public String getUserinfoPO(String UserName, String UserPass) {
 		// TODO Auto-generated method stub
-		int i=0;
 		
-		UserBean User=GetUser.getUserName(Username, UserPass);
-		if (!User.getUserName().equals("")) {
-			if (!User.getUserPass().equals("")) {
-				i=1;
-				System.out.println("账户验证完毕");
+		try {
+			UserinfoPO UserP= LD.getUserinfoPOByNameAndPass(UserName, UserPass);
+			if (UserP!=null) {
+				return "可以登陆";
 			} else {
-				System.out.println("密码错误");
+				return "不存在此用户";
 			}
-		} else {
-			System.out.println("用户名不存在");
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
 		}
-		return i;
+		
 	}
+
+
 	
 
 }
