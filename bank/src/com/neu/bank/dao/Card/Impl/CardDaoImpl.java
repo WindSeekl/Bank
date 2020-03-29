@@ -27,5 +27,11 @@ public class CardDaoImpl implements CardDao{
 		// TODO Auto-generated method stub
 		return bd.querySome("select * from card where obUserId='"+obUserId+"'",Card.class);
 	}
+	
+	@Override
+	public void updateState(String cardId, int state) {
+		// TODO Auto-generated method stub
+		bd.inUpDel("update card set State = '"+state+"' where cardId = '"+cardId+"'");
+	}
 
 }

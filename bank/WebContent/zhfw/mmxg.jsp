@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.util.*"%>
-<%@ page import="com.neu.bank.po.*"%>
+<%@ page import="java.util.List"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="com.neu.bank.po.Card"%>
 <%@ page import="com.neu.bank.service.Card.Impl.CardServiceImpl"%>
 <%@ page import="com.neu.bank.service.Card.CardService"%>
 <!DOCTYPE html>
@@ -326,8 +327,7 @@
                             <ul class="treeview-menu">
                                 <li><a href="../khfw/changePass.jsp"><i class="fa fa-angle-double-right"></i> 个人信息管理</a></li>
                                 <li><a href=""><i class="fa fa-angle-double-right"></i> 大额取款预约服务</a></li>
-                                <li><a href=""><i class="fa fa-angle-double-right"></i> 贷款计算器</a></li>
-                                <li><a href=""><i class="fa fa-angle-double-right"></i> 存款计算器</a></li>
+                                <li><a href="../khfw/calculator.jsp"><i class="fa fa-angle-double-right"></i> 理财计算</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
@@ -462,7 +462,9 @@
 															List<String> list = cs.queryId("1212556");
 															for(int i=0;i<list.size();i++) {%>
 														  	<option value ="<%=list.get(i)%>" ><%=list.get(i)%></option>
-														  <%}%>
+														  <%
+														  }
+														  %>
                                          				</select>                 						 
 													</div><!-- input-group -->
 												</div> <!--  form-group -->

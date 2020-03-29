@@ -435,7 +435,6 @@
                 <!-- Main content -->
                 <section class="content">
 						<div class="row">
-						
 							<div class="col-lg-9 col-sm-11 col-xs-11 col-md-10">
 							
 								<div class="nav-tabs-custom">
@@ -444,7 +443,7 @@
 									<li><a href="#tab_2-2" data-toggle="tab">预留信息设置</a></li>
 									<li><a href="#tab_3-3" data-toggle="tab">登录名修改</a></li>
 	                                <li><a href="#tab_4-4" data-toggle="tab">登录密码修改</a></li>
-	                                <li class="pull-left header"><i class="fa fa-th"></i> 操作</li>
+	                                <li class="pull-left header"><i class="fa fa-th"></i>操作</li>
                                </ul>
                                 <div class="tab-content">
                                 
@@ -457,6 +456,17 @@
                              	<div class="tab-pane" id="tab_2-2">
 									<form action="#" id="chmess">
 									    	<input name="mark" value="changeMess" type="hidden">
+									    	<div class="row">
+												  <div class="col-lg-8">
+													<div class="form-group">
+										 				<div class="input-group">
+			                                           		<span class="input-group-addon">原预留信息：</span>
+															<input id="oldmess" type="text" class="form-control" value="" readonly="readonly">
+														</div><!-- input-group -->
+													</div> <!--  form-group -->
+												  </div> <!--  col -->
+											</div> <!--  row -->
+											
 											<div class="row">
 												  <div class="col-lg-8">
 													<div class="form-group">
@@ -476,11 +486,23 @@
 									<div class="tab-pane" id="tab_3-3">
 										 <form action="#" id="chname">
 									    	<input name="mark" value="changeName" type="hidden">
+									    	
+									    	<div class="row">
+												  <div class="col-lg-8">
+													<div class="form-group">
+										 				<div class="input-group">
+			                                           		<span class="input-group-addon">原登录名：</span>
+															<input id="oldname" type="text" class="form-control" value="" readonly="readonly">
+														</div><!-- input-group -->
+													</div> <!--  form-group -->
+												  </div> <!--  col -->
+											</div> <!--  row -->
+									    	
 											<div class="row">
 												  <div class="col-lg-8">
 													<div class="form-group">
 										 				<div class="input-group">
-			                                           		<span class="input-group-addon">登录名：</span>
+			                                           		<span class="input-group-addon">新登录名：</span>
 															<input name="name" type="text" class="form-control">
 														</div><!-- input-group -->
 													</div> <!--  form-group -->
@@ -541,14 +563,7 @@
                             </div><!-- nav-tabs-custom -->
 							
 						</div> <!-- col -->
-					</div> <!-- row -->
-	
-						 <div class="col-lg-2 col-sm-6 col-xs-6 col-md-2">
-						   		广告位
-							</div>
 						
-					</div> <!-- row --> 
-					
                 </section><!-- /.content -->
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
@@ -597,25 +612,27 @@
 					url:'../UserController',
 					data:{mark:$("#mark").val()},
 					success:function(data){
-						var str = "<h5>网银编号："+data.obUserId+"</h5>";
-						str += "<h5>用户名："+data.userName+"</h5>";
-						str += "<h5>真实姓名："+data.cealName+"</h5>";
-						str += "<h5>证件类型："+data.certificateType+"</h5>";
-						str += "<h5>证件号码："+data.certificateNum+"</h5>";
-						str += "<h5>性别："+data.sex+"</h5>";
-						str += "<h5>手机号码："+data.phoneNum+"</h5>";
-						str += "<h5>固定电话："+data.fixPhone+"</h5>";
-						str += "<h5>电子邮箱："+data.e_mail+"</h5>";
-						str += "<h5>家庭住址："+data.site+"</h5>";
-						str += "<h5>预留信息："+data.mess+"</h5>";
+						var str = "<span class='input-group-addon'>网银编号："+data.obUserId+"</span></br>";
+						str += "<span class='input-group-addon'>用户名："+data.userName+"</span></br>";
+						str += "<span class='input-group-addon'>真实姓名："+data.cealName+"</span></br>";
+						str += "<span class='input-group-addon'>证件类型："+data.certificateType+"</span></br>";
+						str += "<span class='input-group-addon'>证件号码："+data.certificateNum+"</span></br>";
+						str += "<span class='input-group-addon'>性别："+data.sex+"</span></br>";
+						str += "<span class='input-group-addon'>手机号码："+data.phoneNum+"</span></br>";
+						str += "<span class='input-group-addon'>固定电话："+data.fixPhone+"</span></br>";
+						str += "<span class='input-group-addon'>电子邮箱："+data.e_mail+"</span></br>";
+						str += "<span class='input-group-addon'>家庭住址："+data.site+"</span></br>";
+						str += "<span class='input-group-addon'>预留信息："+data.mess+"</span></br>";
 						var sta;
 						if(data.state=="0"){
 							sta = "冻结";
 						}else{
 							sta = "正常";
 						}
-						str += "<h5>账户状态："+sta+"</h5>";
+						str += "<span class='input-group-addon>账户状态："+sta+"</span></br>";
 						$("#tab_1-1").append(str);
+						$("#oldmess").val(data.mess);
+						$("#oldname").val(data.userName);
 					}
 				})
 			})
