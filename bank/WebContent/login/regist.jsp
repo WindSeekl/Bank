@@ -12,7 +12,7 @@
 	<label>用户名：</label><input id="PassWord2" type="password" name="registPass2">
 	<button id="login" onclick="addUser()">注册</button>
 	<button id="call">取消</button>
-	
+	<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
    <script type="text/javascript">
    	function addUser() {
    		$.ajax({
@@ -26,7 +26,7 @@
 				dataType: "text",
 			success:function(data){
 				alert('注册成功!');
-				document.href("WebContent/login.jsp");
+				document.href("../login.jsp");
 			},
 			error:function(data){
 				alert("注册失败!");

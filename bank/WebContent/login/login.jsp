@@ -11,7 +11,7 @@
 	-->
 	<script type="text/javascript" language="javascript">
 		function toRegist(){
-			location.href = "regist.jsp";
+			location.href = "../regist.jsp";
 		}
 	
 	</script>
@@ -28,9 +28,10 @@
    	
    		<button id="register" class="register">注册</button>
   </body>
+	<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
   <script type="text/javascript">
   $(".register").click(function () {
-      window.location.href = 'WebContent/regist.jsp';
+      window.location.href = 'regist.jsp';
   });
   
   $(".logins").click(
