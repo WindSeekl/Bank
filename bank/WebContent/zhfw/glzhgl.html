@@ -454,7 +454,6 @@
 												<tbody id="data">
 		  									　　</tbody>
 										</table>
-									 	<!--  <a href="#" class="btn btn-primary" data-toggle="modal" data-backdrop="static"  data-target="#compose-modal">新增关联账户</a> -->
 								      <input type="button" class="btn btn-primary" value="删除关联账户" id="dbut"/>
 								</form>
 								
@@ -606,6 +605,7 @@
 					url:'../DelContorller',
 					data:$("#del").serialize(),
 					success:function(data){
+						alert("删除成功！");
 						window.location.reload();
 					}
 				})

@@ -22,13 +22,11 @@ public class GsController extends HttpServlet{
 		String res = null;
 		String cardId = req.getParameter("cardId");
 		String pwd = req.getParameter("pass");
-
-			if (card.getState() == true) {
-				res = cs.updateState(1, pwd, cardId);
-			}else {
-				res = "已提交挂失请求，请勿重复操作！"; 
-		}
-			System.out.println(card.getState());
+			if (pwd!=null) {
+				if (card.getState() == true) {
+					res = cs.updateState(1, pwd, cardId);
+				}
+			}
 		String jsonStr = JSONObject.toJSONString(res);
 		resp.setContentType("application/json;charset=utf-8");
 		resp.getWriter().println(jsonStr);
