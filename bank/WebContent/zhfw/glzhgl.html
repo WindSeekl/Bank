@@ -349,6 +349,8 @@
                             <ul class="treeview-menu">
                                 <li><a href="../creditCard/sqjd.jsp"><i class="glyphicon glyphicon-tag"></i>申请进度查询</a></li>
                                 <li><a href="../creditCard/xykgl.jsp"><i class="glyphicon glyphicon-tag"></i>信用卡管理</a></li>
+                                <li><a href="../creditCard/queryBill.jsp"><i class="glyphicon glyphicon-tag"></i>账单查询</a></li>
+                                <li><a href="../creditCard/limit.jsp"><i class="glyphicon glyphicon-tag"></i>额度查询</a></li>
                             </ul>
                         </li>
                         <li>
@@ -439,7 +441,7 @@
 							 <div class="modal-body">
 							     
 								<form action="#" id="del">
-									<table class="table table-striped" id="data">
+										<table class="table table-striped" >
 											<thead>
 												<th></th>
 												<th>账号</th>
@@ -449,19 +451,14 @@
 												<th>余额</th>
 												<th>操作</th>
 											<thead>
-												<tbody>
-													
-		  									　　　</tbody>
-											</table>
+												<tbody id="data">
+		  									　　</tbody>
+										</table>
+									 	<!--  <a href="#" class="btn btn-primary" data-toggle="modal" data-backdrop="static"  data-target="#compose-modal">新增关联账户</a> -->
+								      <input type="button" class="btn btn-primary" value="删除关联账户" id="dbut"/>
 								</form>
 								
-                                <div class="box-footer clearfix">
-									
-									 <!--  <a href="#" class="btn btn-primary" data-toggle="modal" data-backdrop="static"  data-target="#compose-modal">新增关联账户</a> -->
-								      <input type="button" href="#" class="btn btn-primary">删除关联账户</input>
-                                </div>		
-								
-								 
+                                	
 						     </div> <!-- body -->
 						   </div> <!-- box -->
 						   
@@ -584,26 +581,35 @@
         <!-- AdminLTE for demo purposes -->
         <script src="../js/AdminLTE/demo.js" type="text/javascript"></script>
         <script type="text/javascript">
-		$(function(){
-			$.ajax({
-				url:"../GlContorller",
-				data:null,
-				success:function(data){
-					console.log(data);
-					for (var i in data) {
-						var html="<tr>";
-						html += "<td><input type='checkbox' name='dName' value='"+data[i].cardId+"'></td>";
-						html += "<td>"+data[i].cardId+"</td>";
-						html += "<td>"+data[i].cardTypeId+"</td>";
-						html += "<td>"+data[i].networkId+"</td>";
-						html += "<td>"+data[i].alias+"</td>";
-						html += "<td>"+data[i].balance+"</td>";
-						html += "<td><a href='zhmx.jsp'>明细查询</a><small>&nbsp;|&nbsp;</small><a href='#'><a href='wsjycx.jsp'>网上交易查询</td>";
-						$("#data").append(html);
+			$(function(){
+				$.ajax({
+					url:"../GlContorller",
+					data:null,
+					success:function(data){
+						console.log(data);
+						for (var i in data) {
+							var html="<tr>";
+							html += "<td><input type='checkbox' name='cId' value='"+data[i].cardId+"'></td>";
+							html += "<td>"+data[i].cardId+"</td>";
+							html += "<td>"+data[i].cardTypeId+"</td>";
+							html += "<td>"+data[i].networkId+"</td>";
+							html += "<td>"+data[i].alias+"</td>";
+							html += "<td>"+data[i].balance+"</td>";
+							html += "<td><a href='zhmx.jsp'>明细查询</a><small>&nbsp;|&nbsp;</small><a href='#'><a href='wsjycx.jsp'>网上交易查询</td>";
+							$("#data").append(html);
+						}
 					}
-				}
+				})
 			})
-		})
-			</script>
+			$("#dbut").click(function(){
+				$.ajax({
+					url:'../DelContorller',
+					data:$("#del").serialize(),
+					success:function(data){
+						window.location.reload;
+					}
+				})
+			})
+		</script>
     </body>
 </html>

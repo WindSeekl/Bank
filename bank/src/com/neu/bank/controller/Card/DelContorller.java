@@ -16,8 +16,10 @@ public class DelContorller extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("utf-8");
-		String obUserId = req.getParameter("");
-		
+		String[] cardId = req.getParameterValues("cId");//获取删除的卡号
+		for (String string : cardId) {
+			cs.del(string);
+		}
 	}
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
