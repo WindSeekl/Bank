@@ -9,22 +9,25 @@ import com.neu.bank.service.login.loginService;
 public class loginServiceImpl implements loginService{
 	LoginDao LD=new LoginDaoImpl();
 	@Override
-	public String getUserinfoPO(String UserName, String UserPass) {
+	public int getUserinfoPO(String UserName, String UserPass) {
 		// TODO Auto-generated method stub
+			int u=0;
 		
-		try {
 			UserinfoPO UserP= LD.getUserinfoPOByNameAndPass(UserName, UserPass);
-			if (UserP!=null) {
-				return "可以登陆";
+			if (UserP.getUserName().isEmpty()) {
+				if (UserP.getUserPass().isEmpty()) {
+					u=1;
+					return u;
+				} 
+				else {
+					return u;
+				}
+				
 			} else {
-				return "不存在此用户";
+				return u;
 			}
-			
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return null;
-		}
+	
+		
 		
 	}
 

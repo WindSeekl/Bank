@@ -10,13 +10,13 @@ public class registDaoImpl implements registDao {
 @Override
 public UserinfoPO getUserinfoPOByNameAndPass(String UserName, String UserPass) {
 // TODO Auto-generated method stub
-return basedao.queryOne("SELECT * FROM User WHERE UserName="+UserName+" and UserPass="+UserPass+"", UserinfoPO.class);
+return basedao.queryOne("SELECT * FROM User WHERE UserName='"+UserName+"' and UserPass='"+UserPass+"'", UserinfoPO.class);
 }
 
 @Override
 public int addUserinfo(String UserName, String UserPass) {
 // TODO Auto-generated method stub
-return basedao.inUpDel("insert into loginuser values("+UserName+","+UserPass+");");
+return basedao.inUpDel("insert into loginuser values('"+UserName+"','"+UserPass+"');");
 }
 
 

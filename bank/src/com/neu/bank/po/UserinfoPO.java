@@ -1,29 +1,23 @@
 package com.neu.bank.po;
 
 public class UserinfoPO {
-private int userid;
-private String loginname;
-private String loginpass;
+
+private String UserName;
+private String UserPass;
+public String getUserName() {
+	return UserName;
+}
+public void setUserName(String userName) {
+	UserName = userName;
+}
+public String getUserPass() {
+	return UserPass;
+}
+public void setUserPass(String userPass) {
+	UserPass = userPass;
+}
 
 
-public int getUserid() {
-	return userid;
-}
-public void setUserid(int userid) {
-	this.userid = userid;
-}
-public String getLoginname() {
-	return loginname;
-}
-public void setLoginname(String loginname) {
-	this.loginname = loginname;
-}
-public String getLoginpass() {
-	return loginpass;
-}
-public void setLoginpass(String loginpass) {
-	this.loginpass = loginpass;
-}
 
 
 }

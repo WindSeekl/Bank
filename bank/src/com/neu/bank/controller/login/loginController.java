@@ -2,6 +2,7 @@ package com.neu.bank.controller.login;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Writer;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -31,63 +32,42 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	String uName=req.getParameter("UserName");
 	String uPass=req.getParameter("UserPassWord");
-	if (uName!="") {
-		if (uPass!="") {
-			System.out.println("用户名："+uName+",密码："+uPass);
-			HttpSession session = req.getSession(); 
-			loginService LgS=new loginServiceImpl();
-			String JG=LgS.getUserinfoPO(uName, uPass);
-			if (JG=="可以登陆") {
-				req.setAttribute("name", uName);
-				req.setAttribute("PassWord", uPass);
-			    resp.setContentType("text/html; charset=UTF-8"); //转码
-			    PrintWriter out = resp.getWriter();
-			    out.flush();
-			    out.println("<script>");
-			    out.println("alert('登陆成功');");
-			    out.println("history.back();");
-			    out.println("</script>");
-				RequestDispatcher  rd = req.getRequestDispatcher("index.jsp");  
-				rd.forward(req, resp);
-			} else {
-			    resp.setContentType("text/html; charset=UTF-8"); //转码
-			    PrintWriter out = resp.getWriter();
-			    out.flush();
-			    out.println("<script>");
-			    out.println("alert('登陆失败,不存在此用户');");
-			    out.println("history.back();");
-			    out.println("</script>");
-				RequestDispatcher  rd = req.getRequestDispatcher("login.jsp");  
-				rd.forward(req, resp);
-
-			};
+	if(!uName.isEmpty()&&!uPass.isEmpty()) {
+		HttpSession session = req.getSession(); 
+		loginService LgS=new loginServiceImpl();
+		int i=LgS.getUserinfoPO(uName, uPass);
+		StringBuilder sb = new StringBuilder("{");
+		sb.append("\"resArr\":");
+		sb.append("[");	
+		if (i==1) {
+			session.setAttribute("name", uName);
+			session.setAttribute("PassWord", uPass);
+		    resp.setContentType("text/html; charset=UTF-8"); //转码
+		    System.out.println(uName+","+uPass);
+		    sb.append("\""+uName+"\""+",");
+			sb.append("\""+uPass+"\"");
+		    sb.append("]}");
+		    resp.setContentType("application/json;charset=utf-8");
+			resp.getWriter().println(sb.toString());
+			
 		} else {
-			//判空
-			   resp.setContentType("text/html; charset=UTF-8"); //转码
-			    PrintWriter out = resp.getWriter();
-			    out.flush();
-			    out.println("<script>");
-			    out.println("alert('密码不能为空！');");
-			    out.println("history.back();");
-			    out.println("</script>");
-			    RequestDispatcher  rd = req.getRequestDispatcher("login.jsp");  
-				rd.forward(req, resp);
+			resp.getWriter().println("登陆成功");
 		}
-		
-	} else{
-		//判空
-		   resp.setContentType("text/html; charset=UTF-8"); //转码
-		    PrintWriter out = resp.getWriter();
-		    out.flush();
-		    out.println("<script>");
-		    out.println("alert('用户名不能为空！');");
-		    out.println("history.back();");
-		    out.println("</script>");
-		    RequestDispatcher  rd = req.getRequestDispatcher("login.jsp");  
-			rd.forward(req, resp);
+	} else {
+		resp.getWriter().println("用户名或密码不能为空");
 	}
 	
-}
+	
+	
+	
+	}
+	
+	
+
+
 
 
 }
+
+
+

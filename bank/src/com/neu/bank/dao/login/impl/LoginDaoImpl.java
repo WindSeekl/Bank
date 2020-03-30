@@ -10,7 +10,7 @@ public class LoginDaoImpl implements LoginDao{
 	@Override
 	public UserinfoPO getUserinfoPOByNameAndPass(String UserName, String UserPass){
 		// TODO Auto-generated method stub
-	 return basedao.queryOne("SELECT * FROM User WHERE UserName="+UserName+" and UserPass="+UserPass+"", UserinfoPO.class);
+	 return basedao.queryOne("SELECT * FROM loginuser WHERE UserName='"+UserName+"' and UserPass='"+UserPass+"'", UserinfoPO.class);
 	}
 
 	

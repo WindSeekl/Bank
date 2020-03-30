@@ -2,6 +2,7 @@ package com.neu.bank.controller.regist;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Writer;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -31,60 +32,38 @@ public class registController extends HttpServlet{
 		String uName=req.getParameter("registUser");
 		String uPass=req.getParameter("registPass");
 		String uPass2=req.getParameter("registPass2");
-		if (uName!="") {
-			if (uPass!="") {
-				if (uPass2!="") {
-				if (uPass==uPass2) {
+		Writer wr = resp.getWriter();
+		if (!uName.isEmpty()) {
+			if (!uPass.isEmpty()) {
+				if (!uPass2.isEmpty()) {
+				if (uPass.equals(uPass2)) {
 					registService RS=new registServiceImpl();
 					RS.regist(uName, uPass);
-					
-					
+					  wr.write("<script type=\"text/javascript\">alert(\"注册成功\") </script>");
+					    wr.flush();
+					    RequestDispatcher  rd = req.getRequestDispatcher("../index.jsp");  
+						rd.forward(req, resp);
 					
 				} else if(uPass!=uPass2){
 					 resp.setContentType("text/html; charset=UTF-8"); //转码
-					    PrintWriter out = resp.getWriter();
-					    out.flush();
-					    out.println("<script>");
-					    out.println("alert('两次输入密码不一致请重新输入！');");
-					    out.println("history.back();");
-					    out.println("</script>");
+					  wr.write("<script type=\"text/javascript\">alert(\"输入的两次密码不一致\") </script>");
+					    wr.flush();
 					    RequestDispatcher  rd = req.getRequestDispatcher("regist.jsp");  
 						rd.forward(req, resp);
 				}
 					
 					
 				} else {
-					  resp.setContentType("text/html; charset=UTF-8"); //转码
-					    PrintWriter out = resp.getWriter();
-					    out.flush();
-					    out.println("<script>");
-					    out.println("alert('密码不能为空！');");
-					    out.println("history.back();");
-					    out.println("</script>");
-					    RequestDispatcher  rd = req.getRequestDispatcher("regist.jsp");  
-						rd.forward(req, resp);
+					 wr.write("<script type=\"text/javascript\">alert(\"密码不能为空\") </script>");
+					    wr.flush();
 				}
 			} else {
-				  resp.setContentType("text/html; charset=UTF-8"); //转码
-				    PrintWriter out = resp.getWriter();
-				    out.flush();
-				    out.println("<script>");
-				    out.println("alert('密码不能为空！');");
-				    out.println("history.back();");
-				    out.println("</script>");
-				    RequestDispatcher  rd = req.getRequestDispatcher("regist.jsp");  
-					rd.forward(req, resp);
+				 wr.write("<script type=\"text/javascript\">alert(\"密码不能为空\") </script>");
+				    wr.flush();
 			}
 		} else {
-			  resp.setContentType("text/html; charset=UTF-8"); //转码
-			    PrintWriter out = resp.getWriter();
-			    out.flush();
-			    out.println("<script>");
-			    out.println("alert('用户名不能为空！');");
-			    out.println("history.back();");
-			    out.println("</script>");
-			    RequestDispatcher  rd = req.getRequestDispatcher("regist.jsp");  
-				rd.forward(req, resp);
+			 wr.write("<script type=\"text/javascript\">alert(\"用户名不能为空\") </script>");
+			    wr.flush();
 		}
 		
 		
