@@ -1,0 +1,82 @@
+.table{
+    width:100% ;
+    border: 1px solid #c0c2c2;
+    height: 50px;
+    
+}
+
+.table th{
+    background-color: rgb(245, 245, 245); 
+}
+
+
+.span1{
+    position: relative;
+    margin-left: 20px;
+}
+
+.span2{
+    position: relative;
+    margin-left: 250px;
+}
+
+
+.span3{
+    position: relative;
+    margin-left:  35px;
+}
+
+.span4{
+    color: rgb(167, 165, 165);
+}
+.input1{
+    width: 300px;
+}
+.button1{
+    width: 80px;
+    background-color: rgb(255, 145, 71);
+    border:none;
+    color: white;    
+}
+.button2{
+    width: 55px;
+    background-color: rgb(255, 145, 71);
+    border:none;
+    color: white;    
+}
+.button3{
+width: 140px;    
+background-color: rgb(255, 145, 71);
+border:none;
+color: white;   
+}
+
+#table td{
+    border-width: 1px;
+    padding:5px;
+    border-style: solid;
+    border:1px solid #c0c2c2;
+    text-align: center;
+    font-size: 12px;
+}
+#sp{
+    color: red;
+
+  
+}
+
+.td1{
+    height: 280px;
+    background-color: white;
+     border: 1px solid #c0c2c2;
+     text-align: center;
+}
+textarea{
+    resize: none;
+}
+
+.selectwidth{
+    width: 170px;
+    margin-right: 115px;
+}
+ 

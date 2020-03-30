@@ -1,0 +1,8 @@
+span{
+    display: -moz-inline-box;
+    display: inline-block;
+    text-align: right;
+    font-size: 8px;
+    width: 105px;
+    
+}

@@ -1,0 +1,48 @@
+#chaxun{
+	height: 40px;
+	background-color: #F9F9F9;
+}
+#daohang{
+	
+}
+#liebiao{
+	height: 40px;
+	background-color: #404040;
+	color: white;
+}
+table{
+	width: 98%;
+	
+}
+#head{
+	width: 120px;
+	height: 30px;
+	background-color: #D8DCE5;
+	
+}
+table tb{
+	width: 120px;
+	height: 30px;
+}
+#down{
+	height: 50px;
+	background-color: #F9F9F9;
+	text-align: right;
+	margin-right: 12px;
+}
+button{
+	width: 70px;
+	color: white;
+	background-color: #FF7600;
+}
+button:hover
+{
+	background-color: orange;
+}
+.shurukuang{
+	width: 300px;
+}
+.1{
+	width: 120px;
+	height: 30px;
+}

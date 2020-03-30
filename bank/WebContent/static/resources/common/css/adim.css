@@ -1,0 +1,85 @@
+.biaoge td{
+	text-align: center;
+	width: 300px;
+	height:60px;
+border:1px solid  #D7D7D7;
+}
+#liebiaotou{
+	background-color: #2D2D2D;
+	height: 30px;
+	text-align: left;
+	color: #FFFFFF;
+}
+
+.tupianduiqi{
+	 display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+body button{
+border: 1px solid #FFFFFF;
+}
+.caozuo{
+	width: 40px;
+	height: 40px;
+	color: #FFFFFF;
+	background-color: #FF9500;
+}
+.danshu{
+	background-color: #F9EFDC;
+	border:1px solid  #D7D7D7;
+}
+.shuangshu{
+	background-color: #CDF7F1;
+	border:1px solid  #D7D7D7;
+}
+.caozuosc{
+	width: 40px;
+	height: 40px;
+	color: #FFFFFF;
+	background-color: #F32B2B;
+}
+#cxbeijing{
+	width: 1600Spx;
+	height: 150px;
+	background-color: #E1E1E8;
+}
+#biaogebeijing{
+	background-color: #FFFFFF;
+}
+#cxneirong{
+	text-align: center;
+	height: 100px;
+	background-color:#E0F0DD ;
+}
+.adimbutton{
+	color: #FFFFFF;
+	text-align:right;
+	background-color: #FF9500;
+}
+.buttonyangshi{
+	text-align: right;
+}
+.wenzitou{
+	height: 35px;
+	width: 100px;
+}
+
+.shurukuang{
+	height: 35px;
+	width: 500px;
+	height: 25px;
+}
+.xialatiao{
+	height: 35px;
+	width: 500px;
+	height: 25px;
+}
+#db{
+	background-color: #8AA1B3;
+	font-size: 30px;
+}
+.chaxundaxiao{
+	width: 828px;
+}

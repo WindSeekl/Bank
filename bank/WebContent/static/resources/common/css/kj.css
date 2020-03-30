@@ -1,0 +1,98 @@
+
+.top{
+	height:100px auto;
+	border: 0px #F5F5F5;
+	border: 1px solid #D0D0D0;
+	margin: 0px auto;
+}
+.down{
+	border: 1px solid #D0D0D0;
+	margin-top: 30px;
+}
+div #head{
+	height: 30px;
+	vertical-align: 15px;
+	background-color: #FAFAFA;
+	border-bottom: 1px solid #D0D0D0;
+}
+div #body{
+	margin: 40px;
+}
+div #foot{
+	height: 50px;
+	background-color: #FAFAFA;
+	border-bottom: 1px solid #D0D0D0;
+	text-align: right;
+}
+.down #head{
+	background-color:#404040 ;
+	color: white;
+	vertical-align: 15px;
+	
+	height: 30px;
+	border-bottom: 1px solid #D0D0D0;
+}
+.down #body{
+	height: 130px auto;
+	border-bottom: 1px solid #D0D0D0;
+}
+.down #foot{
+	height: 50px;
+	background-color: #FAFAFA;
+}
+/*表格*/
+#table1{
+	width: 100%;
+	text-align: center;
+}
+.tou{
+	background-color: #D6DDE7;
+	font-weight: 900;
+}
+tr{
+	border: 1px solid #D0D0D0;
+}
+span{
+	margin-left: 30px;
+}
+.row{
+	margin:0px auto ;
+	
+}
+#create{
+	width: 300px;
+}
+ #btn1{
+	margin-right: 30px;
+	margin-top: 10px;
+	color: white;
+	background-color: #FF7A02;
+}
+#btn1:hover{
+	background-color: #FDA454;
+}
+#table2{
+	margin: 10px;
+}
+#table3{
+	text-indent: 30px;
+	width: 100%;
+	text-align: left;
+}
+#table4{
+	width: 100%;
+	text-align: left;
+}
+#table5{
+	width: 100%;
+	text-align: left;
+}
+.tou2{
+	background-color: #E6E4E5;
+}
+#kehu{
+	background-color: #EBF2F8;
+}
+#XX{
+	background-color: #F9F9F9;
+}
